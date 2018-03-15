@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net"
 	"log"
+	"strings"
 )
 
 func main() {
@@ -29,7 +30,17 @@ func main() {
 }
 
 func HandleRequest(conn net.Conn)  {
+	//函数调用完毕 关闭connect
+
 	fmt.Println(conn.RemoteAddr().String(),"addr connect success!")
-	
+
+	buf:=make([]byte,2048)
 	//读取用户数据
+	n,err:=conn.Read(buf)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("buf = \n",string(buf[:n]))
+
+	conn.Write([]byte(strings.ToUpper(string(buf[:n]))))
 }
