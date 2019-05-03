@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d7e2263-ed8d-4c11-a034-a998b514d6a1" name="Default" comment="" />
+    <list default="true" id="6d7e2263-ed8d-4c11-a034-a998b514d6a1" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/files/kkk.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/timg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190501/study_arr.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190501/study_slice.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190501/study_time.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190502/CustomManager/modle/customer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190502/CustomManager/service/customerService.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190502/CustomManager/view/customerView.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190502/familyaccount/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190502/familyaccount/utils/familyaccoutlgo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190502/socket.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190502/study_lock.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190502/study_sort.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190502/study_sort2.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190502/testMyAccount.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190503/file_demo_1/main/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190503/file_demo_10/main/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190503/file_demo_11/main/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190503/file_demo_2/main/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190503/file_demo_3/main/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190503/file_demo_4/main/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190503/file_demo_5/main/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190503/file_demo_6/main/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190503/file_demo_7/main/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190503/file_demo_8/main/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go学习20190503/file_demo_9/main/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,67 +39,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="11_方法的继承.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/11_方法的继承.go">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go学习20190503/file_demo_6/main/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="26" column="17" lean-forward="false" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="598">
+              <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="11_通过结构体生成json.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/11_通过结构体生成json.go">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go学习20190503/file_demo_7/main/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="24" column="51" lean-forward="false" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="51" />
+            <state relative-caret-position="520">
+              <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go学习20190503/file_demo_8/main/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="729">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go学习20190503/file_demo_9/main/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
               <folding>
-                <element signature="e#14#48#0" expanded="true" />
+                <element signature="e#14#44#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="httpServer.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/httpServer.go">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/go学习20190503/file_demo_11/main/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="23" column="23" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-              <folding>
-                <element signature="e#14#78#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="13_json解析到结构体.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/13_json解析到结构体.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-              <folding>
-                <element signature="e#14#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="14_json解析到map.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/14_json解析到map.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="15_设备文件的使用.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/15_设备文件的使用.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+            <state relative-caret-position="486">
+              <caret line="37" column="40" lean-forward="true" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
               <folding>
                 <element signature="e#14#37#0" expanded="true" />
               </folding>
@@ -79,44 +90,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="16_磁盘文件的读写.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/16_磁盘文件的读写.go">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go学习20190503/file_demo_10/main/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="17_拷贝文件.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/17_拷贝文件.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="25" column="36" lean-forward="false" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="03_TCP服务器.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/黑马Go第6天笔记/03_TCP服务器.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="32" column="4" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+            <state relative-caret-position="157">
+              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
               <folding>
-                <element signature="e#14#45#0" expanded="true" />
+                <element signature="e#14#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="net.go" pinned="false" current-in-tab="false">
-        <entry file="file://D:/Golang/src/net/net.go">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/files/test.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="116" column="5" lean-forward="false" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="52">
+              <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -130,41 +120,22 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="D:\Golang" />
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>modle</find>
+      <find>\</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>/</replace>
+    </replaceStrings>
+  </component>
+  <component name="GOROOT" path="E:\Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/15_切片的长度和容量.go" />
-        <option value="$PROJECT_DIR$/16_切片的创建.go" />
-        <option value="$PROJECT_DIR$/17_切片截取.go" />
-        <option value="$PROJECT_DIR$/18_切片和底层数组关系.go" />
-        <option value="$PROJECT_DIR$/19_append函数的使用.go" />
-        <option value="$PROJECT_DIR$/20_append扩容特点.go" />
-        <option value="$PROJECT_DIR$/21_copy的使用.go" />
-        <option value="$PROJECT_DIR$/22_切片做函数参数.go" />
-        <option value="$PROJECT_DIR$/23_猜数字游戏.go" />
-        <option value="$PROJECT_DIR$/24_map的基本使用.go" />
-        <option value="$PROJECT_DIR$/25_map赋值.go" />
-        <option value="$PROJECT_DIR$/26_map遍历.go" />
-        <option value="$PROJECT_DIR$/26_map删除.go" />
-        <option value="$PROJECT_DIR$/28_map做函数参数.go" />
-        <option value="$PROJECT_DIR$/29_结构体初始化.go" />
-        <option value="$PROJECT_DIR$/30_结构体指针变量初始化.go" />
-        <option value="$PROJECT_DIR$/31_结构体成员的使用：普通变量.go" />
-        <option value="$PROJECT_DIR$/32_结构体成员的使用：指针变量.go" />
-        <option value="$PROJECT_DIR$/33_结构体比较和赋值.go" />
-        <option value="$PROJECT_DIR$/34_结构体做函数参数：普通变量.go" />
-        <option value="$PROJECT_DIR$/34_结构体做函数参数：地址传递.go" />
-        <option value="$PROJECT_DIR$/黑马Go第4天笔记/01_匿名字段初始化.go" />
-        <option value="$PROJECT_DIR$/黑马Go第4天笔记/02_成员的操作.go" />
-        <option value="$PROJECT_DIR$/黑马Go第4天笔记/03_同名字段.go" />
-        <option value="$PROJECT_DIR$/黑马Go第4天笔记/04_非结构体匿名字段.go" />
-        <option value="$PROJECT_DIR$/黑马Go第4天笔记/05_结构体指针类型匿名字段.go" />
-        <option value="$PROJECT_DIR$/黑马Go第4天笔记/06_面向过程和面向对象函数的区别.go" />
-        <option value="$PROJECT_DIR$/黑马Go第4天笔记/07_为结构体类型添加方法.go" />
-        <option value="$PROJECT_DIR$/黑马Go第4天笔记/08_值语义和引用语义.go" />
-        <option value="$PROJECT_DIR$/黑马Go第4天笔记/09_指针变量的方法集.go" />
-        <option value="$PROJECT_DIR$/黑马Go第4天笔记/10_普通变量的方法集.go" />
         <option value="$PROJECT_DIR$/黑马Go第4天笔记/11_方法的继承.go" />
         <option value="$PROJECT_DIR$/黑马Go第4天笔记/12_方法的重写.go" />
         <option value="$PROJECT_DIR$/黑马Go第4天笔记/13_方法值.go" />
@@ -185,36 +156,61 @@
         <option value="$PROJECT_DIR$/黑马Go第5天笔记/17_拷贝文件.go" />
         <option value="$PROJECT_DIR$/黑马Go第6天笔记/server.go" />
         <option value="$PROJECT_DIR$/黑马Go第6天笔记/03_TCP服务器.go" />
+        <option value="$PROJECT_DIR$/go学习20190501/time_study.go" />
+        <option value="$PROJECT_DIR$/go学习20190501/arr_study.go" />
+        <option value="$PROJECT_DIR$/go学习20190501/study_sllice.go" />
+        <option value="$PROJECT_DIR$/go学习20190501/study_slice.go" />
+        <option value="$PROJECT_DIR$/go学习20190502/study_sort.go" />
+        <option value="$PROJECT_DIR$/go学习20190502/study_lock.go" />
+        <option value="$PROJECT_DIR$/go学习20190502/study_sort2.go" />
+        <option value="$PROJECT_DIR$/go学习20190502/socket.go" />
+        <option value="$PROJECT_DIR$/go学习20190502/testMyAccount.go" />
+        <option value="$PROJECT_DIR$/go学习20190502/familyaccount/utils.go" />
+        <option value="$PROJECT_DIR$/go学习20190502/familyaccount/utils/familyaccoutlgo.go" />
+        <option value="$PROJECT_DIR$/go学习20190502/familyaccount/main.go" />
+        <option value="$PROJECT_DIR$/go学习20190502/CoustomManager/modle/costomer.go" />
+        <option value="$PROJECT_DIR$/go学习20190502/CustomManager/modle/customer.go" />
+        <option value="$PROJECT_DIR$/go学习20190502/CustomManager/service/customeerService.go" />
+        <option value="$PROJECT_DIR$/go学习20190502/CustomManager/service/customerService.go" />
+        <option value="$PROJECT_DIR$/go学习20190502/CustomManager/view/customerView.go" />
+        <option value="$PROJECT_DIR$/go学习20190503/study_file.go" />
+        <option value="$PROJECT_DIR$/go学习20190503/file_demo/main/main.go" />
+        <option value="$PROJECT_DIR$/files/test.txt" />
+        <option value="$PROJECT_DIR$/go学习20190503/file_demo_2/main/main.go" />
+        <option value="$PROJECT_DIR$/go学习20190503/file_demo_3/main/main.go" />
+        <option value="$PROJECT_DIR$/go学习20190503/file_demo_4/main/main.go" />
+        <option value="$PROJECT_DIR$/go学习20190503/file_demo_5/main/main.go" />
+        <option value="$PROJECT_DIR$/go学习20190503/file_demo_6/main/main.go" />
+        <option value="$PROJECT_DIR$/go学习20190503/file_demo_7/main/main.go" />
+        <option value="$PROJECT_DIR$/go学习20190503/file_demo_8/main/main.go" />
+        <option value="$PROJECT_DIR$/files/kkk.txt" />
+        <option value="$PROJECT_DIR$/go学习20190503/file_demo_9/main/main.go" />
+        <option value="$PROJECT_DIR$/go学习20190503/file_demo_10/main/main.go" />
+        <option value="$PROJECT_DIR$/go学习20190503/file_demo_11/main/main.go" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+      </list>
+    </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
-    <option name="y" value="13" />
-    <option name="width" value="1258" />
-    <option name="height" value="1000" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="952" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -225,29 +221,90 @@
             <path>
               <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
               <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
+              <item name="copy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go学习20190503" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go学习20190503" type="462c0819:PsiDirectoryNode" />
+              <item name="file_demo_9" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go学习20190503" type="462c0819:PsiDirectoryNode" />
+              <item name="file_demo_9" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go学习20190503" type="462c0819:PsiDirectoryNode" />
+              <item name="file_demo_10" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go学习20190503" type="462c0819:PsiDirectoryNode" />
+              <item name="file_demo_10" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go学习20190503" type="462c0819:PsiDirectoryNode" />
+              <item name="file_demo_11" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go学习20190503" type="462c0819:PsiDirectoryNode" />
+              <item name="file_demo_11" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
               <item name="黑马Go第6天笔记" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Go" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="go.sdk.automatically.set" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
+    <property name="go.gopath.indexing.explicitly.defined" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/files" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GIT\GoProject\src\GolangStudy\GolangStudy\files" />
+      <recent name="D:\GIT\GoProject\src\GolangStudy\GolangStudy\go学习20190503" />
       <recent name="G:\GoPath\src\GolangStudyNote\GolangStudy" />
       <recent name="G:\GoPath\src\GolangStudyNote\GolangStudy\黑马Go第5天笔记" />
       <recent name="G:\GoPath\src\GolangStudyNote\GolangStudy\黑马Go第4天笔记" />
-      <recent name="G:\GoPath\src\GolangStudy" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -262,7 +319,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go Build.go build main.go">
     <configuration name="Unnamed" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="GolangStudy" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -271,211 +328,127 @@
       <filePath value="G:\GoPath\src\GolangStudy\指针基础操作.go" />
       <package value="GolangStudy" />
       <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
     </configuration>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+    <configuration name="go build main.go (2)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="GolangStudy" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/go学习20190503/file_demo_8/main/main.go" />
+      <package value="GolangStudy/GolangStudy" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go (3)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="GolangStudy" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/go学习20190503/file_demo_9/main/main.go" />
+      <package value="GolangStudy/GolangStudy" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go (4)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="GolangStudy" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/go学习20190503/file_demo_10/main/main.go" />
+      <package value="GolangStudy/GolangStudy" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go (5)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="GolangStudy" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/go学习20190503/file_demo_6/main/main.go" />
+      <package value="GolangStudy/GolangStudy" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="GolangStudy" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/go学习20190503/file_demo_11/main/main.go" />
+      <package value="GolangStudy/GolangStudy" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build main.go (4)" />
+        <item itemvalue="Go Build.go build main.go (3)" />
+        <item itemvalue="Go Build.go build main.go (2)" />
+        <item itemvalue="Go Build.go build main.go (5)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="13" width="1258" height="1000" extended-state="0" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18115942" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995495" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995495" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.12861736" />
+      <window_info id="Structure" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="1" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.3295583" />
+      <window_info anchor="bottom" id="Message" order="3" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.3295583" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.37259343" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.3997735" />
+      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="9" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Json Parser" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/httpServer.go</url>
-          <line>39</line>
+          <line>25</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/go学习20190502/CustomManager/service/customerService.go</url>
+          <line>32</line>
+          <properties />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
     </breakpoint-manager>
-    <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/17_切片截取.go" />
-    <entry file="file://$PROJECT_DIR$/18_切片和底层数组关系.go" />
-    <entry file="file://$PROJECT_DIR$/19_append函数的使用.go" />
-    <entry file="file://$PROJECT_DIR$/20_append扩容特点.go" />
-    <entry file="file://$PROJECT_DIR$/21_copy的使用.go" />
-    <entry file="file://$PROJECT_DIR$/22_切片做函数参数.go" />
-    <entry file="file://$PROJECT_DIR$/23_猜数字游戏.go" />
-    <entry file="file://$PROJECT_DIR$/24_map的基本使用.go" />
-    <entry file="file://$PROJECT_DIR$/25_map赋值.go" />
-    <entry file="file://$PROJECT_DIR$/26_map遍历.go" />
-    <entry file="file://$PROJECT_DIR$/27_map删除.go" />
-    <entry file="file://$PROJECT_DIR$/28_map做函数参数.go" />
-    <entry file="file://$PROJECT_DIR$/29_结构体初始化.go" />
-    <entry file="file://$PROJECT_DIR$/30_结构体指针变量初始化.go" />
-    <entry file="file://$PROJECT_DIR$/31_结构体成员的使用：普通变量.go" />
-    <entry file="file://$PROJECT_DIR$/32_结构体成员的使用：指针变量.go" />
-    <entry file="file://$PROJECT_DIR$/33_结构体比较和赋值.go" />
-    <entry file="file://$PROJECT_DIR$/35_结构体做函数参数：普通变量.go" />
-    <entry file="file://$PROJECT_DIR$/34_结构体做函数参数：地址传递.go" />
-    <entry file="file://$PROJECT_DIR$/黑马Go第3天笔记/35_结构体做函数参数：普通变量.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/01_匿名字段初始化.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/02_成员的操作.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/03_同名字段.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/04_非结构体匿名字段.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/05_结构体指针类型匿名字段.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="33" column="47" lean-forward="false" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/06_面向过程和面向对象函数的区别.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/07_为结构体类型添加方法.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/08_值语义和引用语义.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="43" column="22" lean-forward="false" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/09_指针变量的方法集.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="34" column="46" lean-forward="false" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/12_方法的重写.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="36" column="24" lean-forward="false" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/10_普通变量的方法集.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/13_方法值.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/14_方法表达式.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="32" column="8" lean-forward="false" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/15_接口的定义和实现.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/16_接口的继承.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="34" column="16" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/17_接口转换.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/18_空接口.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/19_类型断言.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
-          <caret line="36" column="53" lean-forward="false" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
+          <caret line="36" column="53" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/08_正则表达式.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding>
-            <element signature="e#14#41#0" expanded="false" />
+            <element signature="e#14#41#0" />
           </folding>
         </state>
       </provider>
@@ -483,29 +456,35 @@
     <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/12_通过map生成json.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
-          <caret line="38" column="1" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="38" selection-end-column="1" />
+          <caret line="38" column="1" selection-start-line="15" selection-end-line="38" selection-end-column="1" />
           <folding>
             <element signature="e#14#48#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/httpServer.go">
+    <entry file="file://D:/Golang/src/fmt/print.go" />
+    <entry file="file://D:/Golang/src/net/net.go" />
+    <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/17_拷贝文件.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="23" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-          <folding>
-            <element signature="e#14#78#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="441">
+          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/13_json解析到结构体.go">
+    <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/16_磁盘文件的读写.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+        <state relative-caret-position="420">
+          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/15_设备文件的使用.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
           <folding>
-            <element signature="e#14#48#0" expanded="true" />
+            <element signature="e#14#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -513,76 +492,316 @@
     <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/14_json解析到map.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
-          <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-          <folding />
+          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/15_设备文件的使用.go">
+    <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/13_json解析到结构体.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding>
-            <element signature="e#14#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Golang/src/fmt/print.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="198" column="12" lean-forward="true" selection-start-line="198" selection-start-column="12" selection-end-line="198" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/16_磁盘文件的读写.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/11_方法的继承.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="26" column="17" lean-forward="false" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/11_通过结构体生成json.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="24" column="51" lean-forward="false" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="51" />
+        <state relative-caret-position="525">
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
           <folding>
             <element signature="e#14#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/17_拷贝文件.go">
+    <entry file="file://$PROJECT_DIR$/黑马Go第5天笔记/11_通过结构体生成json.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="25" column="36" lean-forward="false" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-          <folding />
+        <state relative-caret-position="441">
+          <caret line="24" column="51" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="51" />
+          <folding>
+            <element signature="e#14#48#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Golang/src/net/net.go">
+    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/11_方法的继承.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="116" column="5" lean-forward="false" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="378">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190502/familyaccount/utils.go" />
+    <entry file="file://$PROJECT_DIR$/go学习20190501/study_time.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190501/study_arr.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190501/study_slice.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190502/study_sort.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding>
+            <element signature="e#14#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190502/study_sort2.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190502/socket.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190502/study_lock.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190502/familyaccount/utils/familyaccoutlgo.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/01_匿名字段初始化.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/黑马Go第4天笔记/04_非结构体匿名字段.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/httpServer.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="9" />
+          <folding>
+            <element signature="e#14#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/黑马Go第6天笔记/concurrentClient.go">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/黑马Go第6天笔记/03_TCP服务器.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="32" column="4" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+        <state relative-caret-position="315">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
           <folding>
-            <element signature="e#14#45#0" expanded="true" />
+            <element signature="e#14#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/黑马Go第6天笔记/concurrentServer.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190502/familyaccount/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+          <folding>
+            <element signature="e#14#91#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Go/src/builtin/builtin.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="133" column="5" selection-start-line="133" selection-start-column="5" selection-end-line="133" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190502/testMyAccount.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190502/CustomManager/modle/customer.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190502/CustomManager/service/customerService.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190503/study_file.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190502/CustomManager/view/customerView.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="189" column="9" selection-start-line="189" selection-start-column="9" selection-end-line="189" selection-end-column="9" />
+          <folding>
+            <element signature="e#14#93#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190503/file_demo_1/main/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding>
+            <element signature="e#14#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190503/file_demo_2/main/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190503/file_demo_3/main/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding>
+            <element signature="e#14#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190503/file_demo_4/main/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#14#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190503/file_demo_5/main/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+          <folding>
+            <element signature="e#14#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190503/file_demo_6/main/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190503/file_demo_7/main/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190503/file_demo_8/main/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190503/file_demo_10/main/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+          <folding>
+            <element signature="e#14#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190503/file_demo_9/main/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+          <folding>
+            <element signature="e#14#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/kkk.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/copy/abc.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/copy/timg.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/copy/ccc.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/abc.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go学习20190503/file_demo_11/main/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="37" column="40" lean-forward="true" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
+          <folding>
+            <element signature="e#14#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
