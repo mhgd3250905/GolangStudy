@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Websocket</title>
+</head>
+<body>
+    <h1>字符串转换大写</h1>
+    <form>
+        <p>
+            字符串: <input id="content" type="text" placeholder="输入要转换的字符串">
+        </p>
+    </form>
+    <label id="result">结果为：</label><br><br>
+    <button onclick="send()">转换</button>
+ 
+    <script type="text/javascript">
+        var sock = null;
+        var wsuri = "ws://127.0.0.1:9999/upper";
+        sock = new WebSocket(wsuri);
+        sock.onmessage = function(e) {
+            var result = document.getElementById('result');
+            result.innerHTML = "结果为：" + e.data;
+        }
+ 
+        function send() {
+            var msg = document.getElementById('content').value;
+            sock.send(msg);
+        }
+    </script>
+</body>
+</html>
