@@ -15,7 +15,7 @@ func main() {
 	//判断是否还继续显示菜单
 	var loop = true
 
-	for loop{
+	for loop {
 		fmt.Println("-----------------欢迎登陆多人聊天室-----------------")
 		fmt.Println("                 1.登陆聊天室")
 		fmt.Println("                 2.注册用户")
@@ -27,13 +27,13 @@ func main() {
 		switch key {
 		case 1:
 			fmt.Println("登陆聊天室")
-			loop=false
+			loop = false
 		case 2:
 			fmt.Println("注册用户")
-			loop=false
+			loop = false
 		case 3:
 			fmt.Println("退出系统")
-			loop=false
+			loop = false
 		default:
 			fmt.Println("你的输入有误，请重新输入")
 
@@ -44,19 +44,15 @@ func main() {
 	if key == 1 {
 		//用户登陆
 		fmt.Println("请输入用户的id：")
-		fmt.Scanf("%d\n",&userId)//如果不写回车就会把回车当做下一个输入记录到密码中
+		fmt.Scanf("%d\n", &userId) //如果不写回车就会把回车当做下一个输入记录到密码中
 		fmt.Println("请输入用户密码：")
-		fmt.Scanf("%s\n",&userPwd)
+		fmt.Scanf("%s\n", &userPwd)
 		//先把登陆函数写到另外一个文件
-		err:=login(userId,userPwd)
-		if err != nil {
-			fmt.Println("登陆失败")
-		}else {
-			fmt.Println("登陆成功")
-		}
-	}else if key == 2 {
+		login(userId, userPwd)
+
+	} else if key == 2 {
 		fmt.Println("进行用户注册")
-	}else if key ==3 {
+	} else if key == 3 {
 		fmt.Println("退出登陆")
 		os.Exit(1)
 	}

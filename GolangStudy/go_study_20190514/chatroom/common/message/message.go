@@ -4,6 +4,7 @@ package message
 const (
 	LoginMsgType    = "LoginMsg"
 	LoginResMsgType = "LoginResMsg"
+	RegisterMsgType = "RegisterMsg"
 )
 
 type Message struct {
@@ -23,4 +24,9 @@ type LoginMsg struct {
 type LoginResMsg struct {
 	Code  int    `json:"code"`  //返回状态吗 500 表示该用户未注册 200表示注册成功
 	Error string `json:"error"` //返回错误信息
+}
+
+//定义注册消息
+type RegisterMsg struct {
+	//...
 }

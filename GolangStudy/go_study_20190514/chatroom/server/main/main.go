@@ -9,18 +9,21 @@ func process(conn net.Conn) {
 
 	//不要忘记延时关闭
 	defer conn.Close()
-	//循环读取客户端消息
-	for {
-		buf := make([]byte, 1024*4)
-		fmt.Println("等待读取客户端发送的数据...")
-		n,err:=conn.Read(buf[:4])
-		if n != 4 || err != nil {
-			fmt.Println("conn.Read err=",err)
-			return
-		}
-		fmt.Println("读到的长度为buf=",buf)
+
+	//调用总控，创建一个总控
+	processor:=&Processor{
+		Conn:conn,
 	}
+
+	err:=processor.Process2()
+	if err != nil {
+		fmt.Println("process.Process2() fail err= ",err)
+		return
+	}
+
 }
+
+
 
 func main() {
 	//提示信息

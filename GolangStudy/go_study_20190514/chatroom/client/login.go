@@ -2,8 +2,10 @@ package main
 
 import (
 	"../common/message"
+	"../server/utils"
 	"encoding/binary"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"net"
 )
@@ -15,7 +17,7 @@ func login(userId int, userPwd string) (err error) {
 	conn, err := net.Dial("tcp", "0.0.0.0:8889")
 	if err != nil {
 		fmt.Println("net.Dial err=", err)
-		return err
+		return
 	}
 	//延时关闭
 	defer conn.Close()
@@ -33,7 +35,7 @@ func login(userId int, userPwd string) (err error) {
 	data, err := json.Marshal(loginMsg)
 	if err != nil {
 		fmt.Println("json.Marshal err=", err)
-		return err
+		return
 	}
 	//5.把data赋给msg.Data字段
 	msg.Data = string(data)
@@ -42,7 +44,7 @@ func login(userId int, userPwd string) (err error) {
 	data, err = json.Marshal(msg)
 	if err != nil {
 		fmt.Println("json.Marshal err=", err)
-		return err
+		return
 	}
 
 	//7.这个时候data就是我们要发送的消息
@@ -57,9 +59,34 @@ func login(userId int, userPwd string) (err error) {
 	n, err := conn.Write(buf[:4])
 	if n != 4 || err != nil {
 		fmt.Println("conn.write(bytes) err=", err)
-		return err
+		return
 	}
 
 	fmt.Printf("客户端发送消息长度成功,发送消息长度为=%v 内容为=%v\n",len(data),string(data))
-	return nil
+
+	//发送消息本身
+	n,err=conn.Write(data)
+	if n!=int(pkgLen)||err != nil {
+		fmt.Println("conn.write(data) fail,err= ",err)
+		return
+	}
+
+	//这里还需要处理服务器端返回的消息
+	msg,err=utils.ReadPkg(conn)
+	if err != nil {
+		fmt.Println("readPkg(conn) err=",err)
+		return
+	}
+
+	//j将msg的data部分反序列化为LoginResMsg
+	var loginResMsg message.LoginResMsg
+	err=json.Unmarshal([]byte(msg.Data),&loginResMsg)
+	if loginResMsg.Code==200 {
+		fmt.Println("登录成功")
+	}else if loginResMsg.Code==500 {
+		fmt.Println(loginResMsg.Error)
+		err=errors.New(loginResMsg.Error)
+	}
+	return
+
 }
