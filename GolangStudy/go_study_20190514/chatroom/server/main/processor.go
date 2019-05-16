@@ -2,7 +2,7 @@ package main
 
 import (
 	"GolangStudy/GolangStudy/go_study_20190514/chatroom/common/message"
-	process2 "GolangStudy/GolangStudy/go_study_20190514/chatroom/server/process"
+	"GolangStudy/GolangStudy/go_study_20190514/chatroom/server/process2"
 	"GolangStudy/GolangStudy/go_study_20190514/chatroom/server/utils"
 	"fmt"
 	"io"
@@ -35,7 +35,7 @@ func (this *Processor)serverProcessMsg(msg *message.Message) (err error) {
 	return
 }
 
-func (this *Processor) Process2() (err error) {
+func (this *Processor) Process() (err error) {
 	//循环读取客户端消息
 	for {
 
@@ -48,10 +48,10 @@ func (this *Processor) Process2() (err error) {
 		if err != nil {
 			if err == io.EOF {
 				fmt.Println("客户端退出，服务器也退出")
-				return
+				return err
 			} else {
 				fmt.Println("readPkg fail err=", err)
-				return
+				return err
 			}
 		}
 
@@ -59,7 +59,7 @@ func (this *Processor) Process2() (err error) {
 		err=this.serverProcessMsg(&msg)
 		if err != nil {
 			fmt.Println("serverProcessMsg fail err=",err)
-			return
+			return err
 		}
 	}
 }

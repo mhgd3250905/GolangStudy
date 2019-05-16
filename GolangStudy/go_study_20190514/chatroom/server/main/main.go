@@ -15,9 +15,9 @@ func process(conn net.Conn) {
 		Conn:conn,
 	}
 
-	err:=processor.Process2()
+	err:=processor.Process()
 	if err != nil {
-		fmt.Println("process.Process2() fail err= ",err)
+		fmt.Println("客户端和服务器通讯协程出了问题 fail err= ",err)
 		return
 	}
 

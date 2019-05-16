@@ -1,4 +1,4 @@
-package process
+package process2
 
 import (
 	"GolangStudy/GolangStudy/go_study_20190514/chatroom/common/message"

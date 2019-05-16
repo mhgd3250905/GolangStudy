@@ -1,9 +1,8 @@
-package main
+package process
 
 import (
+	"GolangStudy/GolangStudy/go_study_20190514/chatroom/client/utils"
 	"GolangStudy/GolangStudy/go_study_20190514/chatroom/common/message"
-	"GolangStudy/GolangStudy/go_study_20190514/chatroom/server/utils"
-
 	"encoding/binary"
 	"encoding/json"
 	"errors"
@@ -11,8 +10,12 @@ import (
 	"net"
 )
 
+type UserProcess struct {
+	//字段
+}
+
 //登陆函数
-func login(userId int, userPwd string) (err error) {
+func (this *UserProcess) Login(userId int, userPwd string) (err error) {
 
 	//1.连接到服务器
 	conn, err := net.Dial("tcp", "0.0.0.0:8889")
@@ -63,33 +66,42 @@ func login(userId int, userPwd string) (err error) {
 		return
 	}
 
-	fmt.Printf("客户端发送消息长度成功,发送消息长度为=%v 内容为=%v\n",len(data),string(data))
+	fmt.Printf("客户端发送消息长度成功,发送消息长度为=%v 内容为=%v\n", len(data), string(data))
 
 	//发送消息本身
-	n,err=conn.Write(data)
-	if n!=int(pkgLen)||err != nil {
-		fmt.Println("conn.write(data) fail,err= ",err)
+	n, err = conn.Write(data)
+	if n != int(pkgLen) || err != nil {
+		fmt.Println("conn.write(data) fail,err= ", err)
 		return
 	}
 
-	ty:=&utils.Transfer{
-		Conn:conn,
+	ty := &utils.Transfer{
+		Conn: conn,
 	}
 	//这里还需要处理服务器端返回的消息
-	msg,err=ty.ReadPkg()
+	msg, err = ty.ReadPkg()
 	if err != nil {
-		fmt.Println("readPkg(conn) err=",err)
+		fmt.Println("readPkg(conn) err=", err)
 		return
 	}
 
 	//j将msg的data部分反序列化为LoginResMsg
 	var loginResMsg message.LoginResMsg
-	err=json.Unmarshal([]byte(msg.Data),&loginResMsg)
-	if loginResMsg.Code==200 {
-		fmt.Println("登录成功")
-	}else if loginResMsg.Code==500 {
+	err = json.Unmarshal([]byte(msg.Data), &loginResMsg)
+	if loginResMsg.Code == 200 {
+		//fmt.Println("登录成功")
+
+		//这里还需要在客户端启动一个协程
+		//该协程保持和服务器的通讯，如果服务器有数据推送给客户端
+		//则接受并显示在客户端终端
+
+		go serverProcessMsg(conn)
+
+		//1.显示登陆成功后的菜单
+		ShowMenu()
+	} else if loginResMsg.Code == 500 {
 		fmt.Println(loginResMsg.Error)
-		err=errors.New(loginResMsg.Error)
+		err = errors.New(loginResMsg.Error)
 	}
 	return
 
