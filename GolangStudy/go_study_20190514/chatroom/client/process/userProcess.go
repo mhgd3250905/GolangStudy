@@ -5,7 +5,6 @@ import (
 	"GolangStudy/GolangStudy/go_study_20190514/chatroom/common/message"
 	"encoding/binary"
 	"encoding/json"
-	"errors"
 	"fmt"
 	"net"
 )
@@ -99,9 +98,8 @@ func (this *UserProcess) Login(userId int, userPwd string) (err error) {
 
 		//1.显示登陆成功后的菜单
 		ShowMenu()
-	} else if loginResMsg.Code == 500 {
+	} else  {
 		fmt.Println(loginResMsg.Error)
-		err = errors.New(loginResMsg.Error)
 	}
 	return
 

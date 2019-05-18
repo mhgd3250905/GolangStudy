@@ -35,7 +35,6 @@ func main() {
 			err := up.Login(userId, userPwd)
 			if err != nil {
 				fmt.Println("up.Login fail err=", err)
-				return
 			}
 		case 2:
 			fmt.Println("注册用户")

@@ -5,6 +5,7 @@ const (
 	LoginMsgType    = "LoginMsg"
 	LoginResMsgType = "LoginResMsg"
 	RegisterMsgType = "RegisterMsg"
+	RegisterResMsgType = "RegisterResMsgType"
 )
 
 type Message struct {
@@ -28,5 +29,10 @@ type LoginResMsg struct {
 
 //定义注册消息
 type RegisterMsg struct {
-	//...
+	User User//类型就是User结构体
+}
+
+type RegisterResMsg struct {
+	Code int `json:"code"` //返回状态码 400 表示用户已存在，200表示注册成功
+	Error string `json:"error"`//返回错误信息
 }
