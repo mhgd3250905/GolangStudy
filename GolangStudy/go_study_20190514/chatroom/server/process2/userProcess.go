@@ -11,7 +11,8 @@ import (
 
 type UserProcess struct {
 	Conn net.Conn
-	//
+	//增加一个字段，表示该Conn是哪个用户的
+	UserId int
 }
 
 //编写一个函数serverProcessLogin专门，专门处理登录请求
@@ -43,14 +44,23 @@ func (this *UserProcess) ServerProcessLogin(msg *message.Message) (err error) {
 		} else if err == model.ERROR_USER_PWD {
 			loginResMsg.Code = 403 //500 状态码表示该用户不存在
 			loginResMsg.Error = err.Error()
-		}else {
+		} else {
 			loginResMsg.Code = 505 //500 状态码表示该用户不存在
 			loginResMsg.Error = "服务器内部错误..."
 		}
 		//这里我们先测试成功，然后我们可以根据错误返回具体的信息
 	} else {
 		loginResMsg.Code = 200
-		fmt.Println(user," 登录成功")
+		//因为用户已经登录成功,我们就把登录成功的用户放入到UserMgr中
+		//将登录成功的UserId赋值给this
+		this.UserId = loginMsg.UserId
+		userMgr.AddOnlineUser(this)
+		//将当前在线用户的id放入到loginResMsg的UserIds
+		//遍历 userMgr.OnlineUsers
+		for id, _ := range userMgr.onlineUsers {
+			loginResMsg.UsersId = append(loginResMsg.UsersId, id)
+		}
+		fmt.Println(user, " 登录成功")
 	}
 
 	//如果用户id为100，密码为123456，认为合法，否则不合法
@@ -111,14 +121,14 @@ func (this *UserProcess) ServerProcessRegister(msg *message.Message) (err error)
 
 	if err != nil {
 		if err == model.ERROR_USER_EXISTS {
-			registerResMsg.Code=505
-			registerResMsg.Error=model.ERROR_USER_EXISTS.Error()
-		}else {
-			registerResMsg.Code=506
-			registerResMsg.Error="注册发生未知错误..."
+			registerResMsg.Code = 505
+			registerResMsg.Error = model.ERROR_USER_EXISTS.Error()
+		} else {
+			registerResMsg.Code = 506
+			registerResMsg.Error = "注册发生未知错误..."
 		}
-	}else {
-		registerResMsg.Code=200
+	} else {
+		registerResMsg.Code = 200
 	}
 
 	//3.将registerResMsg序列化
