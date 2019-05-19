@@ -8,6 +8,7 @@ import (
 //定义用户id，用户密码
 var userId int
 var userPwd string
+var userName string
 
 func main() {
 	//接收用户选择
@@ -38,6 +39,18 @@ func main() {
 			}
 		case 2:
 			fmt.Println("注册用户")
+			fmt.Println("请输入用户id:")
+			fmt.Scanf("%d\n",&userId)
+			fmt.Println("请输入用户密码:")
+			fmt.Scanf("%v\n",&userPwd)
+			fmt.Println("请输入用户名称（nikename）:")
+			fmt.Scanf("%v\n",&userName)
+			//2,调用UserProcess,完成注册的请求
+			up := &process.UserProcess{}
+			err := up.Register(userId, userPwd,userName)
+			if err != nil {
+				fmt.Println("up.Login fail err=", err)
+			}
 		case 3:
 			fmt.Println("退出系统")
 		default:

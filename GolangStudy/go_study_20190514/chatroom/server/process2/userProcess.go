@@ -88,3 +88,62 @@ func (this *UserProcess) ServerProcessLogin(msg *message.Message) (err error) {
 	err = tf.WritePkg(data)
 	return
 }
+
+func (this *UserProcess) ServerProcessRegister(msg *message.Message) (err error) {
+	//1.先从msg中取出msg.Data,并反序列化为RegisterMsg
+	var registerMsg message.RegisterMsg
+	err = json.Unmarshal([]byte(msg.Data), &registerMsg)
+	if err != nil {
+		fmt.Println("json.Unmarshal fail err=", err)
+		return
+	}
+
+	//1.先声音一个 reMsg
+	var resMsg message.Message
+	resMsg.Type = message.RegisterResMsgType
+
+	//2.再声明一个LoginResMessage
+	var registerResMsg message.RegisterResMsg
+
+	//我们需要先到redis数据库完成注册
+	//1.使用model.MyUserDao 到redis验证
+	err = model.MyUserDao.Register(&registerMsg.User)
+
+	if err != nil {
+		if err == model.ERROR_USER_EXISTS {
+			registerResMsg.Code=505
+			registerResMsg.Error=model.ERROR_USER_EXISTS.Error()
+		}else {
+			registerResMsg.Code=506
+			registerResMsg.Error="注册发生未知错误..."
+		}
+	}else {
+		registerResMsg.Code=200
+	}
+
+	//3.将registerResMsg序列化
+	data, err := json.Marshal(registerResMsg)
+	if err != nil {
+		fmt.Println("json.Marshal fail err=", err)
+		return
+	}
+
+	//4.将data赋值给resMsg
+	resMsg.Data = string(data)
+
+	//5.对resMsg序列化并准备发送
+	data, err = json.Marshal(resMsg)
+	if err != nil {
+		fmt.Println("json.Marshal fail err=", err)
+		return
+	}
+
+	//6.发送data,将其封装到writePkg函数中
+	//因为使用了分层模式（MVC）先创建一个Transfer,然后读取
+	tf := &utils.Transfer{
+		Conn: this.Conn,
+	}
+	err = tf.WritePkg(data)
+
+	return
+}

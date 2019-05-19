@@ -7,10 +7,80 @@ import (
 	"encoding/json"
 	"fmt"
 	"net"
+	"os"
 )
 
 type UserProcess struct {
 	//字段
+}
+
+func (this *UserProcess) Register(userId int, userPwd string,
+	userName string) (err error) {
+	//1.连接到服务器
+	conn, err := net.Dial("tcp", "0.0.0.0:8889")
+	if err != nil {
+		fmt.Println("net.Dial err=", err)
+		return
+	}
+	//延时关闭
+	defer conn.Close()
+	//2.准备通过conn发送消息给服务器
+	var msg message.Message
+	msg.Type = message.RegisterMsgType
+
+	//3.创建一个LoginMsg结构体
+	var registerMsg message.RegisterMsg
+	registerMsg.User.UserId = userId
+	registerMsg.User.UserPwd = userPwd
+	registerMsg.User.UserName = userName
+
+	//4.将registerMsg序列化
+	data, err := json.Marshal(registerMsg)
+	if err != nil {
+		fmt.Println("json.Marshal err=", err)
+		return
+	}
+
+	//5.把data赋给msg.Data字段
+	msg.Data = string(data)
+
+	//6.将msg进行序列化
+	data, err = json.Marshal(msg)
+	if err != nil {
+		fmt.Println("json.Marshal err=", err)
+		return
+	}
+
+	//创建一个Transfer实例
+	tf := &utils.Transfer{
+		Conn: conn,
+	}
+
+	//发送data给服务端
+	err=tf.WritePkg(data)
+	if err != nil {
+		fmt.Println("注册发送信息错误err= ",err)
+	}
+
+	//这里还需要处理服务器端返回的消息
+	msg, err = tf.ReadPkg()
+
+	if err != nil {
+		fmt.Println("readPkg(conn) err=", err)
+		return
+	}
+
+	//将msg的data部分反序列化为RegisterResMsg
+	var registerResMsg message.RegisterResMsg
+	err = json.Unmarshal([]byte(msg.Data), &registerResMsg)
+	if registerResMsg.Code == 200 {
+		fmt.Println("注册成功，请重新登录")
+		os.Exit(0)
+	} else {
+		fmt.Println(registerResMsg.Error)
+		os.Exit(0)
+	}
+	return
 }
 
 //登陆函数
@@ -74,11 +144,11 @@ func (this *UserProcess) Login(userId int, userPwd string) (err error) {
 		return
 	}
 
-	ty := &utils.Transfer{
+	tf := &utils.Transfer{
 		Conn: conn,
 	}
 	//这里还需要处理服务器端返回的消息
-	msg, err = ty.ReadPkg()
+	msg, err = tf.ReadPkg()
 	if err != nil {
 		fmt.Println("readPkg(conn) err=", err)
 		return
@@ -98,7 +168,7 @@ func (this *UserProcess) Login(userId int, userPwd string) (err error) {
 
 		//1.显示登陆成功后的菜单
 		ShowMenu()
-	} else  {
+	} else {
 		fmt.Println(loginResMsg.Error)
 	}
 	return

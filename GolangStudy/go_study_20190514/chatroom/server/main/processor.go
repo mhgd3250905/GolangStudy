@@ -27,7 +27,11 @@ func (this *Processor)serverProcessMsg(msg *message.Message) (err error) {
 		}
 		err = up.ServerProcessLogin(msg)
 	case message.RegisterMsgType:
-
+		//创建爱你一个UserProcess实例
+		up:=&process2.UserProcess{
+			Conn:this.Conn,
+		}
+		err = up.ServerProcessRegister(msg)
 	default:
 		fmt.Println("消息类型不存在，无法处理...")
 	}
