@@ -57,9 +57,9 @@ func (this *UserProcess) Register(userId int, userPwd string,
 	}
 
 	//发送data给服务端
-	err=tf.WritePkg(data)
+	err = tf.WritePkg(data)
 	if err != nil {
-		fmt.Println("注册发送信息错误err= ",err)
+		fmt.Println("注册发送信息错误err= ", err)
 	}
 
 	//这里还需要处理服务器端返回的消息
@@ -162,8 +162,18 @@ func (this *UserProcess) Login(userId int, userPwd string) (err error) {
 
 		//现在可以显示一下当前在线用户列表
 		fmt.Println("当前在线用户列表如下：")
-		for _,v:=range loginResMsg.UsersId{
-			fmt.Printf("用户id:%v\t",v)
+		for _, v := range loginResMsg.UsersId {
+			//不显示自己在线
+			if v == userId {
+				continue
+			}
+			fmt.Printf("用户id:%v\t\n", v)
+			//完成客户端onlineUsers的初始化
+			user := &message.User{
+				UserId:     v,
+				UserStatus: message.UserOnline,
+			}
+			onlineUsers[v] = user
 		}
 		fmt.Println()
 		fmt.Println()

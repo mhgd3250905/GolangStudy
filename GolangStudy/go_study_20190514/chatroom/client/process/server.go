@@ -2,6 +2,8 @@ package process
 
 import (
 	"GolangStudy/GolangStudy/go_study_20190514/chatroom/client/utils"
+	"GolangStudy/GolangStudy/go_study_20190514/chatroom/common/message"
+	"encoding/json"
 	"fmt"
 	"net"
 	"os"
@@ -21,6 +23,7 @@ func ShowMenu() {
 		switch key {
 		case 1:
 			fmt.Println("显示在线用户列表")
+			outputOnlineUser()
 		case 2:
 			fmt.Println("发送消息")
 		case 3:
@@ -37,17 +40,34 @@ func ShowMenu() {
 //和服务器端保持通讯
 func serverProcessMsg(conn net.Conn) {
 	//创建一个transfer实例，不停地读取服务器发送的消息
-	tf:=&utils.Transfer{
-		Conn:conn,
+	tf := &utils.Transfer{
+		Conn: conn,
 	}
-	for{
+	for {
 		fmt.Println("客户端正在等待读取服务器发来的消息")
-		msg,err:=tf.ReadPkg()
+		msg, err := tf.ReadPkg()
 		if err != nil {
-			fmt.Println("tf.ReadPkg fail err=",err)
+			fmt.Println("tf.ReadPkg fail err=", err)
 			return
 		}
+
 		//如果读取到消息，下一步处理
+		switch msg.Type {
+		case message.NotifyUserStatusMsgType: //有人上线了
+			//处理
+			//1.取出NotifyUserStatusMsg
+			var notifyUserStatusMsg message.NotifyUserStatusMsg
+			err=json.Unmarshal([]byte(msg.Data),&notifyUserStatusMsg)
+			if err != nil {
+				fmt.Println("json.Unmarshal fail err=",err)
+			}
+			//2.把这个用户的状态保存到客户端的map中
+			updateUserStatus(&notifyUserStatusMsg)
+			break
+		default:
+			fmt.Println("服务器端返回了一个未知的消息类型...")
+
+		}
 		fmt.Printf("msg=%v\n",msg)
 
 	}

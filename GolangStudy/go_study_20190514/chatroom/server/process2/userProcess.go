@@ -15,6 +15,55 @@ type UserProcess struct {
 	UserId int
 }
 
+//编写通知所有的在线用户的方法
+//userId要通知其他的在线用户 我上线了
+func (this *UserProcess)NotifyOthersOnlineUser(userId int)  {
+	//遍历onlineUsers,然后一个一个发送
+	for id,up:=range userMgr.onlineUsers{
+		//过滤掉自己
+		if id == userId {
+			continue
+		}
+		//开始通知 单独开辟一个方法
+		up.NotifyMeOnline(userId)
+	}
+}
+
+func (this *UserProcess)NotifyMeOnline(userId int){
+
+	//组装我们的NotifyUserStatusMes
+	var msg message.Message
+	msg.Type=message.NotifyUserStatusMsgType
+
+	var notifyUserStatusMsg message.NotifyUserStatusMsg
+	notifyUserStatusMsg.UserId=userId
+	notifyUserStatusMsg.Status=message.UserOnline
+
+	//将NotifuUserStatusMsg序列化
+	data,err:=json.Marshal(notifyUserStatusMsg)
+	if err != nil {
+		fmt.Println("json.Marshal fail err=",err)
+	}
+
+	msg.Data=string(data)
+
+	//将msg序列化
+	data,err=json.Marshal(msg)
+	if err != nil {
+		fmt.Println("json.Marshal fail err=",err)
+	}
+
+	//发送,创建一个Transfer实例发送
+	tf:=&utils.Transfer{
+		Conn:this.Conn,
+	}
+	err=tf.WritePkg(data)
+	if err != nil {
+		fmt.Println("notify me online err=",err)
+		return
+	}
+}
+
 //编写一个函数serverProcessLogin专门，专门处理登录请求
 func (this *UserProcess) ServerProcessLogin(msg *message.Message) (err error) {
 	//核心代码
@@ -55,6 +104,10 @@ func (this *UserProcess) ServerProcessLogin(msg *message.Message) (err error) {
 		//将登录成功的UserId赋值给this
 		this.UserId = loginMsg.UserId
 		userMgr.AddOnlineUser(this)
+
+		//通知其他在线的用户，我上线了
+		this.NotifyOthersOnlineUser(loginMsg.UserId)
+
 		//将当前在线用户的id放入到loginResMsg的UserIds
 		//遍历 userMgr.OnlineUsers
 		for id, _ := range userMgr.onlineUsers {
