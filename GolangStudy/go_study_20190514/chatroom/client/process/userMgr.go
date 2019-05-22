@@ -1,12 +1,14 @@
 package process
 
 import (
+	"GolangStudy/GolangStudy/go_study_20190514/chatroom/client/model"
 	"GolangStudy/GolangStudy/go_study_20190514/chatroom/common/message"
 	"fmt"
 )
 
 //客户端要维护map
 var onlineUsers = make(map[int]*message.User, 10)
+var CurUser model.CurUser //在用户登陆成功后完成对CurUser的初始化
 
 //在客户端显示当前在线用户
 func outputOnlineUser() {

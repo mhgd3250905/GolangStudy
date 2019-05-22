@@ -7,6 +7,7 @@ const (
 	RegisterMsgType         = "RegisterMsg"
 	RegisterResMsgType      = "RegisterResMsgType"
 	NotifyUserStatusMsgType = "NotifyUserStatusMsgType"
+	SmsMsgType              = "SmsMsgType"
 )
 
 //定义几个用户状态的常量
@@ -50,4 +51,10 @@ type RegisterResMsg struct {
 type NotifyUserStatusMsg struct {
 	UserId int `json:"userId"` //用户id
 	Status int `json:"status"` //用户状态
+}
+
+//正价一个SmsMes ,发送的
+type SmsMsg struct {
+	Content string `json:"content"` //内容
+	User    User   `json:"user"`
 }
