@@ -72,14 +72,12 @@ func serverProcessMsg(conn net.Conn) {
 			//2.把这个用户的状态保存到客户端的map中
 			updateUserStatus(&notifyUserStatusMsg)
 		case message.SmsMsgType://接收到消息
-			//创建一个SmsProcess实例完成转发群聊消息
-
-
+			OutputGroupMsg(&msg)
 		default:
 			fmt.Println("服务器端返回了一个未知的消息类型...")
 
 		}
-		fmt.Printf("msg=%v\n",msg)
+		//fmt.Printf("msg=%v\n",msg)
 
 	}
 }
