@@ -4,11 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/GolangStudy/go_study_20190514/chatroom/server/process2/userProcess.go" line="115" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cc110f4-c571-47e7-941e-d2fae968b3d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190527/queue/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190528/circlequeue/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7cc110f4-c571-47e7-941e-d2fae968b3d6" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +28,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190528/circlequeue/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+            <state relative-caret-position="84">
+              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+              <folding>
+                <element signature="e#14#47#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -648,8 +647,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190528/circlequeue/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+        <state relative-caret-position="84">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="e#14#47#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
