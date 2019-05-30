@@ -77,7 +77,12 @@ func DelHeroNode(head *HeroNode, id int) {
 	}
 	if flag {
 		//找到删除
+		//因为我们总是使用temp的下一个作为删除的对象，所以当我们要删除最后一个结点的时候
+		//第一步将temp的next设置为nil,然后再使用temp.next的时候就是一个nil了，所以特殊处理
 		temp.next = temp.next.next
+		if temp.next!=nil {
+			temp.next.pre=temp
+		}
 	} else {
 		fmt.Println("sorry 要删除的id不存在")
 	}

@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cc110f4-c571-47e7-941e-d2fae968b3d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190529/doublelink/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190530/circlesinglelink/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20190529/doublelink/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190529/doublelink/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,31 +18,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190528/circlequeue/main.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
-              <folding>
-                <element signature="e#14#47#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190528/singlelink/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
+            <state relative-caret-position="2478">
               <caret line="118" selection-start-line="118" selection-end-line="118" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190529/doublelink/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="146" column="26" lean-forward="true" selection-start-line="146" selection-start-column="26" selection-end-line="146" selection-end-column="26" />
+            <state relative-caret-position="538">
+              <caret line="79" column="51" selection-start-line="79" selection-start-column="51" selection-end-line="79" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190530/circlesinglelink/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -184,6 +182,7 @@
         <option value="$PROJECT_DIR$/GolangStudy/go_study_201905278/circlequeue/main.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190528/singlelink/main.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190529/doublelink/main.go" />
+        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190530/circlesinglelink/main.go" />
       </list>
     </option>
   </component>
@@ -217,20 +216,14 @@
               <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
               <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
               <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="go_study_20190528" type="462c0819:PsiDirectoryNode" />
+              <item name="go_study_20190530" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
               <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
               <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="go_study_20190529" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="go_study_20190529" type="462c0819:PsiDirectoryNode" />
-              <item name="doublelink" type="462c0819:PsiDirectoryNode" />
+              <item name="go_study_20190530" type="462c0819:PsiDirectoryNode" />
+              <item name="circlesinglelink" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -253,19 +246,19 @@
     <property name="settings.editor.selected.configurable" value="go" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190514\chatroom\common\message" />
-      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190514\chatroom\server\model" />
-      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190514\chatroom\client\main" />
-      <recent name="G:\GoPath\src\GolangStudy\GolangStudy\go_study_20190514\chatroom\server\utils" />
-      <recent name="G:\GoPath\src\GolangStudy\GolangStudy\go_study_20190514\chatroom\server\main" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy" />
       <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190514\chatroom\client\utils" />
       <recent name="G:\GoPath\src\GolangStudy\GolangStudy\go_study_20190514\chatroom\server\process" />
       <recent name="G:\GoPath\src\GolangStudy\GolangStudy" />
       <recent name="G:\GoPath\src\GolangStudy\GolangStudy\go_study_20190512" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190514\chatroom\common\message" />
+      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190514\chatroom\server\model" />
+      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190514\chatroom\client\main" />
+      <recent name="G:\GoPath\src\GolangStudy\GolangStudy\go_study_20190514\chatroom\server\utils" />
+      <recent name="G:\GoPath\src\GolangStudy\GolangStudy\go_study_20190514\chatroom\server\main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -280,22 +273,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go (3)">
-    <configuration name="go build GolangStudy/GolangStudy/go_study_201905278/queue" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="GolangStudy" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/" />
-      <package value="GolangStudy/GolangStudy/go_study_201905278/queue" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Build.go build main.go (1)">
     <configuration name="go build GolangStudy/GolangStudy/go_study_20190528/singlelink" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="GolangStudy" />
       <working_directory value="$PROJECT_DIR$/" />
       <kind value="PACKAGE" />
       <filePath value="$PROJECT_DIR$/" />
       <package value="GolangStudy/GolangStudy/go_study_20190528/singlelink" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="GolangStudy" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/GolangStudy/go_study_20190530/circlesinglelink/main.go" />
+      <package value="GolangStudy" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -328,11 +321,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build main.go (1)" />
         <item itemvalue="Go Build.go build main.go (3)" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build GolangStudy/GolangStudy/go_study_20190528/singlelink" />
         <item itemvalue="Go Build.go build main.go (2)" />
-        <item itemvalue="Go Build.go build GolangStudy/GolangStudy/go_study_201905278/queue" />
       </list>
     </recent_temporary>
   </component>
@@ -340,12 +333,13 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.124200426" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12526652" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Thumbnails" weight="0.32936078" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31419286" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31419286" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -385,7 +379,6 @@
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/GolangStudy/go_study_20190528/singlelink/main.go</url>
           <line>132</line>
-          <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
@@ -609,6 +602,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190528/circlequeue/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+          <folding>
+            <element signature="e#14#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190528/singlelink/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2478">
+          <caret line="118" selection-start-line="118" selection-end-line="118" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190514/chatroom/server/process2/smsProcess.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -661,27 +671,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190528/circlequeue/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
-          <folding>
-            <element signature="e#14#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190528/singlelink/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="118" selection-start-line="118" selection-end-line="118" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190530/doublelink/main.go">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190529/doublelink/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="146" column="26" lean-forward="true" selection-start-line="146" selection-start-column="26" selection-end-line="146" selection-end-column="26" />
+        <state relative-caret-position="538">
+          <caret line="79" column="51" selection-start-line="79" selection-start-column="51" selection-end-line="79" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190530/circlesinglelink/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
         </state>
       </provider>
     </entry>
