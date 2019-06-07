@@ -41,7 +41,7 @@ func main() {
 	http.HandleFunc("/",index)
 
 	if err := http.ListenAndServe(":9999", nil); err != nil {
-		fmt.Printf("http listenAndServe failed:%v/n",err)
+		fmt.Printf("http_server listenAndServe failed:%v/n",err)
 		os.Exit(1)
 	}
 }
