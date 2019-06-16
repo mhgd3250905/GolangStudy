@@ -7,13 +7,13 @@ import (
 )
 
 type Product struct {
-	ID uint `gorm:"primary_key"`
+	ID uint `gorm_demo:"primary_key"`
 	Code string
 	Price uint
 }
 
 type Student struct {
-	Id uint `gorm:"primary_key"`
+	Id uint `gorm_demo:"primary_key"`
 	Name string
 	Age uint
 	Address string
