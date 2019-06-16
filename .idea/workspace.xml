@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cc110f4-c571-47e7-941e-d2fae968b3d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/modle/animal.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/modle/modle.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/modle/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190615/sqlite3/gorm.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/gorm_query/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/gorm_update/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GolangStudy/SQL/gormDemo.go" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/SQL/gormDemo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/gorm_create/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/modle/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/modle/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20190615/sqlite3/gorm_demo.db" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190615/sqlite3/gorm_demo.db" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,13 +20,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/main.go">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/gorm_create/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="453">
+              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
               <folding>
                 <element signature="e#14#101#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/gorm_query/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="19" selection-end-column="42" />
+              <folding>
+                <element signature="e#14#170#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/gorm_update/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+              <folding>
+                <element signature="e#14#162#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -45,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/modle/user.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="488">
+              <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
               <folding>
                 <element signature="e#15#58#0" expanded="true" />
               </folding>
@@ -70,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/modle/animal.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
-              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
               <folding>
                 <element signature="e#15#58#0" expanded="true" />
               </folding>
@@ -110,9 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190514/chatroom/common/message.go" />
-        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190514/chatroom/client/utils.go" />
-        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190514/chatroom/utils/utils.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190514/chatroom/server/main.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190514/chatroom/client/main.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190514/chatroom/server/process/userProcess.go" />
@@ -157,16 +177,19 @@
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm/modle.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/modle.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/modle/modle.go" />
-        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/modle/user.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/modle/base_modle.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/modle/animal.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/main.go" />
+        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/gorm_create/main.go" />
+        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/modle/user.go" />
+        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/gorm_query/main.go" />
+        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/gorm_update/main.go" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="748" />
-    <option name="width" value="1172" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="960" />
+    <option name="width" value="960" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -234,6 +257,22 @@
               <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
               <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
               <item name="go_study_20190615" type="462c0819:PsiDirectoryNode" />
+              <item name="gorm_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="gorm_query" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go_study_20190615" type="462c0819:PsiDirectoryNode" />
+              <item name="gorm_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="gorm_update" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go_study_20190615" type="462c0819:PsiDirectoryNode" />
               <item name="sqlite3" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -264,11 +303,11 @@
       <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190607\template" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190615\gorm_demo\gorm_create" />
       <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190615\gorm_demo\modle" />
       <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190615\gorm" />
       <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190615" />
       <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190615\sqlite3" />
-      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190514\chatroom\common\message" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -283,12 +322,12 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go (3)">
-    <configuration name="go build main.go (2)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.go build main.go (4)">
+    <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="GolangStudy" />
       <working_directory value="$PROJECT_DIR$/" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/GolangStudy/go_study_20190607/template/main.go" />
+      <filePath value="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/gorm_query/main.go" />
       <package value="GolangStudy" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
@@ -306,7 +345,7 @@
       <module name="GolangStudy" />
       <working_directory value="$PROJECT_DIR$/" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/GolangStudy/go_study_20190607/http_server/main.go" />
+      <filePath value="$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/gorm_update/main.go" />
       <package value="GolangStudy" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
@@ -331,19 +370,19 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build main.go (4)" />
+        <item itemvalue="Go Build.go build main.go (1)" />
         <item itemvalue="Go Build.go build main.go (3)" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build main.go (5)" />
-        <item itemvalue="Go Build.go build main.go (2)" />
-        <item itemvalue="Go Build.go build main.go (4)" />
       </list>
     </recent_temporary>
   </component>
   <component name="ToolWindowManager">
-    <frame x="748" y="0" width="1172" height="1040" extended-state="0" />
+    <frame x="960" y="0" width="960" height="1040" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1663669" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26222223" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -365,13 +404,13 @@
       <window_info anchor="right" id="Database" order="3" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20661986" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26222223" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32855567" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3131202" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24476296" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39801544" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -417,17 +456,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190514/chatroom/client/login.go" />
-    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190514/chatroom/server/main/redis.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="15" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="15" />
-          <folding>
-            <element signature="e#14#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GolangStudy/go_mobile_study/main/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -731,17 +759,7 @@
     <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/modle/animal.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding>
-            <element signature="e#15#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/modle/user.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
             <element signature="e#15#58#0" expanded="true" />
           </folding>
@@ -755,12 +773,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/main.go">
+    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/gorm_create/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="453">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding>
             <element signature="e#14#101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/modle/user.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+          <folding>
+            <element signature="e#15#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/gorm_query/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="19" selection-end-column="42" />
+          <folding>
+            <element signature="e#14#170#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190615/gorm_demo/gorm_update/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+          <folding>
+            <element signature="e#14#162#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -48,3 +48,7 @@ func (this *User)CreateRecord(db *gorm.DB) (hasCreated bool,err error) {
 		return false,fmt.Errorf("this modle %v creare fail!",this)
 	}
 }
+
+func (this *User)Show(){
+	fmt.Printf("Name: %v , Age: %v\n",this.Name,this.Age)
+}
