@@ -1,6 +1,8 @@
 package main
 
 import (
+	"GolangStudy/GolangStudy/go_study_20190617/modles/bookSet"
+	"encoding/json"
 	"fmt"
 	"github.com/gomodule/redigo/redis"
 )
@@ -41,6 +43,21 @@ func main() {
 	//如果我们要从pool中取出链接 一定保证连接池是没有关闭
 	pool.Close()
 	//conn2:=pool.Get()//这个时候获取到的conn使用时会报错
+
+
+	arr,_:=redis.Strings(conn.Do("LRANGE","book","0","5"))
+
+	for i,_:= range arr  {
+		book:=bookSet.Book{}
+		err=json.Unmarshal([]byte(arr[i]),&book)
+		if err != nil {
+			fmt.Println("json.Unmarshal failed,err= ",err)
+			continue
+		}
+		fmt.Println(book)
+	}
+
+	//fmt.Println(arr)
 
 
 }
