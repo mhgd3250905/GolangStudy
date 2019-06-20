@@ -45,16 +45,16 @@ func main() {
 	//conn2:=pool.Get()//这个时候获取到的conn使用时会报错
 
 
-	arr,_:=redis.Strings(conn.Do("LRANGE","book","0","5"))
+	arr,_:=redis.Strings(conn.Do("LRANGE","book_detail","0","5"))
 
 	for i,_:= range arr  {
-		book:=bookSet.Book{}
-		err=json.Unmarshal([]byte(arr[i]),&book)
+		bookDetail:=bookSet.BookDetail{}
+		err=json.Unmarshal([]byte(arr[i]),&bookDetail)
 		if err != nil {
 			fmt.Println("json.Unmarshal failed,err= ",err)
 			continue
 		}
-		fmt.Println(book)
+		fmt.Println(bookDetail)
 	}
 
 	//fmt.Println(arr)

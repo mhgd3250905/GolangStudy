@@ -1,6 +1,7 @@
 package main
 
 import (
+	"GolangStudy/GolangStudy/go_study_20190617/collectors"
 	"GolangStudy/GolangStudy/go_study_20190617/modles/bookSet"
 	"encoding/json"
 	"fmt"
@@ -16,7 +17,7 @@ const KEY_BOOK_IN_REDIS = "book"
 func init() {
 
 	pool = &redis.Pool{
-		MaxIdle:     8,   //最大空闲连接数
+		MaxIdle:     0,   //最大空闲连接数
 		MaxActive:   0,   //表示和数据库的最大连接数，0表示没有限制
 		IdleTimeout: 100, //最大空闲时间单位：秒
 		Dial: func() (conn redis.Conn, e error) {
@@ -68,7 +69,7 @@ func main() {
 			Image:      imgPath,
 		}
 
-		fmt.Println(book)
+		//fmt.Println(book)
 
 		jsonBytes, err := json.Marshal(&book)
 		if err != nil {
@@ -85,7 +86,7 @@ func main() {
 		fmt.Printf("%v save success!\n", title)
 
 		//继续访问内部
-		//collectors.GetDetailCollector().Visit(e.Request.AbsoluteURL(url))
+		collectors.GetDetailCollector(conn).Visit(e.Request.AbsoluteURL(url))
 	})
 
 	pageCollector.OnScraped(func(response *colly.Response) {

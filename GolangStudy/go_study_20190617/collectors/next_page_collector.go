@@ -7,5 +7,5 @@ import (
 
 func GetNextPageCollector() (collector *colly.Collector) {
 
-	return nil
+return nil
 }
