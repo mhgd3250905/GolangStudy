@@ -12,8 +12,7 @@ import (
 	"strings"
 )
 
-const KEY_BOOK_DETAIL_IN_REDIS  = "book_detail"
-
+const KEY_BOOK_DETAIL_IN_REDIS = "book_detail"
 
 func GetDetailCollector(conn redis.Conn) (collector *colly.Collector) {
 
@@ -46,8 +45,8 @@ func GetDetailCollector(conn redis.Conn) (collector *colly.Collector) {
 		var doubanScore float64
 		var doubanScoreCount int64
 		if splits := strings.Split(doubanScoreStr, "/"); len(splits) >= 2 {
-			doubanScore,_ = strconv.ParseFloat(splits[0][:len(splits[0])-4],64)
-			doubanScoreCount,_ = strconv.ParseInt(splits[1][:len(splits[1])-14],10,64)
+			doubanScore, _ = strconv.ParseFloat(splits[0][:len(splits[0])-4], 64)
+			doubanScoreCount, _ = strconv.ParseInt(splits[1][:len(splits[1])-14], 10, 64)
 		}
 		doubanLink, _ := doubanLink_a.Attr("href")
 
@@ -76,18 +75,18 @@ func GetDetailCollector(conn redis.Conn) (collector *colly.Collector) {
 		//	title, author, time, image, doubanScore, doubanScoreCount, doubanLink, introduction, downloadLinkEpub,
 		//	downloadLinkAzw3, downloadLinkMobi)
 
-		bookDetail:=bookSet.BookDetail{
-			Title:title,
-			Author:author,
-			Time:time,
-			Image:image,
-			DoubanScore:doubanScore,
-			DoubleScoreCount:doubanScoreCount,
-			DoubanLink:doubanLink,
-			Introduction:introduction,
-			DownloadLinkEpub:downloadLinkEpub,
-			DownloadLinkAzw3:downloadLinkAzw3,
-			DownloadLinkMobi:downloadLinkMobi,
+		bookDetail := bookSet.BookDetail{
+			Title:            title,
+			Author:           author,
+			Time:             time,
+			Image:            image,
+			DoubanScore:      doubanScore,
+			DoubleScoreCount: doubanScoreCount,
+			DoubanLink:       doubanLink,
+			Introduction:     introduction,
+			DownloadLinkEpub: downloadLinkEpub,
+			DownloadLinkAzw3: downloadLinkAzw3,
+			DownloadLinkMobi: downloadLinkMobi,
 		}
 
 		jsonBytes, err := json.Marshal(&bookDetail)
@@ -96,7 +95,11 @@ func GetDetailCollector(conn redis.Conn) (collector *colly.Collector) {
 			return
 		}
 
-		err = push2RedisList(conn, KEY_BOOK_DETAIL_IN_REDIS, string(jsonBytes))
+		//err = push2RedisList(conn, KEY_BOOK_DETAIL_IN_REDIS, string(jsonBytes))
+		score := doubanScore * 10
+		scoreStr := strconv.FormatFloat(score, 'E', -1, 64)
+		fmt.Println(scoreStr)
+		err = push2RedisSortedSet(conn, KEY_BOOK_DETAIL_IN_REDIS, scoreStr, string(jsonBytes))
 		if err != nil {
 			fmt.Printf("%v push2RedisList failed,err= %v\n", title, err)
 			return
@@ -115,5 +118,10 @@ func GetDetailCollector(conn redis.Conn) (collector *colly.Collector) {
 
 func push2RedisList(c redis.Conn, key string, content string) (err error) {
 	_, err = c.Do("RPUSH", key, content)
+	return
+}
+
+func push2RedisSortedSet(c redis.Conn, key string, score string, content string) (err error) {
+	_, err = c.Do("ZADD", key, score, content)
 	return
 }
