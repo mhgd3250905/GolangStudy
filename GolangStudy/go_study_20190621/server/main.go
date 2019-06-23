@@ -4,14 +4,19 @@ import (
 	"GolangStudy/GolangStudy/go_study_20190621/modle"
 	"GolangStudy/GolangStudy/go_study_20190621/modle/bookSet"
 	"encoding/json"
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/gomodule/redigo/redis"
 	"net/http"
 )
 
+const (
+	KEY_BOOK_DETAIL_IN_REDIS = "book_detail"
+	KEY_BOOK_IN_REDIS        = "book"
+)
+
 //定义一个全局的pool
 var pool *redis.Pool
+var conn redis.Conn
 
 func init() {
 
@@ -26,7 +31,7 @@ func init() {
 }
 
 func main() {
-	conn := pool.Get()
+	conn = pool.Get()
 	defer conn.Close()
 
 	r := gin.Default()
@@ -35,50 +40,53 @@ func main() {
 			"message": "pong",
 		})
 	})
-	r.GET("/spider/bookset/:key", func(c *gin.Context) {
-		key := c.Param("key")
-		start := c.DefaultQuery("start", "0")
-		end := c.Query("end")
+	r.GET("/spider/bookset/:key", getBooks)
+	r.Run(":8880")
+}
 
-		booksArr, err := redis.Strings(conn.Do("lrange", key, start, end))
+func getBooks(c *gin.Context) {
+	key := c.Param("key")
+	start := c.DefaultQuery("start", "0")
+	end := c.Query("end")
 
-		books := make([]bookSet.Book, 0)
-		for i, _ := range booksArr {
-			bookStr := booksArr[i]
-			book := bookSet.Book{}
-			json.Unmarshal([]byte(bookStr), &book)
-			books = append(books, book)
+	//获取结果
+	result, err := redis.Strings(conn.Do("lrange", key, start, end))
+
+	if err != nil {
+		msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_FAILED,
+			Error: err.Error(),
+			Data:  "",
 		}
-		if err != nil {
-			msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_FAILED,
-				Error:   err.Error(),
-				Data: "",
+		msg.Send(c)
+	} else {
+		//反序列化到数组中
+		if key == KEY_BOOK_IN_REDIS {
+			books := make([]bookSet.Book, 0)
+			for i, _ := range result {
+				bookStr := result[i]
+				book := bookSet.Book{}
+				json.Unmarshal([]byte(bookStr), &book)
+				books = append(books, book)
 			}
-			msgByte, err := json.Marshal(&msg)
-			if err != nil {
-
-			} else {
-				c.String(400, string(msgByte))
+			//设置到消息类中
+			msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_SUCCESS,
+				Error: "",
+				Data:  books}
+			msg.Send(c)
+		} else if key == KEY_BOOK_DETAIL_IN_REDIS {
+			bookDetails := make([]bookSet.BookDetail, 0)
+			for i, _ := range result {
+				bookDetailStr := result[i]
+				bookDetail := bookSet.BookDetail{}
+				json.Unmarshal([]byte(bookDetailStr), &bookDetail)
+				bookDetails = append(bookDetails, bookDetail)
 			}
-		} else {
-			contentByte, err := json.Marshal(&books)
-			fmt.Println(string(contentByte))
-			if err != nil {
-
-			} else {
-				msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_SUCCESS,
-					Error:   "",
-					Data: books}
-				fmt.Println(msg)
-				msgStr, err := json.Marshal(&msg)
-				fmt.Println(string(msgStr))
-				if err != nil {
-
-				} else {
-					c.String(200, string(msgStr))
-				}
-			}
+			//设置到消息类中
+			msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_SUCCESS,
+				Error: "",
+				Data:  bookDetails}
+			msg.Send(c)
 		}
-	})
-	r.Run()
+
+	}
 }
