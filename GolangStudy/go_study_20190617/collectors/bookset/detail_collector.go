@@ -1,4 +1,4 @@
-package collectors
+package bookset
 
 import (
 	"GolangStudy/GolangStudy/go_study_20190617/modles/bookSet"
