@@ -3,6 +3,7 @@ package main
 import (
 	"GolangStudy/GolangStudy/go_study_20190621/modle"
 	"GolangStudy/GolangStudy/go_study_20190621/modle/bookSet"
+	"GolangStudy/GolangStudy/go_study_20190621/modle/huxiu"
 	"encoding/json"
 	"github.com/gin-gonic/gin"
 	"github.com/gomodule/redigo/redis"
@@ -12,6 +13,7 @@ import (
 const (
 	KEY_BOOK_DETAIL_IN_REDIS = "book_detail"
 	KEY_BOOK_IN_REDIS        = "book"
+	KEY_HUXIU_IN_REDIS       = "huxiu"
 )
 
 //定义一个全局的pool
@@ -85,6 +87,19 @@ func getBooks(c *gin.Context) {
 			msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_SUCCESS,
 				Error: "",
 				Data:  bookDetails}
+			msg.Send(c)
+		} else if key == KEY_HUXIU_IN_REDIS {
+			huxiuNewsList := make([]huxiu.HuxiuNews, 0)
+			for i, _ := range result {
+				huxiuNewsStr := result[i]
+				huxiu := huxiu.HuxiuNews{}
+				json.Unmarshal([]byte(huxiuNewsStr), &huxiu)
+				huxiuNewsList = append(huxiuNewsList, huxiu)
+			}
+			//设置到消息类中
+			msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_SUCCESS,
+				Error: "",
+				Data:  huxiuNewsList}
 			msg.Send(c)
 		}
 

@@ -1,6 +1,7 @@
 package bookset
 
 import (
+	"GolangStudy/GolangStudy/go_study_20190617/collectors/redis_utils"
 	"GolangStudy/GolangStudy/go_study_20190617/modles/bookSet"
 	"encoding/json"
 	"fmt"
@@ -49,7 +50,7 @@ func BooksetSpider(conn redis.Conn) {
 			return
 		}
 
-		err = push2RedisList(conn, KEY_BOOK_IN_REDIS, string(jsonBytes))
+		err = redis_utils.Push2RedisList(conn, KEY_BOOK_IN_REDIS, string(jsonBytes))
 		if err != nil {
 			fmt.Printf("%v push2RedisList failed,err= %v\n", title, err)
 			return

@@ -1,7 +1,9 @@
 package huxiu
 
 import (
+	"GolangStudy/GolangStudy/go_study_20190617/collectors/redis_utils"
 	"GolangStudy/GolangStudy/go_study_20190617/modles/huxiu"
+	"encoding/json"
 	"fmt"
 	"github.com/PuerkitoBio/goquery"
 	"github.com/gocolly/colly"
@@ -9,7 +11,7 @@ import (
 	"regexp"
 )
 
-const KEY_BOOK_IN_REDIS = "huxiu"
+const KEY_HUXIU_IN_REDIS = "huxiu"
 const MAIN_URL = "https://www.huxiu.com/"
 
 func HuxiuSpider(conn redis.Conn) {
@@ -65,48 +67,84 @@ func HuxiuSpider(conn redis.Conn) {
 			return
 		}
 
-		author:=huxiu.Author{}
+		author := huxiu.Author{}
 
 		// /member/1854035.html 查找AuthorId
-		re,_:=regexp.Compile("[0-9]+")
-		all:=re.FindAll([]byte(authorLink),1)
-		for i,_ := range all {
-			author.AuthorId=string(all[i])
+		re, _ := regexp.Compile("[0-9]+")
+		all := re.FindAll([]byte(authorLink), 1)
+		for i, _ := range all {
+			author.AuthorId = string(all[i])
 		}
-		
 
 		authorName := a_author.Find("span").First().Text()
 		authorImg, exist := img_author.Attr("src")
 		if !exist {
 			return
 		}
-		//todo 解析时间
+		author.AuthorName = authorName
+		author.AuthorImg = authorImg
 
 		desc := div_desc.Text()
+
 		imgLink, exist := img_imglink.Attr("data-original")
 		if !exist {
 			return
 		}
 
-		categorys:=make([]huxiu.Category,2)
-		div_category.Each(func(i int, selection *goquery.Selection) {
-			categoryName:=selection.Text()
-			//categoryLink,exist:=selection.Attr("href")
-			//if !exist {
-			//	return
-			//}
-			category:=huxiu.Category{}
-			category.CategoryName=categoryName
-			categorys=append(categorys, category)
-		})
-		fmt.Printf("title: %v\n link: %v\n authorLink:%v\n authorName:%v\n authorImg:%v\n" +
-			" desc: %v\n imgLink:%v\n categorys:%v\n",
-			title, newsLink,authorLink,authorName,authorImg,desc,imgLink,categorys)
+		//https://img.huxiucdn.com/article/cover/201907/01/163823923163.jpg?...
+		re, _ = regexp.Compile(`[0-9]+/[0-9]+/[0-9]+`)
+		all = re.FindAll([]byte(imgLink), 1)
+		timeStr := ""
+		for i, _ := range all {
+			timeStr = string(all[i])
+		}
+		fmt.Println("time:", timeStr)
 
+		categorys := make([]huxiu.Category, 0)
+		div_category.Each(func(i int, selection *goquery.Selection) {
+			categoryName := selection.Text()
+			categoryLink, exist := selection.Attr("href")
+			if !exist {
+				return
+			}
+			re, _ = regexp.Compile(`[0-9]+`)
+			all = re.FindAll([]byte(categoryLink), 1)
+			categoryId := ""
+			for i, _ := range all {
+				categoryId = string(all[i])
+			}
+			category := huxiu.Category{}
+			category.CategoryId = categoryId
+			category.CategoryName = categoryName
+			categorys = append(categorys, category)
+		})
+
+		news := huxiu.HuxiuNews{
+			Title:      title,
+			NewsLink:   e.Request.AbsoluteURL(newsLink),
+			Author:     author,
+			CreateTime: timeStr,
+			Desc:       desc,
+			ImgLink:    imgLink,
+			Categorys:  categorys,
+		}
+		fmt.Println(news)
+
+		jsonBytes, err := json.Marshal(&news)
+		if err != nil {
+			fmt.Printf("%v json.Marshal failed,err= %v\n", title, err)
+			return
+		}
+
+		err = redis_utils.Push2RedisList(conn, KEY_HUXIU_IN_REDIS, string(jsonBytes))
+		if err != nil {
+			fmt.Printf("%v push2RedisList failed,err= %v\n", title, err)
+			return
+		}
 	})
 	pageCollector.OnScraped(func(response *colly.Response) {
 		fmt.Println("pageCollector OnScraped")
-		//nextCollector.Visit(startUrl)
+		nextCollector.Visit(startUrl)
 	})
 	nextCollector.OnRequest(func(r *colly.Request) {
 

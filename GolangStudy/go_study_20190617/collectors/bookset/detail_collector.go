@@ -1,6 +1,7 @@
 package bookset
 
 import (
+	"GolangStudy/GolangStudy/go_study_20190617/collectors/redis_utils"
 	"GolangStudy/GolangStudy/go_study_20190617/modles/bookSet"
 	"bytes"
 	"encoding/json"
@@ -99,7 +100,7 @@ func GetDetailCollector(conn redis.Conn) (collector *colly.Collector) {
 		score := doubanScore * 10
 		scoreStr := strconv.FormatFloat(score, 'E', -1, 64)
 		fmt.Println(scoreStr)
-		err = push2RedisSortedSet(conn, KEY_BOOK_DETAIL_IN_REDIS, scoreStr, string(jsonBytes))
+		err = redis_utils.Push2RedisSortedSet(conn, KEY_BOOK_DETAIL_IN_REDIS, scoreStr, string(jsonBytes))
 		if err != nil {
 			fmt.Printf("%v push2RedisList failed,err= %v\n", title, err)
 			return
@@ -116,12 +117,4 @@ func GetDetailCollector(conn redis.Conn) (collector *colly.Collector) {
 	return detailCollector
 }
 
-func push2RedisList(c redis.Conn, key string, content string) (err error) {
-	_, err = c.Do("RPUSH", key, content)
-	return
-}
 
-func push2RedisSortedSet(c redis.Conn, key string, score string, content string) (err error) {
-	_, err = c.Do("ZADD", key, score, content)
-	return
-}

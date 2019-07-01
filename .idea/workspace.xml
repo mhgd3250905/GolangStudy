@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cc110f4-c571-47e7-941e-d2fae968b3d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/bookset/main_collector.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/huxiu/main_collector.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190617/modles/huxiu/huxiu.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/redis_utils/redis_utils.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190621/dump.rdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190621/modle/huxiu/huxiu.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/detail_collector.go" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/bookset/detail_collector.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/next_page_collector.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20190617/colly/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190617/colly/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/bookset/detail_collector.go" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/bookset/detail_collector.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/bookset/main_collector.go" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/bookset/main_collector.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/huxiu/main_collector.go" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/huxiu/main_collector.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20190617/modles/huxiu/huxiu.go" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190617/modles/huxiu/huxiu.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20190621/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190621/server/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,11 +32,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/huxiu/main_collector.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="75" column="8" lean-forward="true" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+            <state relative-caret-position="2541">
+              <caret line="130" column="25" selection-start-line="130" selection-start-column="8" selection-end-line="130" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190513/redis_连接池/main/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="924">
+              <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -42,8 +53,49 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/bookset/main_collector.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1134">
-              <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
+            <state relative-caret-position="987">
+              <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190617/modles/bookSet/book_set.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190621/modle/huxiu/huxiu.go">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190621/server/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/bookset/detail_collector.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1911">
+              <caret line="102" column="46" selection-start-line="102" selection-start-column="46" selection-end-line="102" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/redis_utils/redis_utils.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -51,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190617/modles/huxiu/huxiu.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+            <state relative-caret-position="210">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -89,9 +141,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190514/chatroom/server/process2/userProcess.go" />
-        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190511/reflect最佳实践/main/main.go" />
-        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190514/chatroom/client/process/userMgr.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190514/chatroom/client/model/curUser.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190514/chatroom/common/message/user.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190514/chatroom/client/process/userProcess.go" />
@@ -133,19 +182,22 @@
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190513/redis_连接池/main/main.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190621/modle/message_base.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190621/modle/message.go" />
-        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190621/server/main.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/detail_collector.go" />
-        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/bookset/detail_collector.go" />
-        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/bookset/main_collector.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190617/colly/main.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190617/modles/huxiu/huxiu.go" />
+        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/RedisUtils/redis_utils.go" />
+        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/redisutils/redis_utils.go" />
+        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/redis_utils/redis_utils.go" />
+        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/bookset/detail_collector.go" />
+        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/bookset/main_collector.go" />
         <option value="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/huxiu/main_collector.go" />
+        <option value="$PROJECT_DIR$/GolangStudy/go_study_20190621/server/main.go" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="816" />
-    <option name="width" value="1104" />
+    <option name="x" value="479" />
+    <option name="width" value="1441" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -173,30 +225,52 @@
               <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
               <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
               <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="go_study_20190617" type="462c0819:PsiDirectoryNode" />
+              <item name="go_study_20190513" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go_study_20190513" type="462c0819:PsiDirectoryNode" />
+              <item name="redis_连接池" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go_study_20190513" type="462c0819:PsiDirectoryNode" />
+              <item name="redis_连接池" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go_study_20190514" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go_study_20190525" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go_study_20190527" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go_study_20190528" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
               <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
               <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
               <item name="go_study_20190617" type="462c0819:PsiDirectoryNode" />
-              <item name="collectors" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="go_study_20190617" type="462c0819:PsiDirectoryNode" />
-              <item name="collectors" type="462c0819:PsiDirectoryNode" />
-              <item name="bookset" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="go_study_20190617" type="462c0819:PsiDirectoryNode" />
-              <item name="collectors" type="462c0819:PsiDirectoryNode" />
-              <item name="huxiu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
@@ -218,28 +292,13 @@
               <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
               <item name="go_study_20190617" type="462c0819:PsiDirectoryNode" />
               <item name="modles" type="462c0819:PsiDirectoryNode" />
-              <item name="huxiu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="go_study_20190621" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="go_study_20190621" type="462c0819:PsiDirectoryNode" />
-              <item name="modle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="go_study_20190621" type="462c0819:PsiDirectoryNode" />
-              <item name="modle" type="462c0819:PsiDirectoryNode" />
               <item name="bookSet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go_study_20190621" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
@@ -262,25 +321,25 @@
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/huxiu" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/GolangStudy/go_study_20190621" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="go" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190621" />
+      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190621\modle" />
+      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617\collectors\huxiu" />
+      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy" />
+      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617\collectors\bookset" />
       <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617\collectors" />
       <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190615\gorm_demo\gorm_create" />
       <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190615\gorm_demo\modle" />
       <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190615\gorm" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617\collectors\huxiu" />
-      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190621\modle" />
-      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy" />
-      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617" />
-      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190614" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -295,7 +354,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go (2)">
+  <component name="RunManager" selected="Go Build.go build main.go">
     <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="GolangStudy" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -343,8 +402,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build main.go (2)" />
         <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build main.go (2)" />
         <item itemvalue="Go Build.go build main.go (5)" />
         <item itemvalue="Go Build.go build main.go (4)" />
         <item itemvalue="Go Build.go build main.go (1)" />
@@ -352,16 +411,16 @@
     </recent_temporary>
   </component>
   <component name="ToolWindowManager">
-    <frame x="816" y="0" width="1104" height="1040" extended-state="1" />
+    <frame x="479" y="0" width="1441" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.26532567" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15206373" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32855567" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" weight="0.34509373" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3969129" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.34509373" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3969129" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -429,14 +488,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190530/doublelink/main.go" />
-    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190528/singlelink/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2478">
-          <caret line="118" selection-start-line="118" selection-end-line="118" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190529/doublelink/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1659">
@@ -639,13 +690,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190621/colly/main.go" />
-    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190513/redis_连接池/main/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="819">
-          <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Go/src/encoding/json/stream.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5229">
@@ -660,13 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190621/server/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="77" column="38" selection-start-line="77" selection-start-column="38" selection-end-line="77" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190621/modle/bookSet/book_set.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -675,20 +712,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/next_page_collector.go" />
-    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/bookset/detail_collector.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1932">
-          <caret line="102" column="23" selection-start-line="102" selection-start-column="23" selection-end-line="102" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190617/modles/bookSet/book_set.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190621/modle/message.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -730,24 +753,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/huxiu/main_collector.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2541">
+          <caret line="130" column="25" selection-start-line="130" selection-start-column="8" selection-end-line="130" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190513/redis_连接池/main/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/bookset/main_collector.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
+        <state relative-caret-position="987">
+          <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190617/modles/bookSet/book_set.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190621/modle/huxiu/huxiu.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/bookset/detail_collector.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1911">
+          <caret line="102" column="46" selection-start-line="102" selection-start-column="46" selection-end-line="102" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/redis_utils/redis_utils.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190617/modles/huxiu/huxiu.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        <state relative-caret-position="210">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190617/collectors/huxiu/main_collector.go">
+    <entry file="file://$PROJECT_DIR$/GolangStudy/go_study_20190621/server/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="75" column="8" lean-forward="true" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+        <state relative-caret-position="307">
+          <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
         </state>
       </provider>
     </entry>
