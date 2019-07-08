@@ -43,7 +43,8 @@ func main() {
 		})
 	})
 	r.GET("/spider/bookset/:key", getBooks)
-	r.Run(":8880")
+	r.GET("/spider/huxiu/:key", getHuxius)
+	r.Run(":8888")
 }
 
 func getBooks(c *gin.Context) {
@@ -89,6 +90,41 @@ func getBooks(c *gin.Context) {
 				Data:  bookDetails}
 			msg.Send(c)
 		} else if key == KEY_HUXIU_IN_REDIS {
+			huxiuNewsList := make([]huxiu.HuxiuNews, 0)
+			for i, _ := range result {
+				huxiuNewsStr := result[i]
+				huxiu := huxiu.HuxiuNews{}
+				json.Unmarshal([]byte(huxiuNewsStr), &huxiu)
+				huxiuNewsList = append(huxiuNewsList, huxiu)
+			}
+			//设置到消息类中
+			msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_SUCCESS,
+				Error: "",
+				Data:  huxiuNewsList}
+			msg.Send(c)
+		}
+
+	}
+}
+
+func getHuxius(c *gin.Context) {
+	key := c.Param("key")
+	start := c.DefaultQuery("start", "0")
+	end := c.Query("end")
+
+	//获取结果
+	//ZRANGE w3ckey 0 10 WITHSCORES
+	result, err := redis.Strings(conn.Do("ZREVRANGE", key, start, end, "WITHSCORES"))
+
+	if err != nil {
+		msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_FAILED,
+			Error: err.Error(),
+			Data:  "",
+		}
+		msg.Send(c)
+	} else {
+		//反序列化到数组中
+		if key == KEY_HUXIU_IN_REDIS {
 			huxiuNewsList := make([]huxiu.HuxiuNews, 0)
 			for i, _ := range result {
 				huxiuNewsStr := result[i]
