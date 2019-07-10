@@ -24,9 +24,10 @@ type Category struct {
 }
 
 type Content struct {
-	ContentType   string    `json:"content_type"`   //内容类型 0=>文字 1：图片
+	ContentType   string `json:"content_type"`   //内容类型 0=>文字 1：图片
 	ContentDetail string `json:"content_detail"` //具体内容,文字的话就是内容，图片的话就是链接
-	TextStyle     string    `json:"text_style"`     //文字的类型，譬如标签，大标题，小标题，粗体等等
+	TextStyle     string `json:"text_style"`     //文字的类型，譬如标签，大标题，小标题，粗体等等
+	Extra         string `json:"extra"`
 }
 
 func (this *Content) AppendContent(text string) {

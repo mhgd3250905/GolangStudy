@@ -30,7 +30,7 @@ func main() {
 	conn := pool.Get()
 	defer conn.Close()
 
-	huxiu.HuxiuDetailSpider(conn)
+	huxiu.HuxiuSpider(conn)
 }
 
 

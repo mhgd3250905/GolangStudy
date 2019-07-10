@@ -11,9 +11,10 @@ import (
 )
 
 const (
-	KEY_BOOK_DETAIL_IN_REDIS = "book_detail"
-	KEY_BOOK_IN_REDIS        = "book"
-	KEY_HUXIU_IN_REDIS       = "huxiu"
+	KEY_BOOK_DETAIL_IN_REDIS  = "book_detail"
+	KEY_BOOK_IN_REDIS         = "book"
+	KEY_HUXIU_IN_REDIS        = "huxiu"
+	KEY_HUXIU_DETAIL_IN_REDIS = "huxiu_detail"
 )
 
 //定义一个全局的pool
@@ -136,6 +137,19 @@ func getHuxius(c *gin.Context) {
 			msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_SUCCESS,
 				Error: "",
 				Data:  huxiuNewsList}
+			msg.Send(c)
+		} else if key == KEY_HUXIU_DETAIL_IN_REDIS {
+			detailList := make([]huxiu.HuxiuDetail, 0)
+			for i, _ := range result {
+				huxiuDetailStr := result[i]
+				detail := huxiu.HuxiuDetail{}
+				json.Unmarshal([]byte(huxiuDetailStr), &detail)
+				detailList = append(detailList, detail)
+			}
+			//设置到消息类中
+			msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_SUCCESS,
+				Error: "",
+				Data:  detailList}
 			msg.Send(c)
 		}
 
