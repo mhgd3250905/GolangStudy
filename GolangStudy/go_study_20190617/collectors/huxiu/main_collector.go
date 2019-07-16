@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"github.com/PuerkitoBio/goquery"
 	"github.com/gocolly/colly"
-	"github.com/gocolly/colly/proxy"
 	"github.com/gomodule/redigo/redis"
 	"regexp"
 	"strconv"
@@ -17,7 +16,7 @@ import (
 
 const KEY_HUXIU_IN_REDIS = "huxiu"
 const KEY_HUXIU_DETIAL_IN_REDIS = "huxiu_detail"
-const MAIN_URL = "https://www.huxiu.com"
+const MAIN_URL = "https://wwww.huxiu.com/"
 
 var page = 1
 var lastDateline = ""
@@ -25,26 +24,26 @@ var lastDateline = ""
 func HuxiuSpider(conn redis.Conn) {
 	startUrl := MAIN_URL
 
-	//使用代理
-	rp, err := proxy.RoundRobinProxySwitcher("http://123.52.19.47:3128",
-		"https://218.91.112.188:9999",
-		"https://1.192.243.9:9999",
-		"https://58.253.157.205",
-		"https://180.119.141.211",
-		"https://120.83.107.7",
-		"https://1.192.242.122:9999")
-
-	if err != nil {
-		fmt.Println(err)
-	}
+	////使用代理
+	//rp, err := proxy.RoundRobinProxySwitcher("http://123.52.19.47:3128",
+	//	"https://218.91.112.188:9999",
+	//	"https://1.192.243.9:9999",
+	//	"https://58.253.157.205",
+	//	"https://180.119.141.211",
+	//	"https://120.83.107.7",
+	//	"https://1.192.242.122:9999")
+	//
+	//if err != nil {
+	//	fmt.Println(err)
+	//}
 
 	//解析页面新闻条目收集器
 	pageCollector := colly.NewCollector()
 	//解析下一页收集器
 	nextCollector := colly.NewCollector()
 
-	pageCollector.SetProxyFunc(rp)
-	nextCollector.SetProxyFunc(rp)
+	//pageCollector.SetProxyFunc(rp)
+	//nextCollector.SetProxyFunc(rp)
 
 	//解析页面新闻条目
 	newsItemSelectorStr := "#index > div.wrap-left.pull-left"
@@ -166,7 +165,7 @@ func HuxiuSpider(conn redis.Conn) {
 				return
 			} else {
 				fmt.Printf("%s 爬取完毕\n", news.Title)
-				go HuxiuDetailSpider(conn, news)
+				HuxiuDetailSpider(conn, news)
 			}
 		})
 
@@ -311,7 +310,7 @@ func HuxiuSpider(conn redis.Conn) {
 				return
 			} else {
 				fmt.Printf("%s 爬取完毕\n", news.Title)
-				go HuxiuDetailSpider(conn, news)
+				HuxiuDetailSpider(conn, news)
 			}
 		})
 

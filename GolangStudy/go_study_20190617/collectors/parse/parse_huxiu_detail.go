@@ -1,73 +1,136 @@
 package parse
 
 import (
+	"GolangStudy/GolangStudy/go_study_20190617/modles/detailText"
+	"GolangStudy/GolangStudy/go_study_20190617/modles/detailType"
 	"GolangStudy/GolangStudy/go_study_20190617/modles/huxiu"
 	"github.com/PuerkitoBio/goquery"
 	"golang.org/x/net/html"
+	"golang.org/x/net/html/atom"
 )
+
 
 /**
 保存基本文字
 没有任何样式的文字
 */
-func SaveNormalText(text string, contents []huxiu.Content) []huxiu.Content {
-	content := huxiu.Content{}
-	content.ContentType = "text"
-	//文字类型
-	content.AppendContent(text)
-	content.TextStyle = "N"
-	contents = append(contents, content)
-	return contents
+func SaveNormalText(text string, content huxiu.Content) huxiu.Content {
+	content = saveContent(content, func(contendDetail *huxiu.ContentDetail) {
+		contendDetail.ContentType = detailType.TEXT
+		//文字类型
+		contendDetail.AppendContent(text)
+		contendDetail.TextStyle = detailText.Normal
+	})
+	return content
+}
+/**
+保存图片注释
+*/
+func SaveImgNote(text string, content huxiu.Content) huxiu.Content {
+	content = saveContent(content, func(contendDetail *huxiu.ContentDetail) {
+		contendDetail.ContentType = detailType.TEXT
+		//文字类型
+		contendDetail.AppendContent(text)
+		contendDetail.TextStyle = detailText.ImgNote
+	})
+	return content
+}
+
+/**
+保存段落标题
+*/
+func SaveParagraphTitle(text string, content huxiu.Content) huxiu.Content {
+	//段落标题
+	content = saveContent(content, func(contendDetail *huxiu.ContentDetail) {
+		contendDetail.ContentType = detailType.TEXT
+		contendDetail.AppendContent(text)
+		contendDetail.TextStyle = detailText.ParagraphTitle
+	})
+	return content
 }
 
 /**
 保存换行
 */
-func SaveBrNode(child *goquery.Selection, contents []huxiu.Content) []huxiu.Content {
+func SaveBrNode(child *goquery.Selection, content huxiu.Content) huxiu.Content {
 	if len(child.Nodes) > 0 {
 		if child.Nodes[0] != nil {
-			if child.Nodes[0].Data == "br" {
-				content := huxiu.Content{}
-				content.ContentType = "text" //文字类型
-				content.AppendContent("\n")
-				content.TextStyle = "Br"
-				contents = append(contents, content)
+			if child.Nodes[0].DataAtom == atom.Br {
+
+				content = saveContent(content, func(contendDetail *huxiu.ContentDetail) {
+					contendDetail.ContentType = detailType.TEXT //文字类型
+					contendDetail.AppendContent("\n")
+					contendDetail.TextStyle = detailText.Br
+				})
+
 			}
 		}
 	}
-	return contents
+	return content
+}
+
+/**
+保存图片
+*/
+func SaveImgNode(child *goquery.Selection, content huxiu.Content) huxiu.Content {
+	if len(child.Nodes) > 0 {
+		if child.Nodes[0] != nil {
+			if child.Nodes[0].DataAtom == atom.Img {
+
+				content = saveContent(content, func(contendDetail *huxiu.ContentDetail) {
+					contendDetail.ContentType = detailType.IMG //图片类型
+					contendDetail.TextStyle = detailText.Img
+					img, exist := child.Attr("src")
+					if exist {
+						contendDetail.Extra = img
+					}
+				})
+
+			}
+		}
+	}
+	return content
 }
 
 /**
 保存特殊的具有样式的文本
 譬如：span/b/..
 */
-func SaveSpicalText(child *goquery.Selection, contents []huxiu.Content) []huxiu.Content {
+func SaveSpecialText(child *goquery.Selection, content huxiu.Content) huxiu.Content {
+
 	firstNode := GetFirstNode(child)
-	content := huxiu.Content{}
-	content.ContentType = "text"
-	//文字类型
-	content.AppendContent(child.Text())
 
-	//处理特殊样式信息
-	if firstNode != nil {
-		if firstNode.Data == "span" {
-			content.TextStyle = "span"
-		} else if firstNode.Data == "a" {
-			content.TextStyle = "link"
-			link,exist:=child.Attr("href")
-			if exist {
-				content.Extra=link
+	content = saveContent(content, func(contendDetail *huxiu.ContentDetail) {
+		//处理特殊样式信息
+		if firstNode != nil {
+			if firstNode.DataAtom == atom.Span {
+				//span类型 灰色小字体
+				contendDetail.ContentType = detailType.TEXT
+				contendDetail.AppendContent(child.Text())
+				contendDetail.TextStyle = detailText.Span
+			} else if firstNode.DataAtom == atom.A {
+				//超链接
+				contendDetail.ContentType = detailType.TEXT
+				contendDetail.AppendContent(child.Text())
+				contendDetail.TextStyle = detailText.Link
+				link, exist := child.Attr("href")
+				if exist {
+					contendDetail.Extra = link
+				}
+			} else if firstNode.DataAtom == atom.Strong {
+				//粗体
+				contendDetail.ContentType = detailType.TEXT
+				contendDetail.AppendContent(child.Text())
+				contendDetail.TextStyle = detailText.Bold
+			} else {
+				//正常文本
+				contendDetail.ContentType = detailType.TEXT
+				contendDetail.AppendContent(child.Text())
+				contendDetail.TextStyle = detailText.Normal
 			}
-		}else if firstNode.Data == "strong" {
-			content.TextStyle = "bold"
-		} else {
-			content.TextStyle = "N"
 		}
-	}
-
-	contents = append(contents, content)
-	return contents
+	})
+	return content
 }
 
 /**
@@ -78,4 +141,13 @@ func GetFirstNode(child *goquery.Selection) *html.Node {
 		return nil
 	}
 	return child.Nodes[0]
+}
+
+func saveContent(content huxiu.Content, setContentInfo func(contendDetail *huxiu.ContentDetail)) huxiu.Content {
+	contendDetail := huxiu.ContentDetail{}
+
+	setContentInfo(&contendDetail)
+
+	content.ContentDetails = append(content.ContentDetails, contendDetail)
+	return content
 }

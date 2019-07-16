@@ -45,7 +45,7 @@ func main() {
 	})
 	r.GET("/spider/bookset/:key", getBooks)
 	r.GET("/spider/huxiu/:key", getHuxius)
-	r.Run(":8888")
+	r.Run(":80")
 }
 
 func getBooks(c *gin.Context) {
