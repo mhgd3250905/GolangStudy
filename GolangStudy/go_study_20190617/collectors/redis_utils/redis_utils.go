@@ -11,3 +11,8 @@ func Push2RedisSortedSet(c redis.Conn, key string, score string, content string)
 	_, err = c.Do("ZADD", key, score, content)
 	return
 }
+
+func SaveHashMap(c redis.Conn, key string, mapKey string, content string) (err error) {
+	_, err = c.Do("HMSET", key, mapKey, content)
+	return
+}

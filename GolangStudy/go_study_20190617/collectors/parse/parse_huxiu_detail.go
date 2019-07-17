@@ -59,7 +59,7 @@ func SaveBrNode(child *goquery.Selection, content huxiu.Content) huxiu.Content {
 
 				content = saveContent(content, func(contendDetail *huxiu.ContentDetail) {
 					contendDetail.ContentType = detailType.TEXT //文字类型
-					contendDetail.AppendContent("\n")
+					contendDetail.AppendContent("</br>")
 					contendDetail.TextStyle = detailText.Br
 				})
 
@@ -76,7 +76,6 @@ func SaveImgNode(child *goquery.Selection, content huxiu.Content) huxiu.Content 
 	if len(child.Nodes) > 0 {
 		if child.Nodes[0] != nil {
 			if child.Nodes[0].DataAtom == atom.Img {
-
 				content = saveContent(content, func(contendDetail *huxiu.ContentDetail) {
 					contendDetail.ContentType = detailType.IMG //图片类型
 					contendDetail.TextStyle = detailText.Img

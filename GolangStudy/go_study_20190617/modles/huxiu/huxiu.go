@@ -3,6 +3,7 @@ package huxiu
 import "bytes"
 
 type HuxiuNews struct {
+	NewsId     string     `json:"news_id"`
 	Title      string     `json:"title"`
 	NewsLink   string     `json:"news_link"`
 	Author     Author     `json:"author"`

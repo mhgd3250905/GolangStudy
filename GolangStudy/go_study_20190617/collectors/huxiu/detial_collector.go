@@ -48,13 +48,14 @@ func HuxiuDetailSpider(conn redis.Conn, news huxiu.HuxiuNews) {
 		//fmt.Println(str)
 	})
 
-	onHtmlFunc:=func(e *colly.HTMLElement) {
+	onHtmlFunc := func(e *colly.HTMLElement) {
 		detail := huxiu.HuxiuDetail{}
 		contents := make([]huxiu.Content, 0)
 
 		//解析主要文本内容
 		contents = ParseContentChildRen(e.DOM, contents)
 
+		detail.HuxiuNews=news
 		detail.Contents = contents
 
 		jsonBytes, err := json.Marshal(&detail)
@@ -63,7 +64,7 @@ func HuxiuDetailSpider(conn redis.Conn, news huxiu.HuxiuNews) {
 			return
 		}
 
-		err = redis_utils.Push2RedisSortedSet(conn, KEY_HUXIU_DETIAL_IN_REDIS, news.CreateTime, string(jsonBytes))
+		err = redis_utils.SaveHashMap(conn, KEY_HUXIU_DETIAL_IN_REDIS, detail.HuxiuNews.NewsId, string(jsonBytes))
 		if err != nil {
 			fmt.Printf("%v push2RedisList failed,err= %v\n", news, err)
 			return
@@ -88,7 +89,6 @@ func HuxiuDetailSpider(conn redis.Conn, news huxiu.HuxiuNews) {
 		"AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.132 MQQBrowser/8.9 Mobile Safari/537.36"
 	pageCollector.Visit(startUrl)
 }
-
 
 func ParseContentChildRen(divContent *goquery.Selection, contents []huxiu.Content) []huxiu.Content {
 	divContent.Find("p").Each(func(i int, child *goquery.Selection) {
@@ -153,6 +153,7 @@ func ParseAtomP(p *goquery.Selection, content huxiu.Content) huxiu.Content {
 				content = parse.SaveBrNode(child, content)
 			} else if firstNode.DataAtom == atom.Img {
 				content = parse.SaveImgNode(child, content)
+				content.ContentContainerType = detailContainerType.Img
 			} else {
 				content = parse.SaveSpecialText(child, content)
 			}

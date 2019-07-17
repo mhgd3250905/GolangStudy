@@ -45,6 +45,7 @@ func main() {
 	})
 	r.GET("/spider/bookset/:key", getBooks)
 	r.GET("/spider/huxiu/:key", getHuxius)
+	r.GET("/spider/detail/:mapKey/:key", getHuxiuDetail)
 	r.Run(":80")
 }
 
@@ -139,6 +140,40 @@ func getHuxius(c *gin.Context) {
 				Data:  huxiuNewsList}
 			msg.Send(c)
 		} else if key == KEY_HUXIU_DETAIL_IN_REDIS {
+			detailList := make([]huxiu.HuxiuDetail, 0)
+			for i, _ := range result {
+				huxiuDetailStr := result[i]
+				detail := huxiu.HuxiuDetail{}
+				json.Unmarshal([]byte(huxiuDetailStr), &detail)
+				detailList = append(detailList, detail)
+			}
+			//设置到消息类中
+			msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_SUCCESS,
+				Error: "",
+				Data:  detailList}
+			msg.Send(c)
+		}
+
+	}
+}
+
+
+func getHuxiuDetail(c *gin.Context) {
+	mapKey := c.Param("mapKey")
+	key := c.Param("key")
+
+	//获取结果
+	result, err := redis.Strings(conn.Do("HMGET", mapKey, key))
+
+	if err != nil {
+		msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_FAILED,
+			Error: err.Error(),
+			Data:  "",
+		}
+		msg.Send(c)
+	} else {
+		//反序列化到数组中
+		if mapKey == KEY_HUXIU_DETAIL_IN_REDIS {
 			detailList := make([]huxiu.HuxiuDetail, 0)
 			for i, _ := range result {
 				huxiuDetailStr := result[i]

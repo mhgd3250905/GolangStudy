@@ -143,7 +143,16 @@ func HuxiuSpider(conn redis.Conn) {
 				categorys = append(categorys, category)
 			})
 
+			// /article/309213.html
+			re, _ = regexp.Compile(`[0-9]+`)
+			all = re.FindAll([]byte(newsLink), 1)
+			newsId := ""
+			for i, _ := range all {
+				newsId = string(all[i])
+			}
+
 			news := huxiu.HuxiuNews{
+				NewsId:     newsId,
 				Title:      title,
 				NewsLink:   e.Request.AbsoluteURL(newsLink),
 				Author:     author,
@@ -287,7 +296,16 @@ func HuxiuSpider(conn redis.Conn) {
 				categorys = append(categorys, category)
 			})
 
+			// /article/309213.html
+			re, _ = regexp.Compile(`[0-9]+`)
+			all = re.FindAll([]byte(newsLink), 1)
+			newsId := ""
+			for i, _ := range all {
+				newsId = string(all[i])
+			}
+
 			news := huxiu.HuxiuNews{
+				NewsId:     newsId,
 				Title:      title,
 				NewsLink:   response.Request.AbsoluteURL(newsLink),
 				Author:     author,
