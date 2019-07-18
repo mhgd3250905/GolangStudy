@@ -101,6 +101,9 @@ func ParseContentChildRen(divContent *goquery.Selection, contents []huxiu.Conten
 			content.ContentContainerType = detailContainerType.Blockquote
 			content = ParseAtomP(child, content)
 		} else if childFirstNode.DataAtom == atom.P {
+			if child.HasClass("text-img-note") {
+				content.ContentContainerType = detailContainerType.ImgNote
+			}
 			content = ParseAtomP(child, content)
 		}
 		contents = append(contents, content)
@@ -169,6 +172,5 @@ func ParseAtomP(p *goquery.Selection, content huxiu.Content) huxiu.Content {
 			}
 		})
 	}
-
 	return content
 }
