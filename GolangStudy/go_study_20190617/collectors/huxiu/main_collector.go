@@ -8,6 +8,7 @@ import (
 	"github.com/PuerkitoBio/goquery"
 	"github.com/gocolly/colly"
 	"github.com/gomodule/redigo/redis"
+	"os"
 	"regexp"
 	"strconv"
 	"strings"
@@ -119,6 +120,12 @@ func HuxiuSpider(conn redis.Conn) {
 			//timeTemplate4 := "15:04:05"            //其他类型
 
 			stamp, _ := time.ParseInLocation(timeTemplate1, timeStr[:16], time.Local)
+
+			//仅仅获取最近三天的数据
+			threeDaysBefore:=time.Now().AddDate(0,0,-3)
+			if stamp.Before(threeDaysBefore) {
+				return
+			}
 
 			//fmt.Println(stamp)
 
@@ -274,6 +281,13 @@ func HuxiuSpider(conn redis.Conn) {
 			stamp, _ := time.ParseInLocation(timeTemplate1, timeStr[:16], time.Local)
 
 			//fmt.Println(stamp)
+
+			//仅仅获取最近三天的数据
+			threeDaysBefore:=time.Now().AddDate(0,0,-3)
+			if stamp.Before(threeDaysBefore) {
+				fmt.Println("三天内文章爬取完毕！")
+				os.Exit(0)
+			}
 
 			timeStr = strconv.FormatInt(stamp.Unix(), 10)
 
