@@ -14,7 +14,9 @@ const (
 	KEY_BOOK_DETAIL_IN_REDIS  = "book_detail"
 	KEY_BOOK_IN_REDIS         = "book"
 	KEY_HUXIU_IN_REDIS        = "huxiu"
+	KEY_CHULE_IN_REDIS        = "chule"
 	KEY_HUXIU_DETAIL_IN_REDIS = "huxiu_detail"
+	KEY_CHULE_DETAIL_IN_REDIS = "chule_detail"
 )
 
 //定义一个全局的pool
@@ -45,8 +47,8 @@ func main() {
 	})
 	r.GET("/spider/bookset/:key", getBooks)
 	r.GET("/spider/huxiu/:key", getHuxius)
-	r.GET("/spider/detail/:mapKey/:key", getHuxiuDetail)
-	r.Run(":80")
+	r.GET("/spider/detail/:mapKey/:key", getDetail)
+	r.Run(":8880")
 }
 
 func getBooks(c *gin.Context) {
@@ -126,7 +128,7 @@ func getHuxius(c *gin.Context) {
 		msg.Send(c)
 	} else {
 		//反序列化到数组中
-		if key == KEY_HUXIU_IN_REDIS {
+		if key == KEY_HUXIU_IN_REDIS || key == KEY_CHULE_IN_REDIS {
 			huxiuNewsList := make([]huxiu.HuxiuNews, 0)
 			for i, _ := range result {
 				huxiuNewsStr := result[i]
@@ -157,8 +159,7 @@ func getHuxius(c *gin.Context) {
 	}
 }
 
-
-func getHuxiuDetail(c *gin.Context) {
+func getDetail(c *gin.Context) {
 	mapKey := c.Param("mapKey")
 	key := c.Param("key")
 
@@ -173,7 +174,7 @@ func getHuxiuDetail(c *gin.Context) {
 		msg.Send(c)
 	} else {
 		//反序列化到数组中
-		if mapKey == KEY_HUXIU_DETAIL_IN_REDIS {
+		if mapKey == KEY_HUXIU_DETAIL_IN_REDIS || mapKey == KEY_CHULE_DETAIL_IN_REDIS {
 			detailList := make([]huxiu.HuxiuDetail, 0)
 			for i, _ := range result {
 				huxiuDetailStr := result[i]
