@@ -14,13 +14,25 @@ import (
 )
 
 const KEY_CHULE_IN_REDIS = "chule"
-const MAIN_URL = "http://www.chuapp.com/category/daily"
+//const MAIN_URL = "http://www.chuapp.com/category/daily"
+//const MAIN_URL = "http://www.chuapp.com/category/pcz"
+//const MAIN_URL = "http://www.chuapp.com/tag/index/id/20369.html"
+const MAIN_URL = "http://www.chuapp.com/category/zsyx"
+
+var  CHULE_URL_LIST=[]string{
+	"http://www.chuapp.com/category/daily",
+	"http://www.chuapp.com/category/pcz",
+	"http://www.chuapp.com/tag/index/id/20369.html",
+	"http://www.chuapp.com/category/zsyx",
+	}
 
 var page = 1
 var lastDateline = ""
 
+var index=0
+
 func ChuleSpider(conn redis.Conn) {
-	startUrl := MAIN_URL
+	startUrl := CHULE_URL_LIST[index]
 
 	//解析页面新闻条目收集器
 	pageCollector := colly.NewCollector()
@@ -123,10 +135,17 @@ func ChuleSpider(conn redis.Conn) {
 			}
 
 		})
+
 	})
 
 	pageCollector.OnScraped(func(response *colly.Response) {
 		fmt.Println("pageCollector OnScraped")
+		index++
+		if index > 3 {
+			return
+		}
+		startUrl=CHULE_URL_LIST[index]
+		pageCollector.Visit(startUrl)
 	})
 
 	pageCollector.OnError(func(response *colly.Response, e error) {

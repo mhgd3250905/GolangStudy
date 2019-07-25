@@ -2,6 +2,7 @@ package main
 
 import (
 	"GolangStudy/GolangStudy/go_study_20190617/collectors/chule"
+	"GolangStudy/GolangStudy/go_study_20190617/collectors/huxiu"
 	"github.com/gomodule/redigo/redis"
 )
 
@@ -31,6 +32,7 @@ func main() {
 	defer conn.Close()
 
 	chule.ChuleSpider(conn)
+	huxiu.HuxiuSpider(conn)
 }
 
 

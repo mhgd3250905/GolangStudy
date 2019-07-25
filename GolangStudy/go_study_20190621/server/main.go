@@ -46,9 +46,9 @@ func main() {
 		})
 	})
 	r.GET("/spider/bookset/:key", getBooks)
-	r.GET("/spider/huxiu/:key", getHuxius)
+	r.GET("/spider/news/:key", getNews)
 	r.GET("/spider/detail/:mapKey/:key", getDetail)
-	r.Run(":8880")
+	r.Run(":80")
 }
 
 func getBooks(c *gin.Context) {
@@ -111,7 +111,7 @@ func getBooks(c *gin.Context) {
 	}
 }
 
-func getHuxius(c *gin.Context) {
+func getNews(c *gin.Context) {
 	key := c.Param("key")
 	start := c.DefaultQuery("start", "0")
 	end := c.Query("end")
