@@ -118,7 +118,7 @@ func getNews(c *gin.Context) {
 
 	//获取结果
 	//ZRANGE w3ckey 0 10 WITHSCORES
-	result, err := redis.Strings(conn.Do("ZREVRANGE", key, start, end, "WITHSCORES"))
+	result, err := redis.Strings(conn.Do("ZREVRANGE", key, start, end))
 
 	if err != nil {
 		msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_FAILED,
