@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d7e2263-ed8d-4c11-a034-a998b514d6a1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go_study_20190617/collectors/ifanr/detial_collector.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go_study_20190617/collectors/ifanr/main_collector.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go_study_20190617/collectors/parse/parse_huxiu_detail.go" beforeDir="false" afterPath="$PROJECT_DIR$/go_study_20190617/collectors/parse/parse_huxiu_detail.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go_study_20190621/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/go_study_20190621/server/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_study_20190617/colly/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/go_study_20190617/colly/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,15 +15,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go_study_20190607/http_server/main.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/go_study_20190607/http_client/main.go">
           <provider selected="true" editor-type-id="text-editor">
@@ -48,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/go_study_20190617/colly/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
+            <state relative-caret-position="651">
+              <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -81,11 +72,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/go_study_20190621/server/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="63" column="31" lean-forward="true" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
+            <state relative-caret-position="310">
+              <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/ifanr/detial_collector.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/ifanr/main_collector.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
+              <folding>
+                <element signature="e#15#302#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,10 +129,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/go学习20190501/time_study.go" />
-        <option value="$PROJECT_DIR$/go学习20190501/arr_study.go" />
-        <option value="$PROJECT_DIR$/go学习20190501/study_sllice.go" />
-        <option value="$PROJECT_DIR$/go学习20190501/study_slice.go" />
         <option value="$PROJECT_DIR$/go学习20190502/study_sort.go" />
         <option value="$PROJECT_DIR$/go学习20190502/study_lock.go" />
         <option value="$PROJECT_DIR$/go学习20190502/study_sort2.go" />
@@ -168,6 +176,10 @@
         <option value="$PROJECT_DIR$/go_study_20190607/http_client/main.go" />
         <option value="$PROJECT_DIR$/go_study_20190607/http_head/main.go" />
         <option value="$PROJECT_DIR$/go_study_20190621/server/main.go" />
+        <option value="$PROJECT_DIR$/go_study_20190617/collectors/ifan/main_collector.go" />
+        <option value="$PROJECT_DIR$/go_study_20190617/collectors/ifanr/detial_collector.go" />
+        <option value="$PROJECT_DIR$/go_study_20190617/colly/main.go" />
+        <option value="$PROJECT_DIR$/go_study_20190617/collectors/ifanr/main_collector.go" />
       </list>
     </option>
   </component>
@@ -178,7 +190,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="991" />
     <option name="width" value="937" />
     <option name="height" value="1088" />
@@ -203,6 +215,26 @@
               <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
               <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
               <item name="go_study_20190617" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go_study_20190617" type="462c0819:PsiDirectoryNode" />
+              <item name="collectors" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go_study_20190617" type="462c0819:PsiDirectoryNode" />
+              <item name="collectors" type="462c0819:PsiDirectoryNode" />
+              <item name="chule" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="go_study_20190617" type="462c0819:PsiDirectoryNode" />
+              <item name="collectors" type="462c0819:PsiDirectoryNode" />
+              <item name="ifanr" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
@@ -236,18 +268,21 @@
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/go_study_20190607" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/go_study_20190617/collectors/ifan" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617\collectors\ifanr" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617\collectors\ifan" />
       <recent name="D:\GIT\GoProject\src\GolangStudy\GolangStudy\go_study_20190607" />
       <recent name="D:\GIT\GoProject\src\GolangStudy\GolangStudy" />
       <recent name="D:\GIT\GoProject\src\GolangStudy\GolangStudy\go学习20190505" />
       <recent name="D:\GIT\GoProject\src\GolangStudy\GolangStudy\go学习20190504" />
-      <recent name="D:\GIT\GoProject\src\GolangStudy\GolangStudy\files" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -363,19 +398,18 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15031983" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18176973" />
       <window_info id="Structure" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="1" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.3295583" />
       <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" weight="0.32842582" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.35038933" />
-      <window_info anchor="bottom" id="Debug" order="6" weight="0.39933258" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.32814237" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.35038933" />
+      <window_info active="true" anchor="bottom" id="Debug" order="6" visible="true" weight="0.39933258" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="9" />
@@ -408,22 +442,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/黑马Go第6天笔记/concurrentClient.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第6天笔记/03_TCP服务器.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding>
-            <element signature="e#14#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/黑马Go第6天笔记/concurrentServer.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/go学习20190502/familyaccount/main.go" />
     <entry file="file://E:/Go/src/builtin/builtin.go" />
     <entry file="file://$PROJECT_DIR$/go学习20190502/testMyAccount.go" />
@@ -512,13 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go_study_20190617/colly/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/huxiu/main_collector.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3444">
@@ -540,10 +551,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/ifanr/collector_ifan.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/ifanr/detial_collector.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/go_study_20190621/server/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="63" column="31" lean-forward="true" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
+        <state relative-caret-position="310">
+          <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go_study_20190617/colly/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/ifanr/main_collector.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#15#302#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

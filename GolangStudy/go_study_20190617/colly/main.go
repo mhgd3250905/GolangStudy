@@ -1,8 +1,7 @@
 package main
 
 import (
-	"GolangStudy/GolangStudy/go_study_20190617/collectors/chule"
-	"GolangStudy/GolangStudy/go_study_20190617/collectors/huxiu"
+	"GolangStudy/GolangStudy/go_study_20190617/collectors/ifanr"
 	"github.com/gomodule/redigo/redis"
 )
 
@@ -31,8 +30,9 @@ func main() {
 	conn := pool.Get()
 	defer conn.Close()
 
-	chule.ChuleSpider(conn)
-	huxiu.HuxiuSpider(conn)
+	//chule.ChuleSpider(conn)
+	//huxiu.HuxiuSpider(conn)
+	ifanr.ChuleSpider(conn)
 }
 
 
