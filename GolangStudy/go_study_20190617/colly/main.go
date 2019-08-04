@@ -1,8 +1,11 @@
 package main
 
 import (
+	"GolangStudy/GolangStudy/go_study_20190617/collectors/chule"
+	"GolangStudy/GolangStudy/go_study_20190617/collectors/huxiu"
 	"GolangStudy/GolangStudy/go_study_20190617/collectors/ifanr"
 	"github.com/gomodule/redigo/redis"
+	"os"
 )
 
 //定义一个全局的pool
@@ -26,13 +29,23 @@ func push2RedisList(c redis.Conn, key string, content string) (err error) {
 	return
 }
 
+var conn redis.Conn
+
 func main() {
-	conn := pool.Get()
+	conn = pool.Get()
 	defer conn.Close()
 
-	//chule.ChuleSpider(conn)
-	//huxiu.HuxiuSpider(conn)
-	ifanr.ChuleSpider(conn)
+	chule.ChuleSpider(conn)
+	huxiu.HuxiuSpider(conn,OnHuxiuSpiderFinish)
+
+}
+
+func OnHuxiuSpiderFinish(){
+	ifanr.ChuleSpider(conn,OnIfanrSpiderFinish)
+}
+
+func OnIfanrSpiderFinish(){
+	os.Exit(0)
 }
 
 

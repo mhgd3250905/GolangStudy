@@ -3,7 +3,7 @@ package parse
 import (
 	"GolangStudy/GolangStudy/go_study_20190617/modles/detailText"
 	"GolangStudy/GolangStudy/go_study_20190617/modles/detailType"
-	"GolangStudy/GolangStudy/go_study_20190617/modles/huxiu"
+	"GolangStudy/GolangStudy/go_study_20190617/modles/normal_news"
 	"github.com/PuerkitoBio/goquery"
 	"golang.org/x/net/html"
 	"golang.org/x/net/html/atom"
@@ -14,8 +14,8 @@ import (
 保存基本文字
 没有任何样式的文字
 */
-func SaveNormalText(text string, content huxiu.Content) huxiu.Content {
-	content = saveContent(content, func(contendDetail *huxiu.ContentDetail) {
+func SaveNormalText(text string, content normal_news.Content) normal_news.Content {
+	content = saveContent(content, func(contendDetail *normal_news.ContentDetail) {
 		contendDetail.ContentType = detailType.TEXT
 		//文字类型
 		contendDetail.AppendContent(text)
@@ -26,8 +26,8 @@ func SaveNormalText(text string, content huxiu.Content) huxiu.Content {
 /**
 保存图片注释
 */
-func SaveImgNote(text string, content huxiu.Content) huxiu.Content {
-	content = saveContent(content, func(contendDetail *huxiu.ContentDetail) {
+func SaveImgNote(text string, content normal_news.Content) normal_news.Content {
+	content = saveContent(content, func(contendDetail *normal_news.ContentDetail) {
 		contendDetail.ContentType = detailType.TEXT
 		//文字类型
 		contendDetail.AppendContent(text)
@@ -39,9 +39,9 @@ func SaveImgNote(text string, content huxiu.Content) huxiu.Content {
 /**
 保存段落标题
 */
-func SaveParagraphTitle(text string, content huxiu.Content) huxiu.Content {
+func SaveParagraphTitle(text string, content normal_news.Content) normal_news.Content {
 	//段落标题
-	content = saveContent(content, func(contendDetail *huxiu.ContentDetail) {
+	content = saveContent(content, func(contendDetail *normal_news.ContentDetail) {
 		contendDetail.ContentType = detailType.TEXT
 		contendDetail.AppendContent(text)
 		contendDetail.TextStyle = detailText.ParagraphTitle
@@ -52,11 +52,11 @@ func SaveParagraphTitle(text string, content huxiu.Content) huxiu.Content {
 /**
 保存换行
 */
-func SaveBrNode(child *goquery.Selection, content huxiu.Content) huxiu.Content {
+func SaveBrNode(child *goquery.Selection, content normal_news.Content) normal_news.Content {
 	if len(child.Nodes) > 0 {
 		if child.Nodes[0] != nil {
 			if child.Nodes[0].DataAtom == atom.Br {
-				content = saveContent(content, func(contendDetail *huxiu.ContentDetail) {
+				content = saveContent(content, func(contendDetail *normal_news.ContentDetail) {
 					contendDetail.ContentType = detailType.TEXT //文字类型
 					contendDetail.AppendContent("</br>")
 					contendDetail.TextStyle = detailText.Br
@@ -70,11 +70,11 @@ func SaveBrNode(child *goquery.Selection, content huxiu.Content) huxiu.Content {
 /**
 保存图片
 */
-func SaveImgNode(child *goquery.Selection, content huxiu.Content) huxiu.Content {
+func SaveImgNode(child *goquery.Selection, content normal_news.Content) normal_news.Content {
 	if len(child.Nodes) > 0 {
 		if child.Nodes[0] != nil {
 			if child.Nodes[0].DataAtom == atom.Img {
-				content = saveContent(content, func(contendDetail *huxiu.ContentDetail) {
+				content = saveContent(content, func(contendDetail *normal_news.ContentDetail) {
 					contendDetail.ContentType = detailType.IMG //图片类型
 					contendDetail.TextStyle = detailText.Img
 					img, exist := child.Attr("src")
@@ -93,11 +93,11 @@ func SaveImgNode(child *goquery.Selection, content huxiu.Content) huxiu.Content 
 保存特殊的具有样式的文本
 譬如：span/b/..
 */
-func SaveSpecialText(child *goquery.Selection, content huxiu.Content) huxiu.Content {
+func SaveSpecialText(child *goquery.Selection, content normal_news.Content) normal_news.Content {
 
 	firstNode := GetFirstNode(child)
 
-	content = saveContent(content, func(contendDetail *huxiu.ContentDetail) {
+	content = saveContent(content, func(contendDetail *normal_news.ContentDetail) {
 		//处理特殊样式信息
 		if firstNode != nil {
 			if firstNode.DataAtom == atom.Span {
@@ -140,8 +140,8 @@ func GetFirstNode(child *goquery.Selection) *html.Node {
 	return child.Nodes[0]
 }
 
-func saveContent(content huxiu.Content, setContentInfo func(contendDetail *huxiu.ContentDetail)) huxiu.Content {
-	contendDetail := huxiu.ContentDetail{}
+func saveContent(content normal_news.Content, setContentInfo func(contendDetail *normal_news.ContentDetail)) normal_news.Content {
+	contendDetail := normal_news.ContentDetail{}
 
 	setContentInfo(&contendDetail)
 

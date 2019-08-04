@@ -3,12 +3,12 @@ package huxiu
 import (
 	"GolangStudy/GolangStudy/go_study_20190617/collectors/redis_utils"
 	"GolangStudy/GolangStudy/go_study_20190617/modles/huxiu"
+	"GolangStudy/GolangStudy/go_study_20190617/modles/normal_news"
 	"encoding/json"
 	"fmt"
 	"github.com/PuerkitoBio/goquery"
 	"github.com/gocolly/colly"
 	"github.com/gomodule/redigo/redis"
-	"os"
 	"regexp"
 	"strconv"
 	"strings"
@@ -22,7 +22,7 @@ const MAIN_URL = "https://wwww.huxiu.com/"
 var page = 1
 var lastDateline = ""
 
-func HuxiuSpider(conn redis.Conn) {
+func HuxiuSpider(conn redis.Conn,onSpiderFinish func()) {
 	startUrl := MAIN_URL
 
 	////使用代理
@@ -82,7 +82,7 @@ func HuxiuSpider(conn redis.Conn) {
 				return
 			}
 
-			author := huxiu.Author{}
+			author := normal_news.Author{}
 
 			// /member/1854035.html 查找AuthorId
 			re, _ := regexp.Compile("[0-9]+")
@@ -131,7 +131,7 @@ func HuxiuSpider(conn redis.Conn) {
 
 			timeStr = strconv.FormatInt(stamp.Unix(), 10)
 
-			categorys := make([]huxiu.Category, 0)
+			categorys := make([]normal_news.Category, 0)
 			div_category.Each(func(i int, selection *goquery.Selection) {
 				categoryName := selection.Text()
 				categoryLink, exist := selection.Attr("href")
@@ -144,7 +144,7 @@ func HuxiuSpider(conn redis.Conn) {
 				for i, _ := range all {
 					categoryId = string(all[i])
 				}
-				category := huxiu.Category{}
+				category := normal_news.Category{}
 				category.CategoryId = categoryId
 				category.CategoryName = categoryName
 				categorys = append(categorys, category)
@@ -158,7 +158,7 @@ func HuxiuSpider(conn redis.Conn) {
 				newsId = string(all[i])
 			}
 
-			news := huxiu.HuxiuNews{
+			news := normal_news.News{
 				NewsId:     newsId,
 				Title:      title,
 				NewsLink:   e.Request.AbsoluteURL(newsLink),
@@ -241,7 +241,7 @@ func HuxiuSpider(conn redis.Conn) {
 				return
 			}
 
-			author := huxiu.Author{}
+			author := normal_news.Author{}
 
 			// /member/1854035.html 查找AuthorId
 			re, _ := regexp.Compile("[0-9]+")
@@ -286,12 +286,12 @@ func HuxiuSpider(conn redis.Conn) {
 			threeDaysBefore:=time.Now().AddDate(0,0,-3)
 			if stamp.Before(threeDaysBefore) {
 				fmt.Println("三天内文章爬取完毕！")
-				os.Exit(0)
+				onSpiderFinish()
 			}
 
 			timeStr = strconv.FormatInt(stamp.Unix(), 10)
 
-			categorys := make([]huxiu.Category, 0)
+			categorys := make([]normal_news.Category, 0)
 			div_category.Each(func(i int, selection *goquery.Selection) {
 				categoryName := selection.Text()
 				categoryLink, exist := selection.Attr("href")
@@ -304,7 +304,7 @@ func HuxiuSpider(conn redis.Conn) {
 				for i, _ := range all {
 					categoryId = string(all[i])
 				}
-				category := huxiu.Category{}
+				category := normal_news.Category{}
 				category.CategoryId = categoryId
 				category.CategoryName = categoryName
 				categorys = append(categorys, category)
@@ -318,7 +318,7 @@ func HuxiuSpider(conn redis.Conn) {
 				newsId = string(all[i])
 			}
 
-			news := huxiu.HuxiuNews{
+			news := normal_news.News{
 				NewsId:     newsId,
 				Title:      title,
 				NewsLink:   response.Request.AbsoluteURL(newsLink),
@@ -328,7 +328,7 @@ func HuxiuSpider(conn redis.Conn) {
 				ImgLink:    imgLink,
 				Categorys:  categorys,
 			}
-			//fmt.Println(news.Title)
+			//fmt.Println(normal_news.Title)
 
 			jsonBytes, err := json.Marshal(&news)
 			if err != nil {

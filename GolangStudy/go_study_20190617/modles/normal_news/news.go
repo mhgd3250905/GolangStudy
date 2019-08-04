@@ -1,8 +1,8 @@
-package huxiu
+package normal_news
 
 import "bytes"
 
-type HuxiuNews struct {
+type News struct {
 	NewsId     string     `json:"news_id"`
 	Title      string     `json:"title"`
 	NewsLink   string     `json:"news_link"`
@@ -43,7 +43,7 @@ func (this *ContentDetail) AppendContent(text string) {
 	this.ContentDetail = buffer.String()
 }
 
-type HuxiuDetail struct {
-	HuxiuNews HuxiuNews `json:"huxiu_news"`
+type NewsDetail struct {
+	HuxiuNews News      `json:"huxiu_news"`
 	Contents  []Content `json:"contents""`
 }

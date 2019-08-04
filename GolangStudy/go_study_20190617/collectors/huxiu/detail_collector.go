@@ -4,7 +4,7 @@ import (
 	"GolangStudy/GolangStudy/go_study_20190617/collectors/parse"
 	"GolangStudy/GolangStudy/go_study_20190617/collectors/redis_utils"
 	"GolangStudy/GolangStudy/go_study_20190617/modles/detailContainerType"
-	"GolangStudy/GolangStudy/go_study_20190617/modles/huxiu"
+	"GolangStudy/GolangStudy/go_study_20190617/modles/normal_news"
 	"encoding/json"
 	"fmt"
 	"github.com/PuerkitoBio/goquery"
@@ -15,7 +15,7 @@ import (
 
 const DETAIL_URL = "https://wwww.huxiu.com/article/308860.html"
 
-func HuxiuDetailSpider(conn redis.Conn, news huxiu.HuxiuNews) {
+func HuxiuDetailSpider(conn redis.Conn, news normal_news.News) {
 	startUrl := news.NewsLink
 	//startUrl := DETAIL_URL
 
@@ -49,8 +49,8 @@ func HuxiuDetailSpider(conn redis.Conn, news huxiu.HuxiuNews) {
 	})
 
 	onHtmlFunc := func(e *colly.HTMLElement) {
-		detail := huxiu.HuxiuDetail{}
-		contents := make([]huxiu.Content, 0)
+		detail := normal_news.NewsDetail{}
+		contents := make([]normal_news.Content, 0)
 
 		//解析主要文本内容
 		contents = ParseContentChildRen(e.DOM, contents)
@@ -90,9 +90,9 @@ func HuxiuDetailSpider(conn redis.Conn, news huxiu.HuxiuNews) {
 	pageCollector.Visit(startUrl)
 }
 
-func ParseContentChildRen(divContent *goquery.Selection, contents []huxiu.Content) []huxiu.Content {
+func ParseContentChildRen(divContent *goquery.Selection, contents []normal_news.Content) []normal_news.Content {
 	divContent.Find("p").Each(func(i int, child *goquery.Selection) {
-		content := huxiu.Content{}
+		content := normal_news.Content{}
 		childFirstNode := parse.GetFirstNode(child)
 		parentFirstNode := parse.GetFirstNode(child.Parent())
 
@@ -111,7 +111,7 @@ func ParseContentChildRen(divContent *goquery.Selection, contents []huxiu.Conten
 	return contents
 }
 
-func ParseAtomP(p *goquery.Selection, content huxiu.Content) huxiu.Content {
+func ParseAtomP(p *goquery.Selection, content normal_news.Content) normal_news.Content {
 	if p.Children().Length() == 0 {
 		//保存单纯的文本内容
 		//具有特殊class的文字也需要特殊保存

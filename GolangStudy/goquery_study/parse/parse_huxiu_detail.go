@@ -1,7 +1,7 @@
 package parse
 
 import (
-	"GolangStudy/GolangStudy/go_study_20190617/modles/huxiu"
+	"GolangStudy/GolangStudy/go_study_20190617/modles/normal_news"
 	"github.com/PuerkitoBio/goquery"
 	"golang.org/x/net/html"
 )
@@ -10,8 +10,8 @@ import (
 保存基本文字
 没有任何样式的文字
 */
-func SaveNormalText(text string, contents []huxiu.Content) []huxiu.Content {
-	content := huxiu.Content{}
+func SaveNormalText(text string, contents []normal_news.Content) []normal_news.Content {
+	content := normal_news.Content{}
 	content.ContentType = "text"
 	//文字类型
 	content.AppendContent(text)
@@ -23,11 +23,11 @@ func SaveNormalText(text string, contents []huxiu.Content) []huxiu.Content {
 /**
 保存换行
 */
-func SaveBrNode(child *goquery.Selection, contents []huxiu.Content) []huxiu.Content {
+func SaveBrNode(child *goquery.Selection, contents []normal_news.Content) []normal_news.Content {
 	if len(child.Nodes) > 0 {
 		if child.Nodes[0] != nil {
 			if child.Nodes[0].Data == "br" {
-				content := huxiu.Content{}
+				content := normal_news.Content{}
 				content.ContentType = "text" //文字类型
 				content.AppendContent("\n")
 				content.TextStyle = "Br"
@@ -42,9 +42,9 @@ func SaveBrNode(child *goquery.Selection, contents []huxiu.Content) []huxiu.Cont
 保存特殊的具有样式的文本
 譬如：span/b/..
 */
-func SaveSpicalText(child *goquery.Selection, contents []huxiu.Content) []huxiu.Content {
+func SaveSpicalText(child *goquery.Selection, contents []normal_news.Content) []normal_news.Content {
 	firstNode := GetFirstNode(child)
-	content := huxiu.Content{}
+	content := normal_news.Content{}
 	content.ContentType = "text"
 	//文字类型
 	content.AppendContent(child.Text())

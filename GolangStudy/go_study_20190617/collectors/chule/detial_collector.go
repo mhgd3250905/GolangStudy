@@ -6,7 +6,7 @@ import (
 	"GolangStudy/GolangStudy/go_study_20190617/modles/detailContainerType"
 	"GolangStudy/GolangStudy/go_study_20190617/modles/detailText"
 	"GolangStudy/GolangStudy/go_study_20190617/modles/detailType"
-	"GolangStudy/GolangStudy/go_study_20190617/modles/huxiu"
+	"GolangStudy/GolangStudy/go_study_20190617/modles/normal_news"
 	"encoding/json"
 	"fmt"
 	"github.com/PuerkitoBio/goquery"
@@ -17,7 +17,7 @@ import (
 
 const KEY_CHULE_DETAIL_IN_REDIS ="chule_detail"
 
-func ChuleDetailSpider(conn redis.Conn, news huxiu.HuxiuNews) {
+func ChuleDetailSpider(conn redis.Conn, news normal_news.News) {
 	startUrl := news.NewsLink
 
 	//解析页面新闻条目收集器
@@ -43,8 +43,8 @@ func ChuleDetailSpider(conn redis.Conn, news huxiu.HuxiuNews) {
 	})
 
 	onHtmlFunc := func(e *colly.HTMLElement) {
-		detail := huxiu.HuxiuDetail{}
-		contents := make([]huxiu.Content, 0)
+		detail := normal_news.NewsDetail{}
+		contents := make([]normal_news.Content, 0)
 
 		//解析主要文本内容
 		contents = parseChuleContentChildRen(e.DOM, contents)
@@ -84,9 +84,9 @@ func ChuleDetailSpider(conn redis.Conn, news huxiu.HuxiuNews) {
 	pageCollector.Visit(startUrl)
 }
 
-func parseChuleContentChildRen(divContent *goquery.Selection, contents []huxiu.Content) []huxiu.Content {
+func parseChuleContentChildRen(divContent *goquery.Selection, contents []normal_news.Content) []normal_news.Content {
 	divContent.Children().Each(func(i int, child *goquery.Selection) {
-		content := huxiu.Content{}
+		content := normal_news.Content{}
 		childFirstNode := parse.GetFirstNode(child)
 		if childFirstNode.DataAtom == atom.Figure {
 			//解析图片
@@ -110,11 +110,11 @@ func parseChuleContentChildRen(divContent *goquery.Selection, contents []huxiu.C
 }
 
 //解析chule小标题
-func ParseChuleTitle(h3 *goquery.Selection) huxiu.Content {
+func ParseChuleTitle(h3 *goquery.Selection) normal_news.Content {
 	//保存标题内容
-	content := huxiu.Content{}
-	content.ContentDetails = make([]huxiu.ContentDetail, 0)
-	contentDetail := huxiu.ContentDetail{}
+	content := normal_news.Content{}
+	content.ContentDetails = make([]normal_news.ContentDetail, 0)
+	contentDetail := normal_news.ContentDetail{}
 	content.ContentContainerType = detailContainerType.Normal
 	contentDetail.ContentType = detailType.TEXT
 	contentDetail.ContentDetail = h3.Text()
@@ -124,14 +124,14 @@ func ParseChuleTitle(h3 *goquery.Selection) huxiu.Content {
 }
 
 //解析chule图片
-func ParseChuleImg(figure *goquery.Selection) []huxiu.Content {
-	results := make([]huxiu.Content, 0)
+func ParseChuleImg(figure *goquery.Selection) []normal_news.Content {
+	results := make([]normal_news.Content, 0)
 
 	img := figure.Find("img").First()
 	//保存图片内容
-	content := huxiu.Content{}
-	content.ContentDetails = make([]huxiu.ContentDetail, 0)
-	contentDetail := huxiu.ContentDetail{}
+	content := normal_news.Content{}
+	content.ContentDetails = make([]normal_news.ContentDetail, 0)
+	contentDetail := normal_news.ContentDetail{}
 	content.ContentContainerType = detailContainerType.Img
 	contentDetail.ContentType = detailType.IMG
 	contentDetail.ContentDetail = ""
@@ -145,9 +145,9 @@ func ParseChuleImg(figure *goquery.Selection) []huxiu.Content {
 
 	figcaption := figure.Find("figcaption").First()
 	//保存图片注释内容
-	content = huxiu.Content{}
-	content.ContentDetails = make([]huxiu.ContentDetail, 0)
-	contentDetail = huxiu.ContentDetail{}
+	content = normal_news.Content{}
+	content.ContentDetails = make([]normal_news.ContentDetail, 0)
+	contentDetail = normal_news.ContentDetail{}
 	content.ContentContainerType = detailContainerType.ImgNote
 	contentDetail.ContentType = detailType.TEXT
 	contentDetail.ContentDetail = figcaption.Text()
@@ -158,7 +158,7 @@ func ParseChuleImg(figure *goquery.Selection) []huxiu.Content {
 	return results
 }
 
-func parseChuleAtomP(p *goquery.Selection, content huxiu.Content) huxiu.Content {
+func parseChuleAtomP(p *goquery.Selection, content normal_news.Content) normal_news.Content {
 	if p.Children().Length() == 0 {
 		//保存单纯的文本内容
 		//具有特殊class的文字也需要特殊保存

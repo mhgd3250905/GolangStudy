@@ -15,8 +15,10 @@ const (
 	KEY_BOOK_IN_REDIS         = "book"
 	KEY_HUXIU_IN_REDIS        = "huxiu"
 	KEY_CHULE_IN_REDIS        = "chule"
+	KEY_IFANR_IN_REDIS        = "ifanr"
 	KEY_HUXIU_DETAIL_IN_REDIS = "huxiu_detail"
 	KEY_CHULE_DETAIL_IN_REDIS = "chule_detail"
+	KEY_IFANR_DETAIL_IN_REDIS = "ifanr_detail"
 )
 
 //定义一个全局的pool
@@ -128,7 +130,7 @@ func getNews(c *gin.Context) {
 		msg.Send(c)
 	} else {
 		//反序列化到数组中
-		if key == KEY_HUXIU_IN_REDIS || key == KEY_CHULE_IN_REDIS {
+		if key == KEY_HUXIU_IN_REDIS || key == KEY_CHULE_IN_REDIS || key == KEY_IFANR_IN_REDIS {
 			huxiuNewsList := make([]huxiu.HuxiuNews, 0)
 			for i, _ := range result {
 				huxiuNewsStr := result[i]
@@ -174,7 +176,7 @@ func getDetail(c *gin.Context) {
 		msg.Send(c)
 	} else {
 		//反序列化到数组中
-		if mapKey == KEY_HUXIU_DETAIL_IN_REDIS || mapKey == KEY_CHULE_DETAIL_IN_REDIS {
+		if mapKey == KEY_HUXIU_DETAIL_IN_REDIS || mapKey == KEY_CHULE_DETAIL_IN_REDIS || mapKey == KEY_IFANR_DETAIL_IN_REDIS {
 			detailList := make([]huxiu.HuxiuDetail, 0)
 			for i, _ := range result {
 				huxiuDetailStr := result[i]

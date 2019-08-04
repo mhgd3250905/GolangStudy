@@ -2,7 +2,7 @@ package chule
 
 import (
 	"GolangStudy/GolangStudy/go_study_20190617/collectors/redis_utils"
-	"GolangStudy/GolangStudy/go_study_20190617/modles/huxiu"
+	"GolangStudy/GolangStudy/go_study_20190617/modles/normal_news"
 	"encoding/json"
 	"fmt"
 	"github.com/PuerkitoBio/goquery"
@@ -59,7 +59,7 @@ func ChuleSpider(conn redis.Conn) {
 	pageCollector.OnHTML(newsItemSelectorStr, func(e *colly.HTMLElement) {
 		//解析新闻条目
 		e.DOM.Each(func(i int, a *goquery.Selection) {
-			news := huxiu.HuxiuNews{}
+			news := normal_news.News{}
 
 			link, exist := a.Attr("href")
 			if !exist {
@@ -106,12 +106,12 @@ func ChuleSpider(conn redis.Conn) {
 
 			timeStr = strconv.FormatInt(stamp.Unix(), 10)
 
-			news.Author = huxiu.Author{
+			news.Author = normal_news.Author{
 				AuthorName: authorName,
 				AuthorId:   "",
 				AuthorImg:  "",
 			}
-			//news.Categorys = nil
+			//normal_news.Categorys = nil
 			news.CreateTime = timeStr
 			news.Desc = desc
 			news.ImgLink = imgLink

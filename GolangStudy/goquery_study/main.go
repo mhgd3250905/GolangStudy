@@ -2,7 +2,7 @@ package main
 
 import (
 
-	"GolangStudy/GolangStudy/go_study_20190617/modles/huxiu"
+	"GolangStudy/GolangStudy/go_study_20190617/modles/normal_news"
 	"GolangStudy/GolangStudy/goquery_study/parse"
 	"GolangStudy/GolangStudy/goquery_study/res_str"
 	"fmt"
@@ -27,8 +27,8 @@ func main() {
 	}
 	//fmt.Println(dom.Find("p").Text())
 
-	detail := huxiu.HuxiuDetail{}
-	contents := make([]huxiu.Content, 0)
+	detail := normal_news.NewsDetail{}
+	contents := make([]normal_news.Content, 0)
 
 	divContent := dom.Find("#article_cstaontent307896").First()
 
