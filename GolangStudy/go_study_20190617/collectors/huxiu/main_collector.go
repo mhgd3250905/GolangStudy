@@ -16,13 +16,14 @@ import (
 )
 
 const KEY_HUXIU_IN_REDIS = "huxiu"
+const KEY_HUXIU_INFO_IN_REDIS = "huxiu_info"
 const KEY_HUXIU_DETIAL_IN_REDIS = "huxiu_detail"
 const MAIN_URL = "https://wwww.huxiu.com/"
 
 var page = 1
 var lastDateline = ""
 
-func HuxiuSpider(conn redis.Conn,onSpiderFinish func()) {
+func HuxiuSpider(conn redis.Conn, onSpiderFinish func()) {
 	startUrl := MAIN_URL
 
 	////使用代理
@@ -122,7 +123,7 @@ func HuxiuSpider(conn redis.Conn,onSpiderFinish func()) {
 			stamp, _ := time.ParseInLocation(timeTemplate1, timeStr[:16], time.Local)
 
 			//仅仅获取最近三天的数据
-			threeDaysBefore:=time.Now().AddDate(0,0,-3)
+			threeDaysBefore := time.Now().AddDate(0, 0, -3)
 			if stamp.Before(threeDaysBefore) {
 				return
 			}
@@ -175,7 +176,8 @@ func HuxiuSpider(conn redis.Conn,onSpiderFinish func()) {
 				return
 			}
 
-			err = redis_utils.Push2RedisSortedSet(conn, KEY_HUXIU_IN_REDIS, news.CreateTime, string(jsonBytes))
+			err = redis_utils.Push2RedisSortedSet(conn, news.NewsId, KEY_HUXIU_IN_REDIS, KEY_HUXIU_INFO_IN_REDIS, news.CreateTime, string(jsonBytes))
+
 			if err != nil {
 				fmt.Printf("%v push2RedisList failed,err= %v\n", title, err)
 				return
@@ -283,7 +285,7 @@ func HuxiuSpider(conn redis.Conn,onSpiderFinish func()) {
 			//fmt.Println(stamp)
 
 			//仅仅获取最近三天的数据
-			threeDaysBefore:=time.Now().AddDate(0,0,-3)
+			threeDaysBefore := time.Now().AddDate(0, 0, -3)
 			if stamp.Before(threeDaysBefore) {
 				fmt.Println("三天内文章爬取完毕！")
 				onSpiderFinish()
@@ -336,7 +338,7 @@ func HuxiuSpider(conn redis.Conn,onSpiderFinish func()) {
 				return
 			}
 
-			err = redis_utils.Push2RedisSortedSet(conn, KEY_HUXIU_IN_REDIS, news.CreateTime, string(jsonBytes))
+			err = redis_utils.Push2RedisSortedSet(conn, news.NewsId, KEY_HUXIU_IN_REDIS, KEY_HUXIU_INFO_IN_REDIS, news.CreateTime, string(jsonBytes))
 			if err != nil {
 				fmt.Printf("%v push2RedisList failed,err= %v\n", title, err)
 				return

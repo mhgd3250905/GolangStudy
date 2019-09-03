@@ -12,7 +12,8 @@ import (
 	"time"
 )
 
-const KEY_CHULE_IN_IFANR = "ifanr"
+const KEY_IFANR_REDIS = "ifanr"
+const KEY_IFANR_INFO_REDIS = "ifanr_info"
 const MAIN_URL = "https://www.ifanr.com/"
 
 const JSON_URL = "https://sso.ifanr.com//api/v5/wp/web-feed/?limit=%d&offset=%d"
@@ -22,7 +23,7 @@ var count = 20
 
 var index = 0
 
-func ChuleSpider(conn redis.Conn,onSpiderFinish func()) {
+func IfanrSpider(conn redis.Conn,onSpiderFinish func()) {
 	startUrl := fmt.Sprintf(JSON_URL, count, page*count)
 
 	//解析页面新闻条目收集器
@@ -94,7 +95,7 @@ func ChuleSpider(conn redis.Conn,onSpiderFinish func()) {
 				return
 			}
 
-			err = redis_utils.Push2RedisSortedSet(conn, KEY_CHULE_IN_IFANR, news.CreateTime, string(jsonBytes))
+			err = redis_utils.Push2RedisSortedSet(conn,news.NewsId, KEY_IFANR_REDIS,KEY_IFANR_INFO_REDIS, news.CreateTime, string(jsonBytes))
 			if err != nil {
 				fmt.Printf("%v push2RedisList failed,err= %v\n", news.Title, err)
 				return
@@ -188,7 +189,7 @@ func ChuleSpider(conn redis.Conn,onSpiderFinish func()) {
 	//			return
 	//		}
 	//
-	//		err = redis_utils.Push2RedisSortedSet(conn, KEY_CHULE_IN_IFANR, normal_news.CreateTime, string(jsonBytes))
+	//		err = redis_utils.Push2RedisSortedSet(conn, KEY_IFANR_REDIS, normal_news.CreateTime, string(jsonBytes))
 	//		if err != nil {
 	//			fmt.Printf("%v push2RedisList failed,err= %v\n", title, err)
 	//			return

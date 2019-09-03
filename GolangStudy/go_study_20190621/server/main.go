@@ -2,7 +2,6 @@ package main
 
 import (
 	"GolangStudy/GolangStudy/go_study_20190621/modle"
-	"GolangStudy/GolangStudy/go_study_20190621/modle/bookSet"
 	"GolangStudy/GolangStudy/go_study_20190621/modle/huxiu"
 	"encoding/json"
 	"github.com/gin-gonic/gin"
@@ -11,11 +10,12 @@ import (
 )
 
 const (
-	KEY_BOOK_DETAIL_IN_REDIS  = "book_detail"
-	KEY_BOOK_IN_REDIS         = "book"
 	KEY_HUXIU_IN_REDIS        = "huxiu"
+	KEY_HUXIU_INFO_IN_REDIS   = "huxiu_info"
 	KEY_CHULE_IN_REDIS        = "chule"
+	KEY_CHULE_INFO_IN_REDIS   = "chule_info"
 	KEY_IFANR_IN_REDIS        = "ifanr"
+	KEY_IFANR_INFO_IN_REDIS   = "ifanr_info"
 	KEY_HUXIU_DETAIL_IN_REDIS = "huxiu_detail"
 	KEY_CHULE_DETAIL_IN_REDIS = "chule_detail"
 	KEY_IFANR_DETAIL_IN_REDIS = "ifanr_detail"
@@ -47,70 +47,9 @@ func main() {
 			"message": "pong",
 		})
 	})
-	r.GET("/spider/bookset/:key", getBooks)
 	r.GET("/spider/news/:key", getNews)
 	r.GET("/spider/detail/:mapKey/:key", getDetail)
 	r.Run(":80")
-}
-
-func getBooks(c *gin.Context) {
-	key := c.Param("key")
-	start := c.DefaultQuery("start", "0")
-	end := c.Query("end")
-
-	//获取结果
-	result, err := redis.Strings(conn.Do("lrange", key, start, end))
-
-	if err != nil {
-		msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_FAILED,
-			Error: err.Error(),
-			Data:  "",
-		}
-		msg.Send(c)
-	} else {
-		//反序列化到数组中
-		if key == KEY_BOOK_IN_REDIS {
-			books := make([]bookSet.Book, 0)
-			for i, _ := range result {
-				bookStr := result[i]
-				book := bookSet.Book{}
-				json.Unmarshal([]byte(bookStr), &book)
-				books = append(books, book)
-			}
-			//设置到消息类中
-			msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_SUCCESS,
-				Error: "",
-				Data:  books}
-			msg.Send(c)
-		} else if key == KEY_BOOK_DETAIL_IN_REDIS {
-			bookDetails := make([]bookSet.BookDetail, 0)
-			for i, _ := range result {
-				bookDetailStr := result[i]
-				bookDetail := bookSet.BookDetail{}
-				json.Unmarshal([]byte(bookDetailStr), &bookDetail)
-				bookDetails = append(bookDetails, bookDetail)
-			}
-			//设置到消息类中
-			msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_SUCCESS,
-				Error: "",
-				Data:  bookDetails}
-			msg.Send(c)
-		} else if key == KEY_HUXIU_IN_REDIS {
-			huxiuNewsList := make([]huxiu.HuxiuNews, 0)
-			for i, _ := range result {
-				huxiuNewsStr := result[i]
-				huxiu := huxiu.HuxiuNews{}
-				json.Unmarshal([]byte(huxiuNewsStr), &huxiu)
-				huxiuNewsList = append(huxiuNewsList, huxiu)
-			}
-			//设置到消息类中
-			msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_SUCCESS,
-				Error: "",
-				Data:  huxiuNewsList}
-			msg.Send(c)
-		}
-
-	}
 }
 
 func getNews(c *gin.Context) {
@@ -122,6 +61,34 @@ func getNews(c *gin.Context) {
 	//ZRANGE w3ckey 0 10 WITHSCORES
 	result, err := redis.Strings(conn.Do("ZREVRANGE", key, start, end))
 
+	//取出来的是一串id,要分别获取保存的信息
+	infoKey := KEY_HUXIU_INFO_IN_REDIS
+	if key == KEY_HUXIU_IN_REDIS {
+
+		infoKey = KEY_HUXIU_INFO_IN_REDIS
+
+	} else if key == KEY_CHULE_IN_REDIS {
+
+		infoKey = KEY_CHULE_INFO_IN_REDIS
+
+	} else if key == KEY_IFANR_IN_REDIS {
+
+		infoKey = KEY_IFANR_INFO_IN_REDIS
+
+	}
+
+	var id string
+	var newsInfo string
+	newsInfoArr := make([]string, 0)
+	for i, _ := range result {
+		id = result[i]
+		newsInfo, err = redis.String(conn.Do("HGET", infoKey, id))
+		if err != nil {
+			continue
+		}
+		newsInfoArr = append(newsInfoArr, newsInfo)
+	}
+
 	if err != nil {
 		msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_FAILED,
 			Error: err.Error(),
@@ -132,8 +99,8 @@ func getNews(c *gin.Context) {
 		//反序列化到数组中
 		if key == KEY_HUXIU_IN_REDIS || key == KEY_CHULE_IN_REDIS || key == KEY_IFANR_IN_REDIS {
 			huxiuNewsList := make([]huxiu.HuxiuNews, 0)
-			for i, _ := range result {
-				huxiuNewsStr := result[i]
+			for i, _ := range newsInfoArr {
+				huxiuNewsStr := newsInfoArr[i]
 				huxiu := huxiu.HuxiuNews{}
 				json.Unmarshal([]byte(huxiuNewsStr), &huxiu)
 				huxiuNewsList = append(huxiuNewsList, huxiu)
@@ -145,8 +112,8 @@ func getNews(c *gin.Context) {
 			msg.Send(c)
 		} else if key == KEY_HUXIU_DETAIL_IN_REDIS {
 			detailList := make([]huxiu.HuxiuDetail, 0)
-			for i, _ := range result {
-				huxiuDetailStr := result[i]
+			for i, _ := range newsInfoArr {
+				huxiuDetailStr := newsInfoArr[i]
 				detail := huxiu.HuxiuDetail{}
 				json.Unmarshal([]byte(huxiuDetailStr), &detail)
 				detailList = append(detailList, detail)

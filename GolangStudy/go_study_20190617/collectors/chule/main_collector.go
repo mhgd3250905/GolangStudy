@@ -14,6 +14,7 @@ import (
 )
 
 const KEY_CHULE_IN_REDIS = "chule"
+const KEY_CHULE_INFO_IN_REDIS = "chule_info"
 //const MAIN_URL = "http://www.chuapp.com/category/daily"
 //const MAIN_URL = "http://www.chuapp.com/category/pcz"
 //const MAIN_URL = "http://www.chuapp.com/tag/index/id/20369.html"
@@ -125,7 +126,7 @@ func ChuleSpider(conn redis.Conn) {
 				return
 			}
 
-			err = redis_utils.Push2RedisSortedSet(conn, KEY_CHULE_IN_REDIS, news.CreateTime, string(jsonBytes))
+			err = redis_utils.Push2RedisSortedSet(conn,news.NewsId, KEY_CHULE_IN_REDIS,KEY_CHULE_INFO_IN_REDIS, news.CreateTime, string(jsonBytes))
 			if err != nil {
 				fmt.Printf("%v push2RedisList failed,err= %v\n", title, err)
 				return

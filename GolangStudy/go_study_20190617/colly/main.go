@@ -8,8 +8,15 @@ import (
 	"os"
 )
 
+//关于redis数据库的定义如下：
+//爬取的列表id保存在一个set中
+//id对应的基本信息以key-value进行保存
+//id对应的详情以key-value进行保存
+//希望以这种方式保证达到去重复的效果
+
 //定义一个全局的pool
 var pool *redis.Pool
+
 
 
 func init() {
@@ -41,7 +48,7 @@ func main() {
 }
 
 func OnHuxiuSpiderFinish(){
-	ifanr.ChuleSpider(conn,OnIfanrSpiderFinish)
+	ifanr.IfanrSpider(conn,OnIfanrSpiderFinish)
 }
 
 func OnIfanrSpiderFinish(){
