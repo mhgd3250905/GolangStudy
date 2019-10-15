@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d7e2263-ed8d-4c11-a034-a998b514d6a1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/go_study_20190617/collectors/comic/book_collector.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go_study_20190617/collectors/comic/chapter_collector.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go_study_20190617/collectors/pentaq/main_collector.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go_study_20190617/modles/comic/comic_spider.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go_study_20190617/modles/pentaq/pentaq_spider.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go_study_20190617/collectors/ifanr/main_collector.go" beforeDir="false" afterPath="$PROJECT_DIR$/go_study_20190617/collectors/ifanr/main_collector.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go_study_20190617/colly/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/go_study_20190617/colly/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_study_20190617/collectors/comic/book_collector.go" beforeDir="false" afterPath="$PROJECT_DIR$/go_study_20190617/collectors/comic/book_collector.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_study_20190617/modles/comic/comic_spider.go" beforeDir="false" afterPath="$PROJECT_DIR$/go_study_20190617/modles/comic/comic_spider.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,41 +14,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic/book_collector.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2289">
-              <caret line="116" column="17" selection-start-line="116" selection-start-column="17" selection-end-line="116" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic/chapter_collector.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="597">
+              <caret line="145" column="27" selection-start-line="145" selection-start-column="23" selection-end-line="145" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/huxiu/detail_collector.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1848">
-              <caret line="99" column="27" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="27" />
-              <folding>
-                <element signature="e#15#443#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/redis_utils/redis_utils.go">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/huxiu/main_collector.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7329">
-              <caret line="362" selection-start-line="362" selection-end-line="362" />
+            <state relative-caret-position="6657">
+              <caret line="330" column="36" selection-start-line="330" selection-start-column="36" selection-end-line="330" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go_study_20190617/modles/normal_news/news.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="14" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go_study_20190617/modles/comic/comic_spider.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic/chapter_collector.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2037">
+              <caret line="107" selection-start-line="107" selection-end-line="107" />
             </state>
           </provider>
         </entry>
@@ -63,20 +69,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="798">
               <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go_study_20190502/testMyAccount.go">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go_study_20190607/http_client/main.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -196,10 +188,10 @@
         <option value="$PROJECT_DIR$/go_study_20190617/collectors/ifanr/main_collector.go" />
         <option value="$PROJECT_DIR$/go_study_20190617/modles/pentaq/pentaq_spider.go" />
         <option value="$PROJECT_DIR$/go_study_20190617/collectors/pentaq/main_collector.go" />
-        <option value="$PROJECT_DIR$/go_study_20190617/modles/comic/comic_spider.go" />
         <option value="$PROJECT_DIR$/go_study_20190617/collectors/comic/item_collector.go" />
         <option value="$PROJECT_DIR$/go_study_20190617/collectors/comic/chapter_collector.go" />
         <option value="$PROJECT_DIR$/go_study_20190617/colly/main.go" />
+        <option value="$PROJECT_DIR$/go_study_20190617/modles/comic/comic_spider.go" />
         <option value="$PROJECT_DIR$/go_study_20190617/collectors/comic/book_collector.go" />
       </list>
     </option>
@@ -211,7 +203,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1187" />
     <option name="height" value="1040" />
   </component>
@@ -249,46 +241,6 @@
               <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
               <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
               <item name="go_study_20190504" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="go_study_20190514" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="go_study_20190514" type="462c0819:PsiDirectoryNode" />
-              <item name="chatroom" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="go_study_20190514" type="462c0819:PsiDirectoryNode" />
-              <item name="chatroom" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="go_study_20190514" type="462c0819:PsiDirectoryNode" />
-              <item name="chatroom" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="go_study_20190514" type="462c0819:PsiDirectoryNode" />
-              <item name="chatroom" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="go_study_20190514" type="462c0819:PsiDirectoryNode" />
-              <item name="chatroom" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
@@ -557,10 +509,11 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17750533" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17217484" />
       <window_info id="Structure" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" weight="0.3295583" />
       <window_info anchor="bottom" id="Version Control" order="1" />
@@ -568,7 +521,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32616082" />
       <window_info anchor="bottom" id="Run" order="5" weight="0.48387095" />
-      <window_info anchor="bottom" id="Debug" order="6" weight="0.3737486" />
+      <window_info anchor="bottom" id="Debug" order="6" visible="true" weight="0.3737486" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="9" />
@@ -614,13 +567,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/go_study_20190617/collectors/comic/book_collector.go</url>
-          <line>27</line>
+          <line>35</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/go_study_20190617/collectors/comic/book_collector.go</url>
-          <line>109</line>
+          <line>139</line>
           <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/go_study_20190617/collectors/comic/book_collector.go</url>
+          <line>72</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -670,13 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../github.com/PuerkitoBio/goquery/property.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="81" selection-start-line="81" selection-end-line="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../github.com/PuerkitoBio/goquery/iteration.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -696,20 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2898">
           <caret line="145" column="34" selection-start-line="145" selection-start-column="34" selection-end-line="145" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/redis_utils/redis_utils.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go_study_20190617/modles/normal_news/news.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -783,17 +720,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go_study_20190617/modles/comic/comic_spider.go">
+    <entry file="file://$PROJECT_DIR$/go_study_20190502/testMyAccount.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go_study_20190607/http_client/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        <state relative-caret-position="336">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic/book_collector.go">
+    <entry file="file://$PROJECT_DIR$/../../github.com/PuerkitoBio/goquery/property.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2289">
-          <caret line="116" column="17" selection-start-line="116" selection-start-column="17" selection-end-line="116" selection-end-column="17" />
+        <state relative-caret-position="1155">
+          <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -809,8 +749,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/huxiu/main_collector.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7329">
-          <caret line="362" selection-start-line="362" selection-end-line="362" />
+        <state relative-caret-position="6657">
+          <caret line="330" column="36" selection-start-line="330" selection-start-column="36" selection-end-line="330" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go_study_20190617/modles/normal_news/news.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go_study_20190617/modles/comic/comic_spider.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic/chapter_collector.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2037">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
         </state>
       </provider>
     </entry>
@@ -818,16 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="798">
           <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go_study_20190502/testMyAccount.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go_study_20190607/http_client/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -852,10 +803,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic/chapter_collector.go">
+    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/redis_utils/redis_utils.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic/book_collector.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="597">
+          <caret line="145" column="27" selection-start-line="145" selection-start-column="23" selection-end-line="145" selection-end-column="27" />
         </state>
       </provider>
     </entry>

@@ -3,8 +3,9 @@ package comic
 
 
 type ComicBook struct {
-	Id int `json:"id"`
+	Id string `json:"id"`
 	Name string `json:"name"`
+	Desc string `json:"desc"`
 	ImageLink string `json:"image_link"`
 	Chapters []Chapter `json:"chapters"`
 }
