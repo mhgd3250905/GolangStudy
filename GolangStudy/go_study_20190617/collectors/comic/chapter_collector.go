@@ -1,6 +1,7 @@
 package comic
 
 import (
+	"GolangStudy/GolangStudy/go_study_20190617/collectors/redis_utils"
 	"GolangStudy/GolangStudy/go_study_20190617/modles/comic"
 	"fmt"
 	"github.com/gocolly/colly"
@@ -98,14 +99,16 @@ func ChapterSpider(chapter comic.Chapter,conn redis.Conn, onSpiderFinish func())
 		if err != nil {
 			panic(err)
 		}
-		f, err := os.Create(fmt.Sprintf("%s/%s.png",dirPath,imageName))
+
+		imagePath:=fmt.Sprintf("%s/%s.png",dirPath,imageName)
+
+		f, err := os.Create(imagePath)
 		if err != nil {
 			panic(err)
 		}
 		_,err=io.Copy(f, res.Body)
 		if err == nil {
 			fmt.Printf("保存图片 %s 成功\n",imageName)
-
 			if hasNextPage {
 				chapter.ChapterUrl=e.Request.AbsoluteURL(nextUrl)
 				ChapterSpider(chapter,conn,onSpiderFinish)
@@ -114,6 +117,15 @@ func ChapterSpider(chapter comic.Chapter,conn redis.Conn, onSpiderFinish func())
 			}
 		}
 
+		//把id保存到一个序列里面
+		//把内容保存到一个hashMap里
+		err = redis_utils.SaveList(conn,chapter.ChapterId,imagePath)
+		if err != nil {
+			fmt.Printf("%v SaveList failed,err= %v\n", chapter.Name, err)
+			return
+		} else {
+			fmt.Printf("%s 保存漫画基本信息完毕\n", chapter.Name)
+		}
 	})
 
 	chapterCollector.OnScraped(func(response *colly.Response) {

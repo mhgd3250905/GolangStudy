@@ -25,3 +25,9 @@ func SaveNewsId(c redis.Conn, key string, score string, newsId string) (err erro
 	_, err = c.Do("ZADD", key, score, newsId)
 	return
 }
+
+
+func SaveList(c redis.Conn, key string, item string) (err error) {
+	_, err = c.Do("RPUSH", key, item)
+	return
+}

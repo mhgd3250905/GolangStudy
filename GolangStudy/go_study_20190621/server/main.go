@@ -2,6 +2,7 @@ package main
 
 import (
 	"GolangStudy/GolangStudy/go_study_20190621/modle"
+	"GolangStudy/GolangStudy/go_study_20190621/modle/comic"
 	"GolangStudy/GolangStudy/go_study_20190621/modle/huxiu"
 	"encoding/json"
 	"github.com/gin-gonic/gin"
@@ -19,6 +20,9 @@ const (
 	KEY_HUXIU_DETAIL_IN_REDIS = "huxiu_detail"
 	KEY_CHULE_DETAIL_IN_REDIS = "chule_detail"
 	KEY_IFANR_DETAIL_IN_REDIS = "ifanr_detail"
+
+	KEY_COMIC_BOOK_ID_IN_REDIS   = "COMIC_BOOK_ID"
+	KEY_COMIC_BOOK_INFO_IN_REDIS = "COMIC_BOOK_INFO"
 )
 
 //定义一个全局的pool
@@ -49,7 +53,9 @@ func main() {
 	})
 	r.GET("/spider/news/:key", getNews)
 	r.GET("/spider/detail/:mapKey/:key", getDetail)
-	r.Run(":80")
+	r.GET("/spider/comic/book", getComicList)
+	r.GET("/spider/comic/chapter", getChapterInfo)
+	r.Run(":8080")
 }
 
 func getNews(c *gin.Context) {
@@ -159,4 +165,99 @@ func getDetail(c *gin.Context) {
 		}
 
 	}
+}
+
+func getComicList(c *gin.Context) {
+	start := c.DefaultQuery("start", "0")
+	end := c.Query("end")
+
+	//获取结果
+	//ZRANGE w3ckey 0 10 WITHSCORES
+	result, err := redis.Strings(conn.Do("ZREVRANGE", KEY_COMIC_BOOK_ID_IN_REDIS, start, end))
+
+	//取出来的是一串id,要分别获取保存的信息
+	infoKey := KEY_COMIC_BOOK_INFO_IN_REDIS
+
+	var id string
+	var newsInfo string
+	comicInfoArr := make([]string, 0)
+	for i, _ := range result {
+		id = result[i]
+		newsInfo, err = redis.String(conn.Do("HGET", infoKey, id))
+		if err != nil {
+			continue
+		}
+		comicInfoArr = append(comicInfoArr, newsInfo)
+	}
+
+	if err != nil {
+		msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_FAILED,
+			Error: err.Error(),
+			Data:  "",
+		}
+		msg.Send(c)
+	} else {
+		//反序列化到数组中
+
+		comicList := make([]comic.ComicBook, 0)
+		for i, _ := range comicInfoArr {
+			comicStr := comicInfoArr[i]
+			comic := comic.ComicBook{}
+			json.Unmarshal([]byte(comicStr), &comic)
+			comicList = append(comicList, comic)
+		}
+		//设置到消息类中
+		msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_SUCCESS,
+			Error: "",
+			Data:  comicList}
+		msg.Send(c)
+	}
+
+}
+
+func getChapterInfo(c *gin.Context) {
+
+	id := c.Query("id")
+
+	//获取结果
+	//ZRANGE w3ckey 0 10 WITHSCORES
+	result, err := redis.Strings(conn.Do("LRANGE", id, "0", "-1"))
+
+	////取出来的是一串id,要分别获取保存的信息
+	//infoKey := KEY_COMIC_BOOK_INFO_IN_REDIS
+	//
+	//var newsInfo string
+	//comicInfoArr := make([]string, 0)
+	//for i, _ := range result {
+	//	id = result[i]
+	//	newsInfo, err = redis.String(conn.Do("HGET", infoKey, id))
+	//	if err != nil {
+	//		continue
+	//	}
+	//	comicInfoArr = append(comicInfoArr, newsInfo)
+	//}
+
+	if err != nil {
+		msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_FAILED,
+			Error: err.Error(),
+			Data:  "",
+		}
+		msg.Send(c)
+	} else {
+		//反序列化到数组中
+
+		//comicList := make([]comic.ComicBook, 0)
+		//for i, _ := range comicInfoArr {
+		//	comicStr := comicInfoArr[i]
+		//	comic := comic.ComicBook{}
+		//	json.Unmarshal([]byte(comicStr), &comic)
+		//	comicList = append(comicList, comic)
+		//}
+		//设置到消息类中
+		msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_SUCCESS,
+			Error: "",
+			Data:  result}
+		msg.Send(c)
+	}
+
 }
