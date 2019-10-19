@@ -55,6 +55,7 @@ func main() {
 	r.GET("/spider/detail/:mapKey/:key", getDetail)
 	r.GET("/spider/comic/book", getComicList)
 	r.GET("/spider/comic/chapter", getChapterInfo)
+	r.GET("/spider/comic/chapter/image", getChapterImage)
 	r.Run(":8080")
 }
 
@@ -260,4 +261,10 @@ func getChapterInfo(c *gin.Context) {
 		msg.Send(c)
 	}
 
+}
+
+func getChapterImage(c *gin.Context){
+	path := c.Query("path")
+
+	c.File(string(path))
 }
