@@ -24,7 +24,7 @@ import (
 对各个章节图片进行下载
  */
 
-func ChapterSpider(chapter comic.Chapter,conn redis.Conn, onSpiderFinish func()) {
+func ChapterSpider(bookId string,chapter comic.Chapter,conn redis.Conn, onSpiderFinish func()) {
 
 	startUrl:=chapter.ChapterUrl
 
@@ -71,7 +71,7 @@ func ChapterSpider(chapter comic.Chapter,conn redis.Conn, onSpiderFinish func())
 		}
 
 		//构建保存路径 ../名称/章节/id.png
-		dirPath:=fmt.Sprintf("E:/comic_spider/gmzr")
+		dirPath:=fmt.Sprintf("E:/comic_spider/%s",bookId)
 
 		exist,err:=isFileExist(dirPath)
 		if err != nil {
@@ -83,7 +83,7 @@ func ChapterSpider(chapter comic.Chapter,conn redis.Conn, onSpiderFinish func())
 			err=os.Mkdir(dirPath, os.ModePerm)
 		}
 
-		dirPath=fmt.Sprintf("E:/comic_spider/gmzr/%s",chapter.ChapterId)
+		dirPath=fmt.Sprintf("E:/comic_spider/%s/%s",bookId,chapter.ChapterId)
 
 		exist,err=isFileExist(dirPath)
 		if err != nil {
@@ -111,7 +111,7 @@ func ChapterSpider(chapter comic.Chapter,conn redis.Conn, onSpiderFinish func())
 			fmt.Printf("保存图片 %s 成功\n",imageName)
 			if hasNextPage {
 				chapter.ChapterUrl=e.Request.AbsoluteURL(nextUrl)
-				ChapterSpider(chapter,conn,onSpiderFinish)
+				ChapterSpider(bookId,chapter,conn,onSpiderFinish)
 			}else {
 				fmt.Println("当前已是章节最后一页！")
 			}

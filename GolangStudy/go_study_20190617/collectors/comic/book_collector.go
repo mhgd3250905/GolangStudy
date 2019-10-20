@@ -18,25 +18,26 @@ import (
 - 漫画id name
 	- 章节*n
 		- 章节中具体的图片*n
- */
+*/
 
 //太古漫画 鬼灭之刃地址
-const MAIN_URL = "https://www.dagumanhua.com/manhua/3629/"
+//const MAIN_URL = "https://www.dagumanhua.com/manhua/3629/"
+//大古漫画 进击的巨人地址
+const MAIN_URL = "https://www.dagumanhua.com/manhua/14563/"
 
-const KEY_COMIC_BOOK_ID_IN_REDIS  = "COMIC_BOOK_ID"
-const KEY_COMIC_BOOK_INFO_IN_REDIS  = "COMIC_BOOK_INFO"
-const KEY_COMIC_CHAPTER_LIST_IN_REDIS  = "COMIC_CHAPTER_LIST"
-const KEY_COMIC_CHAPTER_DETAIL_IN_REDIS  = "COMIC_CHAPTER_DETAIL"
+const KEY_COMIC_BOOK_ID_IN_REDIS = "COMIC_BOOK_ID"
+const KEY_COMIC_BOOK_INFO_IN_REDIS = "COMIC_BOOK_INFO"
+const KEY_COMIC_CHAPTER_LIST_IN_REDIS = "COMIC_CHAPTER_LIST"
+const KEY_COMIC_CHAPTER_DETAIL_IN_REDIS = "COMIC_CHAPTER_DETAIL"
 
 func ComicSpider(conn redis.Conn, onSpiderFinish func()) {
 
-	book:=comic.ComicBook{}
+	book := comic.ComicBook{}
 
 	startUrl := MAIN_URL
 
 	//解析网页漫画信息收集器
 	pageCollector := colly.NewCollector()
-
 
 	//解析漫画信息容器
 	bodySelectorStr := "body"
@@ -56,29 +57,27 @@ func ComicSpider(conn redis.Conn, onSpiderFinish func()) {
 
 	pageCollector.OnHTML(bodySelectorStr, func(e *colly.HTMLElement) {
 
-
-		imageLink,exist:=e.DOM.Find("#intro_l > div.cy_info_cover > img").Attr("src")
+		imageLink, exist := e.DOM.Find("#intro_l > div.cy_info_cover > img").Attr("src")
 		if !exist {
 			fmt.Println("图片链接不存在！")
 		}
 
-		name,exist:=e.DOM.Find("#intro_l > div.cy_info_cover > img").Attr("alt")
+		name, exist := e.DOM.Find("#intro_l > div.cy_info_cover > img").Attr("alt")
 		if !exist {
 			fmt.Println("漫画名称不存在！")
 		}
 
-		desc:=e.DOM.Find("#comic-description").Text()
+		desc := e.DOM.Find("#comic-description").Text()
 
-
-		chapters:=make([]comic.Chapter,0)
+		chapters := make([]comic.Chapter, 0)
 		e.DOM.Find(itemSelectorStr).Each(func(i int, li *goquery.Selection) {
-			chapter:=comic.Chapter{}
+			chapter := comic.Chapter{}
 
-			title,exist:=li.Find("a").First().Attr("title")
+			title, exist := li.Find("a").First().Attr("title")
 			if !exist {
 				fmt.Println("不存在此标题！")
 			}
-			url,exist:=li.Find("a").First().Attr("href")
+			url, exist := li.Find("a").First().Attr("href")
 			if !exist {
 				fmt.Println("不存在此链接！")
 			}
@@ -92,17 +91,25 @@ func ComicSpider(conn redis.Conn, onSpiderFinish func()) {
 			}
 
 			//fmt.Printf("标题 %s,链接%s\n",title,e.Request.AbsoluteURL(url))
-			chapter.Name=title
-			chapter.ChapterId=chapterId
-			chapter.ChapterUrl=e.Request.AbsoluteURL(url)
-			chapters=append(chapters, chapter)
+			chapter.Name = title
+			chapter.ChapterId = chapterId
+			chapter.ChapterUrl = e.Request.AbsoluteURL(url)
+			chapters = append(chapters, chapter)
 		})
 
-		book.Name=name
-		book.Desc=desc
-		book.ImageLink=imageLink
-		book.Id="3629"
-		book.Chapters=chapters
+		// /manhua/3629/608970.html
+		re, _ := regexp.Compile(`[0-9]+`)
+		all := re.FindAll([]byte(MAIN_URL), 1)
+		bookId := ""
+		for i, _ := range all {
+			bookId = string(all[i])
+		}
+
+		book.Name = name
+		book.Desc = desc
+		book.ImageLink = imageLink
+		book.Id = bookId
+		book.Chapters = chapters
 
 		//fmt.Println(book)
 
@@ -116,13 +123,13 @@ func ComicSpider(conn redis.Conn, onSpiderFinish func()) {
 
 		//把id保存到一个序列里面
 		//把内容保存到一个hashMap里
-		err = redis_utils.Push2RedisSortedSet(conn,book.Id , KEY_COMIC_BOOK_ID_IN_REDIS, KEY_COMIC_BOOK_INFO_IN_REDIS, timeStr, string(jsonBytes))
+		err = redis_utils.Push2RedisSortedSet(conn, book.Id, KEY_COMIC_BOOK_ID_IN_REDIS, KEY_COMIC_BOOK_INFO_IN_REDIS, timeStr, string(jsonBytes))
 		if err != nil {
 			fmt.Printf("%v push2RedisList failed,err= %v\n", book.Name, err)
 			return
 		} else {
 			fmt.Printf("%s 保存漫画基本信息完毕\n", book.Name)
-			startSpiderChapter(book,conn,onSpiderFinish)
+			startSpiderChapter(book, conn, onSpiderFinish)
 		}
 
 	})
@@ -135,17 +142,17 @@ func ComicSpider(conn redis.Conn, onSpiderFinish func()) {
 		fmt.Println("pageCollector.OnError: ", e)
 	})
 
-
 	pageCollector.UserAgent = "Mozilla/5.0 (Linux; U; Android 8.1.0; zh-cn; BLA-AL00 Build/HUAWEIBLA-AL00) " +
 		"AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.132 MQQBrowser/8.9 Mobile Safari/537.36"
 
 	pageCollector.Visit(startUrl)
 }
 
-func startSpiderChapter(book comic.ComicBook,conn redis.Conn, onSpiderFinish func()) {
-	for i := 0; i< len(book.Chapters);i++{
-		ChapterSpider(book.Chapters[i],conn,onSpiderFinish)
+func startSpiderChapter(book comic.ComicBook, conn redis.Conn, onSpiderFinish func()) {
+	for i := 0; i < len(book.Chapters); i++ {
+		//if book.Chapters[i].ChapterId != "475934" {
+		//	continue
+		//}
+		ChapterSpider(book.Id, book.Chapters[i], conn, onSpiderFinish)
 	}
 }
-
-

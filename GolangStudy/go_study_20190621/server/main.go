@@ -8,6 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/gomodule/redigo/redis"
 	"net/http"
+	"strings"
 )
 
 const (
@@ -56,7 +57,7 @@ func main() {
 	r.GET("/spider/comic/book", getComicList)
 	r.GET("/spider/comic/chapter", getChapterInfo)
 	r.GET("/spider/comic/chapter/image", getChapterImage)
-	r.Run(":8080")
+	r.Run(":80")
 }
 
 func getNews(c *gin.Context) {
@@ -265,6 +266,6 @@ func getChapterInfo(c *gin.Context) {
 
 func getChapterImage(c *gin.Context){
 	path := c.Query("path")
-
+	path=strings.Replace(path,"E","C",1)
 	c.File(string(path))
 }
