@@ -1,4 +1,4 @@
-package comic
+package comic_ikk
 
 import (
 	"GolangStudy/GolangStudy/go_study_20190617/collectors/redis_utils"
@@ -20,12 +20,8 @@ import (
 		- 章节中具体的图片*n
 */
 
-//太古漫画 鬼灭之刃地址
-const MAIN_URL = "https://www.dagumanhua.com/manhua/3629/"
-//大古漫画 亚人
-//const MAIN_URL = "https://www.dagumanhua.com/manhua/14565/"
-//大古漫画 进击的巨人地址
-//const MAIN_URL = "https://www.dagumanhua.com/manhua/14563/"
+//ikk 进击的巨人
+const MAIN_URL = "http://comic.ikkdm.com/comiclist/941/"
 
 const KEY_COMIC_BOOK_ID_IN_REDIS = "COMIC_BOOK_ID"
 const KEY_COMIC_BOOK_INFO_IN_REDIS = "COMIC_BOOK_INFO"
@@ -43,10 +39,16 @@ func ComicSpider(conn redis.Conn, onSpiderFinish func()) {
 
 	//解析漫画信息容器
 	bodySelectorStr := "body"
-	itemSelectorStr := "#play_0 > ul > li"
+	itemSelectorStr := "#comiclistn > dd"
 
 	pageCollector.OnRequest(func(r *colly.Request) {
 		fmt.Println("Visiting", r.URL.String())
+		//r.Headers.Add("content-type","text/html")
+		//r.Headers.Add("Cache-Control","no-cache")
+		//r.Headers.Add("Accept","text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3")
+		//r.Headers.Add("Accept-Encoding","gzip, deflate, br")
+		//r.Headers.Add("Connection","keep-alive")
+		//r.Headers.Add("Pragma","no-cache")
 	})
 
 	pageCollector.OnError(func(response *colly.Response, e error) {
@@ -59,27 +61,24 @@ func ComicSpider(conn redis.Conn, onSpiderFinish func()) {
 
 	pageCollector.OnHTML(bodySelectorStr, func(e *colly.HTMLElement) {
 
-		imageLink, exist := e.DOM.Find("#intro_l > div.cy_info_cover > img").Attr("src")
+		img := e.DOM.Find("table:nth-child(5) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(2) > td:nth-child(1) > img")
+
+		imageLink, exist := img.Attr("src")
 		if !exist {
 			fmt.Println("图片链接不存在！")
 		}
 
-		name, exist := e.DOM.Find("#intro_l > div.cy_info_cover > img").Attr("alt")
-		if !exist {
-			fmt.Println("漫画名称不存在！")
-		}
+		name:=e.DOM.Find("table:nth-child(5) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(1) > td").First().Text()
 
-		desc := e.DOM.Find("#comic-description").Text()
+		desc := e.DOM.Find("#ComicInfo").Text()
 
 		chapters := make([]comic.Chapter, 0)
-		e.DOM.Find(itemSelectorStr).Each(func(i int, li *goquery.Selection) {
+		e.DOM.Find(itemSelectorStr).Each(func(i int, dd *goquery.Selection) {
 			chapter := comic.Chapter{}
 
-			title, exist := li.Find("a").First().Attr("title")
-			if !exist {
-				fmt.Println("不存在此标题！")
-			}
-			url, exist := li.Find("a").First().Attr("href")
+			title := dd.Find("a").First().Text()
+
+			url, exist := dd.Find("a").First().Attr("href")
 			if !exist {
 				fmt.Println("不存在此链接！")
 			}
@@ -144,8 +143,7 @@ func ComicSpider(conn redis.Conn, onSpiderFinish func()) {
 		fmt.Println("pageCollector.OnError: ", e)
 	})
 
-	pageCollector.UserAgent = "Mozilla/5.0 (Linux; U; Android 8.1.0; zh-cn; BLA-AL00 Build/HUAWEIBLA-AL00) " +
-		"AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.132 MQQBrowser/8.9 Mobile Safari/537.36"
+	pageCollector.UserAgent = "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
 
 	pageCollector.Visit(startUrl)
 }

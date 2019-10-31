@@ -57,7 +57,7 @@ func main() {
 	r.GET("/spider/comic/book", getComicList)
 	r.GET("/spider/comic/chapter", getChapterInfo)
 	r.GET("/spider/comic/chapter/image", getChapterImage)
-	r.Run(":80")
+	r.Run(":8080")
 }
 
 func getNews(c *gin.Context) {
