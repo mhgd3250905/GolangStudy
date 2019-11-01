@@ -10,6 +10,7 @@ import (
 	"github.com/gomodule/redigo/redis"
 	"regexp"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -21,7 +22,9 @@ import (
 */
 
 //ikk 进击的巨人
-const MAIN_URL = "http://comic.ikkdm.com/comiclist/941/"
+//const MAIN_URL = "http://comic.ikkdm.com/comiclist/941/"
+//鬼灭之刃
+const MAIN_URL = "http://comic.ikkdm.com/comiclist/2126/"
 
 const KEY_COMIC_BOOK_ID_IN_REDIS = "COMIC_BOOK_ID"
 const KEY_COMIC_BOOK_INFO_IN_REDIS = "COMIC_BOOK_INFO"
@@ -56,24 +59,27 @@ func ComicSpider(conn redis.Conn, onSpiderFinish func()) {
 	})
 
 	pageCollector.OnResponse(func(response *colly.Response) {
-		//fmt.Println(string(response.Body))
-	})
+		responseStr := ConvertToString(string(response.Body), "gbk", "utf-8")
+		dom, err := goquery.NewDocumentFromReader(strings.NewReader(responseStr))
+		if err != nil {
+			fmt.Println("str to dom failed,err= ", err)
+			return
+		}
+		body := dom.Find(bodySelectorStr).First()
 
-	pageCollector.OnHTML(bodySelectorStr, func(e *colly.HTMLElement) {
-
-		img := e.DOM.Find("table:nth-child(5) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(2) > td:nth-child(1) > img")
+		img := body.Find("table:nth-child(5) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(2) > td:nth-child(1) > img")
 
 		imageLink, exist := img.Attr("src")
 		if !exist {
 			fmt.Println("图片链接不存在！")
 		}
 
-		name:=e.DOM.Find("table:nth-child(5) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(1) > td").First().Text()
+		name := body.Find("table:nth-child(5) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(1) > td").First().Text()
 
-		desc := e.DOM.Find("#ComicInfo").Text()
+		desc := body.Find("#ComicInfo").Text()
 
 		chapters := make([]comic.Chapter, 0)
-		e.DOM.Find(itemSelectorStr).Each(func(i int, dd *goquery.Selection) {
+		body.Find(itemSelectorStr).Each(func(i int, dd *goquery.Selection) {
 			chapter := comic.Chapter{}
 
 			title := dd.Find("a").First().Text()
@@ -94,7 +100,7 @@ func ComicSpider(conn redis.Conn, onSpiderFinish func()) {
 			//fmt.Printf("标题 %s,链接%s\n",title,e.Request.AbsoluteURL(url))
 			chapter.Name = title
 			chapter.ChapterId = chapterId
-			chapter.ChapterUrl = e.Request.AbsoluteURL(url)
+			chapter.ChapterUrl = response.Request.AbsoluteURL(url)
 			chapters = append(chapters, chapter)
 		})
 
@@ -106,8 +112,8 @@ func ComicSpider(conn redis.Conn, onSpiderFinish func()) {
 			bookId = string(all[i])
 		}
 
-		book.Name = name
-		book.Desc = desc
+		book.Name = ConvertToString(name, "gbk", "utf-8")
+		book.Desc = ConvertToString(desc, "gbk", "utf-8")
 		book.ImageLink = imageLink
 		book.Id = bookId
 		book.Chapters = chapters
@@ -132,7 +138,6 @@ func ComicSpider(conn redis.Conn, onSpiderFinish func()) {
 			fmt.Printf("%s 保存漫画基本信息完毕\n", book.Name)
 			startSpiderChapter(book, conn, onSpiderFinish)
 		}
-
 	})
 
 	pageCollector.OnScraped(func(response *colly.Response) {
@@ -156,3 +161,4 @@ func startSpiderChapter(book comic.ComicBook, conn redis.Conn, onSpiderFinish fu
 		ChapterSpider(book.Id, book.Chapters[i], conn, onSpiderFinish)
 	}
 }
+

@@ -4,6 +4,7 @@ import (
 	"GolangStudy/GolangStudy/go_study_20190621/modle"
 	"GolangStudy/GolangStudy/go_study_20190621/modle/comic"
 	"GolangStudy/GolangStudy/go_study_20190621/modle/huxiu"
+	"encoding/base64"
 	"encoding/json"
 	"github.com/gin-gonic/gin"
 	"github.com/gomodule/redigo/redis"
@@ -57,7 +58,7 @@ func main() {
 	r.GET("/spider/comic/book", getComicList)
 	r.GET("/spider/comic/chapter", getChapterInfo)
 	r.GET("/spider/comic/chapter/image", getChapterImage)
-	r.Run(":8080")
+	r.Run(":8889")
 }
 
 func getNews(c *gin.Context) {
@@ -238,6 +239,12 @@ func getChapterInfo(c *gin.Context) {
 	//	}
 	//	comicInfoArr = append(comicInfoArr, newsInfo)
 	//}
+	baseResult := make([]string, 0)
+	for i, _ := range result {
+		decoded, _ := base64.StdEncoding.DecodeString(result[i])
+		decodestr := string(decoded)
+		baseResult = append(baseResult, decodestr)
+	}
 
 	if err != nil {
 		msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_FAILED,
@@ -258,14 +265,14 @@ func getChapterInfo(c *gin.Context) {
 		//设置到消息类中
 		msg := modle.Message{ErrCode: modle.MESSAGE_CODE_QUERY_SUCCESS,
 			Error: "",
-			Data:  result}
+			Data:  baseResult}
 		msg.Send(c)
 	}
 
 }
 
-func getChapterImage(c *gin.Context){
+func getChapterImage(c *gin.Context) {
 	path := c.Query("path")
-	path=strings.Replace(path,"E","C",1)
+	path = strings.Replace(path, "E", "C", 1)
 	c.File(string(path))
 }
