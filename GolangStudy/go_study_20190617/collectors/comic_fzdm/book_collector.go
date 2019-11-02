@@ -22,11 +22,8 @@ import (
 */
 
 //ikk 进击的巨人
-//const MAIN_URL = "http://comic.ikkdm.com/comiclist/941/"
-//ikk 亚人
-const MAIN_URL = "http://comic.ikkdm.com/comiclist/1748/"
-//鬼灭之刃
-//const MAIN_URL = "http://comic.ikkdm.com/comiclist/2126/"
+const MAIN_URL = "https://manhua.fzdm.com/39/"
+
 
 const KEY_COMIC_BOOK_ID_IN_REDIS = "COMIC_BOOK_ID"
 const KEY_COMIC_BOOK_INFO_IN_REDIS = "COMIC_BOOK_INFO"
@@ -61,12 +58,23 @@ func ComicSpider(conn redis.Conn, onSpiderFinish func()) {
 	})
 
 	pageCollector.OnResponse(func(response *colly.Response) {
+
 		responseStr := ConvertToString(string(response.Body), "gbk", "utf-8")
+
+
+		re, _ := regexp.Compile(`<script src='/ad/sc_soso\.js'.+/images/d\.gif`)
+		all := re.FindAll([]byte(responseStr), 1)
+
+
 		dom, err := goquery.NewDocumentFromReader(strings.NewReader(responseStr))
+
 		if err != nil {
 			fmt.Println("str to dom failed,err= ", err)
 			return
 		}
+
+
+
 		body := dom.Find(bodySelectorStr).First()
 
 		img := body.Find("table:nth-child(5) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(2) > td:nth-child(1) > img")

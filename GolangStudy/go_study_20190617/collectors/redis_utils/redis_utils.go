@@ -8,7 +8,7 @@ func Push2RedisList(c redis.Conn, key string, content string) (err error) {
 }
 
 func Push2RedisSortedSet(c redis.Conn, newsId string, idKey string,infoKey string, score string, content string) (err error) {
-	err = SaveNewsId(c, idKey, score, newsId)
+	err = SaveZset(c, idKey, score, newsId)
 	if err != nil {
 		return
 	}
@@ -21,7 +21,7 @@ func SaveHashMap(c redis.Conn, key string, mapKey string, content string) (err e
 	return
 }
 
-func SaveNewsId(c redis.Conn, key string, score string, newsId string) (err error) {
+func SaveZset(c redis.Conn, key string, score string, newsId string) (err error) {
 	_, err = c.Do("ZADD", key, score, newsId)
 	return
 }

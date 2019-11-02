@@ -58,7 +58,7 @@ func main() {
 	r.GET("/spider/comic/book", getComicList)
 	r.GET("/spider/comic/chapter", getChapterInfo)
 	r.GET("/spider/comic/chapter/image", getChapterImage)
-	r.Run(":8889")
+	r.Run(":80")
 }
 
 func getNews(c *gin.Context) {
@@ -224,7 +224,7 @@ func getChapterInfo(c *gin.Context) {
 
 	//获取结果
 	//ZRANGE w3ckey 0 10 WITHSCORES
-	result, err := redis.Strings(conn.Do("LRANGE", id, "0", "-1"))
+	result, err := redis.Strings(conn.Do("ZREVRANGE", id, "0", "-1"))
 
 	////取出来的是一串id,要分别获取保存的信息
 	//infoKey := KEY_COMIC_BOOK_INFO_IN_REDIS
