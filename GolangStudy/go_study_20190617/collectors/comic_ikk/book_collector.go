@@ -24,9 +24,9 @@ import (
 //ikk 进击的巨人
 //const MAIN_URL = "http://comic.ikkdm.com/comiclist/941/"
 //ikk 亚人
-const MAIN_URL = "http://comic.ikkdm.com/comiclist/1748/"
+//const MAIN_URL = "http://comic.ikkdm.com/comiclist/1748/"
 //鬼灭之刃
-//const MAIN_URL = "http://comic.ikkdm.com/comiclist/2126/"
+const MAIN_URL = "http://comic.ikkdm.com/comiclist/2126/"
 
 const KEY_COMIC_BOOK_ID_IN_REDIS = "COMIC_BOOK_ID"
 const KEY_COMIC_BOOK_INFO_IN_REDIS = "COMIC_BOOK_INFO"
@@ -80,6 +80,14 @@ func ComicSpider(conn redis.Conn, onSpiderFinish func()) {
 
 		desc := body.Find("#ComicInfo").Text()
 
+		// /manhua/3629/608970.html
+		re, _ := regexp.Compile(`[0-9]+`)
+		all := re.FindAll([]byte(MAIN_URL), 1)
+		bookId := ""
+		for i, _ := range all {
+			bookId = string(all[i])
+		}
+
 		chapters := make([]comic.Chapter, 0)
 		body.Find(itemSelectorStr).Each(func(i int, dd *goquery.Selection) {
 			chapter := comic.Chapter{}
@@ -102,17 +110,12 @@ func ComicSpider(conn redis.Conn, onSpiderFinish func()) {
 			//fmt.Printf("标题 %s,链接%s\n",title,e.Request.AbsoluteURL(url))
 			chapter.Name = title
 			chapter.ChapterId = chapterId
-			chapter.ChapterUrl = response.Request.AbsoluteURL(url)
+			//http://m.kukudm.com/comiclist/1748/
+			chapter.ChapterUrl = fmt.Sprintf("http://m.kukudm.com/comiclist/%s/%s/1.htm",bookId,chapterId)
 			chapters = append(chapters, chapter)
 		})
 
-		// /manhua/3629/608970.html
-		re, _ := regexp.Compile(`[0-9]+`)
-		all := re.FindAll([]byte(MAIN_URL), 1)
-		bookId := ""
-		for i, _ := range all {
-			bookId = string(all[i])
-		}
+
 
 		book.Name = name
 		book.Desc = desc
