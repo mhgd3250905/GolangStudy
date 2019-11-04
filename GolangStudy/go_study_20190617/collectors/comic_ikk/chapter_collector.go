@@ -94,6 +94,15 @@ func ChapterSpider(bookId string, chapter comic.Chapter, conn redis.Conn, onSpid
 			}
 		}
 
+		if imageUrl=="" {
+			//kuku7comic7/201009/20100922/进击的巨人/01/cccc_00203K.jpg
+			re, _ = regexp.Compile(`kuku8comic8/\d+/\d+/.+\.jpg`)
+			all = re.FindAll([]byte(imageHtmlStr), 1)
+			for i, _ := range all {
+				imageUrl = string(all[i])
+			}
+		}
+
 
 		strbytes := []byte(fmt.Sprintf("%s%s", BASE_IMAGE_URL, imageUrl))
 		encoded := base64.StdEncoding.EncodeToString(strbytes)
