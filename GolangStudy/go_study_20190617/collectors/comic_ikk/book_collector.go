@@ -26,7 +26,9 @@ import (
 //ikk 亚人
 //const MAIN_URL = "http://comic.ikkdm.com/comiclist/1748/"
 //鬼灭之刃
-const MAIN_URL = "http://comic.ikkdm.com/comiclist/2126/"
+//const MAIN_URL = "http://comic.ikkdm.com/comiclist/2126/"
+//只有我不在的街道
+const MAIN_URL = "http://comic.ikkdm.com/comiclist/1512/"
 
 const KEY_COMIC_BOOK_ID_IN_REDIS = "COMIC_BOOK_ID"
 const KEY_COMIC_BOOK_INFO_IN_REDIS = "COMIC_BOOK_INFO"
