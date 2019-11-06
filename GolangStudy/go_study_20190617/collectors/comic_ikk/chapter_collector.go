@@ -9,6 +9,7 @@ import (
 	"github.com/gomodule/redigo/redis"
 	"os"
 	"regexp"
+	"strconv"
 	"strings"
 )
 
@@ -29,6 +30,7 @@ const IMAGE_DIR_PATH = "E:/comic_spider/"
 
 func ChapterSpider(bookId string, chapter comic.Chapter, conn redis.Conn, onSpiderFinish func()) {
 
+	//startUrl := "http://m.kukudm.com/comiclist/1512/43058/1.htm"
 	startUrl := chapter.ChapterUrl
 
 	//解析网页漫画图片收集器
@@ -79,13 +81,13 @@ func ChapterSpider(bookId string, chapter comic.Chapter, conn redis.Conn, onSpid
 
 		imageUrl := ""
 
-		re, _ = regexp.Compile(`newkuku/\d+/\d+/\d+/.+\.jpg`)
+		re, _ = regexp.Compile(`newkuku/\d+/\d+/.+\.jpg`)
 		all = re.FindAll([]byte(imageHtmlStr), 1)
 		for i, _ := range all {
 			imageUrl = string(all[i])
 		}
 
-		if imageUrl=="" {
+		if imageUrl == "" {
 			//kuku7comic7/201009/20100922/进击的巨人/01/cccc_00203K.jpg
 			re, _ = regexp.Compile(`kuku7comic7/\d+/\d+/.+\.jpg`)
 			all = re.FindAll([]byte(imageHtmlStr), 1)
@@ -94,7 +96,7 @@ func ChapterSpider(bookId string, chapter comic.Chapter, conn redis.Conn, onSpid
 			}
 		}
 
-		if imageUrl=="" {
+		if imageUrl == "" {
 			//kuku7comic7/201009/20100922/进击的巨人/01/cccc_00203K.jpg
 			re, _ = regexp.Compile(`kuku8comic8/\d+/\d+/.+\.jpg`)
 			all = re.FindAll([]byte(imageHtmlStr), 1)
@@ -103,19 +105,31 @@ func ChapterSpider(bookId string, chapter comic.Chapter, conn redis.Conn, onSpid
 			}
 		}
 
-
 		strbytes := []byte(fmt.Sprintf("%s%s", BASE_IMAGE_URL, imageUrl))
 		encoded := base64.StdEncoding.EncodeToString(strbytes)
 
+		//re, _ = regexp.Compile(`[0-9]+`)
+		//all = re.FindAll([]byte(imageUrl), 2)
+		//index := ""
+		//for i, _ := range all {
+		//	index = string(all[i])
+		//}
+		//timeStr := strconv.FormatInt(time.Now().Unix(), 10)
 
-		re, _ = regexp.Compile(`[0-9]+`)
-		all = re.FindAll([]byte(startUrl), 2)
-		index := ""
-		for i, _ := range all {
-			index = string(all[i])
+		fmt.Println(imageUrl)
+		indexStr := imageUrl[len(imageUrl)-10 : len(imageUrl)-4]
+
+		index := 0
+		sqrt := 10
+		for i := len(indexStr) - 1; i >= 0; i-- {
+			a := int(indexStr[i])
+			sqrt *= 10
+			index += a * sqrt
 		}
 
-		err := redis_utils.SaveZset(conn, chapter.ChapterId, index, encoded)
+		indexStr = strconv.Itoa(index)
+
+		err := redis_utils.SaveZset(conn, chapter.ChapterId, indexStr, encoded)
 		if err != nil {
 			fmt.Printf("%v SaveZset failed,err= %v\n", chapter.Name, err)
 			return

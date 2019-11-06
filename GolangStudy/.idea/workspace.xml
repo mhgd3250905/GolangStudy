@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6d7e2263-ed8d-4c11-a034-a998b514d6a1" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_study_20190617/collectors/comic_fzdm/book_collector.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_study_20190617/collectors/comic_fzdm/chapter_collector.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_study_20190617/collectors/comic_fzdm/string_utils.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_study_20190617/collectors/comic_ikk/book_collector.go" beforeDir="false" afterPath="$PROJECT_DIR$/go_study_20190617/collectors/comic_ikk/book_collector.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go_study_20190617/collectors/comic_ikk/chapter_collector.go" beforeDir="false" afterPath="$PROJECT_DIR$/go_study_20190617/collectors/comic_ikk/chapter_collector.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,20 +17,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic_ikk/chapter_collector.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="104" selection-start-line="104" selection-end-line="104" />
+            <state relative-caret-position="294">
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic_ikk/book_collector.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-108">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic_fzdm/chapter_collector.go">
+        <entry file="file://D:/Go/src/strconv/itoa.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="102" selection-start-line="102" selection-end-line="102" />
+            <state relative-caret-position="546">
+              <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/Go/src/time/time.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22743">
+              <caret line="1086" column="5" selection-start-line="1086" selection-start-column="5" selection-end-line="1086" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -36,24 +58,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
               <caret line="17" column="24" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/Go/src/runtime/panic.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14385">
-              <caret line="689" selection-start-line="689" selection-end-line="689" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/redis_utils/redis_utils.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -144,6 +148,7 @@
       <find>Not Found</find>
       <find>Error</find>
       <find>信息完毕 url</find>
+      <find>当前已是章节最后一页！</find>
     </findStrings>
     <replaceStrings>
       <replace>\&quot;</replace>
@@ -205,9 +210,9 @@
         <option value="$PROJECT_DIR$/go_study_20190617/collectors/redis_utils/redis_utils.go" />
         <option value="$PROJECT_DIR$/go_study_20190617/collectors/comic_fzdm/book_collector.go" />
         <option value="$PROJECT_DIR$/go_study_20190621/server/main.go" />
-        <option value="$PROJECT_DIR$/go_study_20190617/collectors/comic_ikk/book_collector.go" />
         <option value="$PROJECT_DIR$/go_study_20190617/collectors/comic_fzdm/chapter_collector.go" />
         <option value="$PROJECT_DIR$/go_study_20190617/collectors/comic_ikk/chapter_collector.go" />
+        <option value="$PROJECT_DIR$/go_study_20190617/collectors/comic_ikk/book_collector.go" />
       </list>
     </option>
   </component>
@@ -219,9 +224,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="25" />
+    <option name="y" value="100" />
     <option name="width" value="1307" />
     <option name="height" value="1040" />
   </component>
@@ -233,7 +238,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,13 +255,6 @@
               <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
               <item name="go_study_20190617" type="462c0819:PsiDirectoryNode" />
               <item name="collectors" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GolangStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="go_study_20190617" type="462c0819:PsiDirectoryNode" />
-              <item name="collectors" type="462c0819:PsiDirectoryNode" />
-              <item name="comic_fzdm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
@@ -327,10 +324,16 @@
               <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
+            <path>
+              <item name="GolangStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.12.4" type="20ee2d1f:SyntheticLibraryElementNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -473,18 +476,19 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17537314" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.12579957" />
       <window_info id="Structure" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" weight="0.3295583" />
       <window_info anchor="bottom" id="Version Control" order="1" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.3295583" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32616082" />
-      <window_info anchor="bottom" id="Run" order="5" weight="0.45717463" />
-      <window_info anchor="bottom" id="Debug" order="6" visible="true" weight="0.36707452" />
+      <window_info anchor="bottom" id="Run" order="5" visible="true" weight="0.45717463" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.36707452" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="9" />
@@ -556,28 +560,17 @@
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/go_study_20190617/collectors/comic_fzdm/chapter_collector.go</url>
           <line>81</line>
-          <properties />
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/go_study_20190617/collectors/comic_fzdm/chapter_collector.go</url>
           <line>49</line>
-          <properties />
           <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/go_study_20190617/collectors/comic_ikk/chapter_collector.go</url>
-          <line>96</line>
-          <properties />
-          <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/go学习20190505/testing_demo_3/monster.go" />
-    <entry file="file://$PROJECT_DIR$/go学习20190505/testing_demo_2/testcase01/cal.go" />
-    <entry file="file://$PROJECT_DIR$/go学习20190505/testing_demo_2/testcase01/cal_test.go" />
     <entry file="file://$PROJECT_DIR$/go学习20190503/file_demo_10/main/main.go" />
     <entry file="file://$PROJECT_DIR$/go学习20190505/goroutine_demo_1/main.go" />
     <entry file="file://$PROJECT_DIR$/go_study_20190607/circlesinglelink/main.go" />
@@ -779,16 +772,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic_fzdm/string_utils.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic_fzdm/book_collector.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2079">
-          <caret line="111" column="41" selection-start-line="111" selection-start-column="41" selection-end-line="111" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic_fzdm/string_utils.go" />
+    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic_fzdm/book_collector.go" />
     <entry file="file://D:/Go/src/encoding/base64/base64.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3465">
@@ -796,17 +781,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic_ikk/book_collector.go">
+    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/redis_utils/redis_utils.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+        <state relative-caret-position="189">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic_ikk/string_utils.go">
+    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic_fzdm/chapter_collector.go" />
+    <entry file="file://D:/Go/src/encoding/binary/binary.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="24" />
+        <state relative-caret-position="1953">
+          <caret line="98" column="17" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -817,10 +803,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/redis_utils/redis_utils.go">
+    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic_ikk/chapter_collector.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        <state relative-caret-position="294">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Go/src/strconv/itoa.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Go/src/time/time.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22743">
+          <caret line="1086" column="5" selection-start-line="1086" selection-start-column="5" selection-end-line="1086" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic_ikk/string_utils.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -838,13 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go_study_20190617/colly/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="43" column="25" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/go_study_20190621/modle/comic/comic_spider.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -859,17 +859,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic_fzdm/chapter_collector.go">
+    <entry file="file://$PROJECT_DIR$/go_study_20190617/colly/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
+        <state relative-caret-position="798">
+          <caret line="43" column="25" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic_ikk/chapter_collector.go">
+    <entry file="file://$PROJECT_DIR$/go_study_20190617/collectors/comic_ikk/book_collector.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
+        <state relative-caret-position="-108">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
