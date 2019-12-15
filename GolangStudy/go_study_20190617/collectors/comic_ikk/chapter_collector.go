@@ -30,7 +30,7 @@ const IMAGE_DIR_PATH = "E:/comic_spider/"
 
 func ChapterSpider(bookId string, chapter comic.Chapter, conn redis.Conn, onSpiderFinish func()) {
 
-	//startUrl := "http://m.kukudm.com/comiclist/1512/43058/1.htm"
+	//startUrl := "https://m.kukudm.com/comiclist/1512/33563/1.htm"
 	startUrl := chapter.ChapterUrl
 
 	//解析网页漫画图片收集器
@@ -81,7 +81,7 @@ func ChapterSpider(bookId string, chapter comic.Chapter, conn redis.Conn, onSpid
 
 		imageUrl := ""
 
-		re, _ = regexp.Compile(`newkuku/\d+/\d+/.+\.jpg`)
+		re, _ = regexp.Compile(`newkuku/\d+/\d+/.+\.(jpg|png)`)
 		all = re.FindAll([]byte(imageHtmlStr), 1)
 		for i, _ := range all {
 			imageUrl = string(all[i])
@@ -89,7 +89,7 @@ func ChapterSpider(bookId string, chapter comic.Chapter, conn redis.Conn, onSpid
 
 		if imageUrl == "" {
 			//kuku7comic7/201009/20100922/进击的巨人/01/cccc_00203K.jpg
-			re, _ = regexp.Compile(`kuku7comic7/\d+/\d+/.+\.jpg`)
+			re, _ = regexp.Compile(`kuku7comic7/\d+/\d+/.+\.(jpg|png)`)
 			all = re.FindAll([]byte(imageHtmlStr), 1)
 			for i, _ := range all {
 				imageUrl = string(all[i])
@@ -98,7 +98,7 @@ func ChapterSpider(bookId string, chapter comic.Chapter, conn redis.Conn, onSpid
 
 		if imageUrl == "" {
 			//kuku7comic7/201009/20100922/进击的巨人/01/cccc_00203K.jpg
-			re, _ = regexp.Compile(`kuku8comic8/\d+/\d+/.+\.jpg`)
+			re, _ = regexp.Compile(`kuku8comic8/\d+/\d+/.+\.(jpg|png)`)
 			all = re.FindAll([]byte(imageHtmlStr), 1)
 			for i, _ := range all {
 				imageUrl = string(all[i])

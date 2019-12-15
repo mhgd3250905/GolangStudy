@@ -8,8 +8,10 @@ type PentaqItem struct {
 	Link string `json:"link"`
 	Title Title `json:"title"`
 	Content Content `json:"content"`
-	Embedded interface{} `json:"_embedded"`
+	Embedded Embedded `json:"_embedded"`
 }
+
+
 
 type Title struct {
 	Rendered string`json:"rendered"`
@@ -24,8 +26,7 @@ type Excerpt struct {
 }
 
 type Embedded struct {
-	Authors []Author `json:"author"`
-	wpFeaturedMedias []interface{} `json:"wp:featuredmedia"`
+	content string
 }
 
 type Author struct {

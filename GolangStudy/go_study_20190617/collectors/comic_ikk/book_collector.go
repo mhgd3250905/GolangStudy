@@ -22,13 +22,13 @@ import (
 */
 
 //ikk 进击的巨人
-const MAIN_URL = "http://comic.ikkdm.com/comiclist/941/"
+//const MAIN_URL = "http://comic.ikkdm.com/comiclist/941/"
 //ikk 亚人
 //const MAIN_URL = "http://comic.ikkdm.com/comiclist/1748/"
 //鬼灭之刃
 //const MAIN_URL = "http://comic.ikkdm.com/comiclist/2126/"
 //只有我不在的街道
-//const MAIN_URL = "http://comic.ikkdm.com/comiclist/1512/"
+const MAIN_URL = "http://comic.ikkdm.com/comiclist/1512/"
 
 const KEY_COMIC_BOOK_ID_IN_REDIS = "COMIC_BOOK_ID"
 const KEY_COMIC_BOOK_INFO_IN_REDIS = "COMIC_BOOK_INFO"
@@ -165,6 +165,7 @@ func startSpiderChapter(book comic.ComicBook, conn redis.Conn, onSpiderFinish fu
 		//if book.Chapters[i].ChapterId != "475934" {
 		//	continue
 		//}
+		//book.Chapters[i].ChapterUrl="https://m.kukudm.com/comiclist/1512/33563/1.htm"
 		ChapterSpider(book.Id, book.Chapters[i], conn, onSpiderFinish)
 	}
 }

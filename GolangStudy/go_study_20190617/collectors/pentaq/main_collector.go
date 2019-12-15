@@ -51,12 +51,21 @@ func PentaqSeider(conn redis.Conn,onSpiderFinish func()) {
 			return
 		}
 
+		//mJson:=jsoniter.ConfigCompatibleWithStandardLibrary
+		//reader:=strings.NewReader(string(response.Body))
+		//decoder:=json.NewDecoder(reader)
+		//params:=make(map[string]interface{})
+		//err:=decoder.Decode(&params)
+
+
 		//news := normal_news.News{}
-		//for i, _ := range responseIfanr.Objects {
-		//	item := responseIfanr.Objects[i]
+		//for i, _ := range esponsePentaq {
+		//	item := esponsePentaq[i]
+		//	a:=make(map[string]interface{})
+		//	a= item.Embedded
 		//	news.Author = normal_news.Author{
-		//		AuthorName: item.CreatedBy.Name,
-		//		AuthorId:   strconv.Itoa(item.CreatedBy.Id),
+		//		AuthorName: item.Embedded,
+		//		AuthorId:   strconv.Itoa(item.Id),
 		//		AuthorImg:  item.CreatedBy.Avatar,
 		//	}
 		//
@@ -99,6 +108,7 @@ func PentaqSeider(conn redis.Conn,onSpiderFinish func()) {
 		//	}
 		//}
 	})
+
 
 	pageCollector.OnScraped(func(response *colly.Response) {
 		fmt.Println("pageCollector OnScraped")
