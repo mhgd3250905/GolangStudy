@@ -1,8 +1,8 @@
 package main
 
 import (
+	"GolangStudy/GolangStudy/go_study_20190617/collectors/huxiu"
 	"GolangStudy/GolangStudy/go_study_20190617/collectors/ifanr"
-	"GolangStudy/GolangStudy/go_study_20190617/collectors/pentaq"
 	"github.com/gomodule/redigo/redis"
 	"os"
 )
@@ -41,9 +41,9 @@ func main() {
 	conn = pool.Get()
 	defer conn.Close()
 
-	pentaq.PentaqSeider(conn,nil)
+	//pentaq.PentaqSeider(conn,nil)
 	//chule.ChuleSpider(conn)
-	//huxiu.HuxiuSpider(conn,OnHuxiuSpiderFinish)
+	huxiu.HuxiuSpider(conn,OnHuxiuSpiderFinish)
 
 }
 
