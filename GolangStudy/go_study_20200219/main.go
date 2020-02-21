@@ -1,10 +1,13 @@
 package main
 
 import (
+	"GolangStudy/GolangStudy/go_study_20200219/model"
+	"encoding/json"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
 	"net/http"
+	"strings"
 )
 
 var upGrader = websocket.Upgrader{
@@ -13,7 +16,7 @@ var upGrader = websocket.Upgrader{
 	},
 }
 
-var server Server = Server{"Painting", make(map[string]*Client, 0), make(chan error)}
+var server = Server{"Painting", make(map[string]*Client, 0), make(chan error)}
 
 type Server struct {
 	Pattern string
@@ -71,8 +74,13 @@ func ping(c *gin.Context) {
 			}
 		}(client)
 
-		message := makeNoticeMessage(ID, "连接...")
-		sendMessage(message, ID)
+		users := collectUsersInfo()
+		usersMsg := model.UsersMsg{Users: users, Msg: fmt.Sprintf("%s %s", ID, "连接成功。")}
+		b, err := json.Marshal(usersMsg)
+		if err != nil {
+			fmt.Println("json 解析错误")
+		}
+		sendMessage(b, ID)
 	}
 
 	for {
@@ -80,8 +88,14 @@ func ping(c *gin.Context) {
 		_, message, err := ws.ReadMessage()
 		if err != nil {
 			delete(server.Clients, ID)
-			message = makeNoticeMessage(ID, "退出了连接")
-			sendMessage(message, ID)
+			//message = makeNoticeMessage(ID, "退出了连接")
+			users := collectUsersInfo()
+			usersMsg := model.UsersMsg{Users: users, Msg: fmt.Sprintf("%s %s", ID, "退出连接。")}
+			b, err := json.Marshal(usersMsg)
+			if err != nil {
+				fmt.Println("json 解析错误")
+			}
+			sendMessage(b, ID)
 			break
 		}
 
@@ -94,6 +108,16 @@ func ping(c *gin.Context) {
 
 		sendMessage(message, ID)
 	}
+}
+
+//收集用户信息
+func collectUsersInfo() []model.User {
+	users := make([]model.User, 0)
+	for k, _ := range server.Clients {
+		splits := strings.Split(k, ":")
+		users = append(users, model.User{Name: splits[len(splits)-1], Ip: k})
+	}
+	return users
 }
 
 func makeNoticeMessage(userId string, message string) []byte {
