@@ -26,6 +26,6 @@ type Data struct {
 }
 
 type UserMsg struct {
-	Users []User `json:"users"` //用户列表
+	Users User `json:"users"` //用户列表
 	Msg   string `json:"msg"`   //通知消息
 }

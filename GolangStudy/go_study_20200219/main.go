@@ -10,6 +10,8 @@ import (
 	"strings"
 )
 
+const USER_MSG_FLAG = "[-MSG-]"
+
 var upGrader = websocket.Upgrader{
 	CheckOrigin: func(r *http.Request) bool {
 		return true
@@ -109,13 +111,37 @@ func ping(c *gin.Context) {
 			message = []byte("pong")
 		}
 
-		data := model.Data{Type: model.TYPE_DATA, DataMsg: string(message)}
-		b, err := json.Marshal(data)
-		if err != nil {
-			println("转换json错误！")
-			break
+		var b []byte
+		fmt.Printf("%s ,Message: %s\n", ws.RemoteAddr().String(), string(message)[:8])
+		if string(message)[:7] == USER_MSG_FLAG {
+
+			//转发用户消息
+			splits := strings.Split(ws.RemoteAddr().String(), ":")
+			user := model.User{Name: splits[len(splits)-1], Ip: ws.RemoteAddr().String()}
+			userMsg := model.UserMsg{Users: user, Msg: string(message)[7:]}
+			data := model.Data{Type: model.TYPE_USER, UserMsg: userMsg}
+			b, err = json.Marshal(data)
+
+			if err != nil {
+				println("转换json错误！")
+				break
+			}
+
+			sendMessage(b, "")
+		} else {
+			//转发路径消息
+			data := model.Data{Type: model.TYPE_DATA, DataMsg: string(message)}
+			b, err = json.Marshal(data)
+
+			if err != nil {
+				println("转换json错误！")
+				break
+			}
+
+			sendMessage(b, ID)
 		}
-		sendMessage(b, ID)
+
+
 	}
 }
 
