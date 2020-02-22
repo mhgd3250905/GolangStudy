@@ -75,8 +75,10 @@ func ping(c *gin.Context) {
 		}(client)
 
 		users := collectUsersInfo()
-		usersMsg := model.UsersMsg{Users: users, Msg: fmt.Sprintf("%s %s", ID, "连接成功。")}
-		b, err := json.Marshal(usersMsg)
+		connMsg := model.ConnMsg{Users: users, Msg: fmt.Sprintf("%s %s", ID, "连接成功。")}
+		data := model.Data{Type: model.TYPE_CONN, ConnMsg: connMsg}
+
+		b, err := json.Marshal(data)
 		if err != nil {
 			fmt.Println("json 解析错误")
 		}
@@ -90,8 +92,9 @@ func ping(c *gin.Context) {
 			delete(server.Clients, ID)
 			//message = makeNoticeMessage(ID, "退出了连接")
 			users := collectUsersInfo()
-			usersMsg := model.UsersMsg{Users: users, Msg: fmt.Sprintf("%s %s", ID, "退出连接。")}
-			b, err := json.Marshal(usersMsg)
+			connMsg := model.ConnMsg{Users: users, Msg: fmt.Sprintf("%s %s", ID, "退出连接。")}
+			data := model.Data{Type: model.TYPE_CONN, ConnMsg: connMsg}
+			b, err := json.Marshal(data)
 			if err != nil {
 				fmt.Println("json 解析错误")
 			}
@@ -106,7 +109,13 @@ func ping(c *gin.Context) {
 			message = []byte("pong")
 		}
 
-		sendMessage(message, ID)
+		data := model.Data{Type: model.TYPE_DATA, DataMsg: string(message)}
+		b, err := json.Marshal(data)
+		if err != nil {
+			println("转换json错误！")
+			break
+		}
+		sendMessage(b, ID)
 	}
 }
 
