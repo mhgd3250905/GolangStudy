@@ -12,7 +12,7 @@ type Person struct {
 }
 
 func main() {
-	t,err:=template.ParseFiles("D:/index.html")
+	t,err:=template.ParseFiles("D:/index_room_1_1.html")
 	if err!=nil{
 		fmt.Println("parse file err: ",err)
 		return

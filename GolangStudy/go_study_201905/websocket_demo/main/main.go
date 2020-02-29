@@ -29,7 +29,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
 		return
 	}
-	t,err:=template.ParseFiles("E:/go/GoStudy_001/websocket_demo/index.html")
+	t,err:=template.ParseFiles("E:/go/GoStudy_001/websocket_demo/index_room_1_1.html")
 	if err!=nil{
 		log.Printf("template parsefiles failed:%v/n",err)
 	}

@@ -12,12 +12,6 @@ import (
 
 const USER_MSG_FLAG = "[-MSG-]"
 
-var upGrader = websocket.Upgrader{
-	CheckOrigin: func(r *http.Request) bool {
-		return true
-	},
-}
-
 var server = Server{"Painting", make(map[string]*Client, 0), make(chan error)}
 
 type Server struct {
@@ -28,13 +22,20 @@ type Server struct {
 
 type Client struct {
 	Id     string
+	RoomId string
 	Msg    chan []byte
 	Ws     *websocket.Conn
 	Server *Server
 	DoneCh chan bool
 }
 
-func NewClient(ws *websocket.Conn, server *Server) *Client {
+func main() {
+	r := gin.Default()
+	r.GET("/chatroom/:roomId/listen", listen)
+	r.Run(":80")
+}
+
+func NewClient(ws *websocket.Conn, server *Server, roomId string) *Client {
 	if ws == nil {
 		panic("ws cannot be nil!")
 	}
@@ -44,11 +45,19 @@ func NewClient(ws *websocket.Conn, server *Server) *Client {
 	ID := ws.RemoteAddr().String()
 	doneCh := make(chan bool)
 	msg := make(chan []byte)
-	return &Client{ID, msg, ws, server, doneCh}
+	return &Client{ID, roomId, msg, ws, server, doneCh}
 }
 
-//webSocket请求ping返回pong
-func ping(c *gin.Context) {
+func listen(c *gin.Context) {
+	var upGrader = websocket.Upgrader{
+		CheckOrigin: func(r *http.Request) bool {
+			return true
+		},
+	}
+
+	//获取房间Id
+	roomId := c.Param("roomId")
+
 	//升级get请求为webSocket协议
 	ws, err := upGrader.Upgrade(c.Writer, c.Request, nil)
 	if err != nil {
@@ -59,7 +68,7 @@ func ping(c *gin.Context) {
 
 	var client *Client
 	if server.Clients[ID] == nil {
-		client = NewClient(ws, &server)
+		client = NewClient(ws, &server, roomId)
 		server.Clients[ID] = client
 
 		go func(client *Client) {
@@ -84,7 +93,7 @@ func ping(c *gin.Context) {
 		if err != nil {
 			fmt.Println("json 解析错误")
 		}
-		sendMessage(b, ID)
+		sendMessage(b, ID, roomId)
 	}
 
 	for {
@@ -100,13 +109,13 @@ func ping(c *gin.Context) {
 			if err != nil {
 				fmt.Println("json 解析错误")
 			}
-			sendMessage(b, ID)
+			sendMessage(b, ID, roomId)
 			break
 		}
 
 		//fmt.Printf("mt: %d\n",mt)
 
-		fmt.Printf("%s ,Message: %s\n", ws.RemoteAddr().String(), string(message))
+		//fmt.Printf("%s ,Message: %s\n", ws.RemoteAddr().String(), string(message))
 		if string(message) == "ping" {
 			message = []byte("pong")
 		}
@@ -127,8 +136,9 @@ func ping(c *gin.Context) {
 				break
 			}
 
-			sendMessage(b, "")
+			sendMessage(b, "", roomId)
 		} else {
+
 			//转发路径消息
 			data := model.Data{Type: model.TYPE_DATA, DataMsg: string(message)}
 			b, err = json.Marshal(data)
@@ -138,10 +148,8 @@ func ping(c *gin.Context) {
 				break
 			}
 
-			sendMessage(b, ID)
+			sendMessage(b, ID, roomId)
 		}
-
-
 	}
 }
 
@@ -155,22 +163,12 @@ func collectUsersInfo() []model.User {
 	return users
 }
 
-func makeNoticeMessage(userId string, message string) []byte {
-	return []byte(fmt.Sprintf("Notice:%s %s", userId, message))
-}
-
-func sendMessage(message []byte, exceptId string) {
+func sendMessage(message []byte, exceptId string, roomId string) {
 	for k, v := range server.Clients {
-		if k == exceptId {
+		if k == exceptId || v.RoomId != roomId {
 			continue
 		}
 		//发送消息到通道
 		v.Msg <- message
 	}
-}
-
-func main() {
-	r := gin.Default()
-	r.GET("/ping", ping)
-	r.Run(":80")
 }

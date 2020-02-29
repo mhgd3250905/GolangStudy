@@ -74,7 +74,7 @@ func userInfo(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/user/info", userInfo)
-	err := initTemplate("C:/Users/admin/go/src/GolangStudy/GolangStudy/go_study_20190613/template_http/index.html")
+	err := initTemplate("C:/Users/admin/go/src/GolangStudy/GolangStudy/go_study_20190613/template_http/index_room_1_1.html")
 	if err != nil {
 		fmt.Println("init template err= ", err)
 	}

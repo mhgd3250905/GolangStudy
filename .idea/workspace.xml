@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cc110f4-c571-47e7-941e-d2fae968b3d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20200219/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20200219/index2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20200219/index3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20200219/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20200219/index_room_100_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GolangStudy/go_study_20200219/index_room_100_2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20190617/colly/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190617/colly/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20190621/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190621/server/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_201905/websocket_demo/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_201905/websocket_demo/main/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20190607/template/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190607/template/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20190613/template/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190613/template/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20190613/template_http/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20190613/template_http/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20200219/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20200219/index_room_1_1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20200219/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20200219/index_room_1_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20200219/index3.html" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20200219/index_room_1_3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20200219/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20200219/main.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GolangStudy/go_study_20200219/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GolangStudy/go_study_20200219/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,48 +23,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Go File" />
         <option value="HTML File" />
+        <option value="Go File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>read</find>
-      <find>登陆成功</find>
-      <find>conn</find>
-      <find>process</find>
-      <find>serverProcessLogin</find>
-      <find>loginResMsg</find>
-      <find>up.Login fail err</find>
-      <find>200</find>
-      <find>\</find>
-      <find>日本人</find>
-      <find>----</find>
-      <find>e.DOM</find>
-      <find>time:</find>
-      <find>fmt.Println(news)</find>
-      <find>pageCollector OnScraped</find>
-      <find>Page：</find>
-      <find>fmt</find>
-      <find>string(</find>
-      <find>timeStr =</find>
-      <find>江苏</find>
-      <find>#article_cstaontent307777</find>
-      <find>htmlCallbacks</find>
-      <find>article_cstaontent</find>
-      <find>detail</find>
-      <find>go</find>
-      <find>page</find>
-      <find>lastDateline:</find>
-      <find>stamp, _ :</find>
-      <find>http://www.chuapp.com/tag/index/id/20369.html</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>/</replace>
-      <replace>selector</replace>
-      <replace>selection</replace>
-    </replaceStrings>
   </component>
   <component name="GOROOT" path="D:\Go" />
   <component name="Git.Settings">
@@ -100,19 +67,19 @@
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617\collectors\chule" />
-      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617\modles\detailContainerType" />
-      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617\collectors\bookset" />
-      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617\collectors" />
-      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190615\gorm_demo\gorm_create" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\GoPath\src\GolangStudy\GolangStudy\go_study_20200219" />
       <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617\collectors\chule" />
       <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617\collectors\huxiu" />
       <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617\modles\detailContainerType" />
       <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190621\modle" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617\collectors\chule" />
+      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617\modles\detailContainerType" />
+      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617\collectors\bookset" />
+      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190617\collectors" />
+      <recent name="C:\Users\admin\go\src\GolangStudy\GolangStudy\go_study_20190615\gorm_demo\gorm_create" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build GolangStudy/GolangStudy/go_study_20200219">
@@ -184,46 +151,50 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="499" height="466" key="DebuggerActiveHint" timestamp="1582196537091">
+    <state x="421" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582941073010">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="499" height="466" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1582196537091" />
+    <state x="421" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1582941073010" />
+    <state width="686" height="466" key="DebuggerActiveHint" timestamp="1582359388774">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="686" height="466" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1582359388774" />
     <state x="465" y="122" key="FileChooserDialogImpl" timestamp="1582090494661">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="465" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582090494661" />
-    <state width="1323" height="255" key="GridCell.Tab.0.bottom" timestamp="1582197890962">
+    <state width="1323" height="203" key="GridCell.Tab.0.bottom" timestamp="1582954556082">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="255" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582197890962" />
-    <state width="1323" height="255" key="GridCell.Tab.0.center" timestamp="1582197890961">
+    <state width="1323" height="203" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582954556082" />
+    <state width="1323" height="203" key="GridCell.Tab.0.center" timestamp="1582954556082">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="255" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582197890961" />
-    <state width="1323" height="255" key="GridCell.Tab.0.left" timestamp="1582197890961">
+    <state width="1323" height="203" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582954556082" />
+    <state width="1323" height="203" key="GridCell.Tab.0.left" timestamp="1582954556082">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="255" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582197890961" />
-    <state width="1323" height="255" key="GridCell.Tab.0.right" timestamp="1582197890962">
+    <state width="1323" height="203" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582954556082" />
+    <state width="1323" height="203" key="GridCell.Tab.0.right" timestamp="1582954556082">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="255" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582197890962" />
-    <state width="1323" height="255" key="GridCell.Tab.1.bottom" timestamp="1582197890871">
+    <state width="1323" height="203" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582954556082" />
+    <state width="1323" height="203" key="GridCell.Tab.1.bottom" timestamp="1582954556082">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="255" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582197890871" />
-    <state width="1323" height="255" key="GridCell.Tab.1.center" timestamp="1582197890871">
+    <state width="1323" height="203" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582954556082" />
+    <state width="1323" height="203" key="GridCell.Tab.1.center" timestamp="1582954556082">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="255" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1582197890871" />
-    <state width="1323" height="255" key="GridCell.Tab.1.left" timestamp="1582197890871">
+    <state width="1323" height="203" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1582954556082" />
+    <state width="1323" height="203" key="GridCell.Tab.1.left" timestamp="1582954556082">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="255" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1582197890871" />
-    <state width="1323" height="255" key="GridCell.Tab.1.right" timestamp="1582197890871">
+    <state width="1323" height="203" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1582954556082" />
+    <state width="1323" height="203" key="GridCell.Tab.1.right" timestamp="1582954556082">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="255" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1582197890871" />
+    <state width="1323" height="203" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1582954556082" />
     <state x="186" y="9" key="SettingsEditor" timestamp="1582090499116">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
